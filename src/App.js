@@ -294,7 +294,8 @@ const FlashcardApp = () => {
 
         window.addEventListener('keydown', handleKeyDown);
         return () => window.removeEventListener('keydown', handleKeyDown);
-    }, [filteredCards, currentIndex, displayMode, revealedFields, difficulties, currentCardId, isRandomBlur, randomDisplayMode]); // Add necessary deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [filteredCards, currentIndex, displayMode, revealedFields, difficulties, currentCardId, isRandomBlur, randomDisplayMode]);
 
     // Safety check - if no cards match filters
     if (filteredCards.length === 0) {
