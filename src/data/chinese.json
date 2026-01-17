@@ -1,0 +1,3302 @@
+[
+    {
+        "chiński": "中文",
+        "pinyin": "zhōngwén",
+        "polskie_znaczenie": "język chiński",
+        "id_lekcji": "19.01.2025",
+        "przykład": {
+            "chiński": "我在学习中文。",
+            "pinyin": "Wǒ zài xuéxí Zhōngwén.",
+            "polski": "Uczę się chińskiego."
+        }
+    },
+    {
+        "chiński": "声调",
+        "pinyin": "shēngdiào",
+        "polskie_znaczenie": "tona w języku chińskim",
+        "id_lekcji": "19.01.2025",
+        "przykład": {
+            "chiński": "中文是语言 tonalny.",
+            "pinyin": "Zhōngwén shì yǔyán tonalny.",
+            "polski": "Chiński to język tonalny."
+        }
+    },
+    {
+        "chiński": "人",
+        "pinyin": "rén",
+        "polskie_znaczenie": "człowiek",
+        "id_lekcji": "26.01.2025",
+        "przykład": {
+            "chiński": "一个人",
+            "pinyin": "yī gè rén",
+            "polski": "jeden człowiek"
+        }
+    },
+    {
+        "chiński": "我",
+        "pinyin": "wǒ",
+        "polskie_znaczenie": "ja",
+        "id_lekcji": "26.01.2025",
+        "przykład": {
+            "chiński": "我很好。",
+            "pinyin": "Wǒ hěn hǎo.",
+            "polski": "Mam się dobrze."
+        }
+    },
+    {
+        "chiński": "你",
+        "pinyin": "nǐ",
+        "polskie_znaczenie": "ty",
+        "id_lekcji": "26.01.2025",
+        "przykład": {
+            "chiński": "你好吗？",
+            "pinyin": "Nǐ hǎo ma?",
+            "polski": "Jak się masz?"
+        }
+    },
+    {
+        "chiński": "他",
+        "pinyin": "tā",
+        "polskie_znaczenie": "on",
+        "id_lekcji": "26.01.2025",
+        "przykład": {
+            "chiński": "他是我朋友。",
+            "pinyin": "Tā shì wǒ péngyǒu.",
+            "polski": "On jest moim przyjacielem."
+        }
+    },
+    {
+        "chiński": "你好",
+        "pinyin": "nǐ hǎo",
+        "polskie_znaczenie": "dzień dobry",
+        "id_lekcji": "26.01.2025",
+        "przykład": {
+            "chiński": "你好，你最近怎么样？",
+            "pinyin": "Nǐ hǎo, nǐ zuìjìn zěnme yàng?",
+            "polski": "Cześć, co tam u ciebie?"
+        }
+    },
+    {
+        "chiński": "再见",
+        "pinyin": "zài jiàn",
+        "polskie_znaczenie": "do widzenia",
+        "id_lekcji": "26.01.2025",
+        "przykład": {
+            "chiński": "明天见！",
+            "pinyin": "Míngtiān jiàn!",
+            "polski": "Do zobaczenia jutro!"
+        }
+    },
+    {
+        "chiński": "谢谢",
+        "pinyin": "xièxie",
+        "polskie_znaczenie": "Dziękuję",
+        "id_lekcji": "04.02.2025",
+        "przykład": {
+            "chiński": "谢谢，我很好。",
+            "pinyin": "Xièxie, wǒ hěn hǎo.",
+            "polski": "Dziękuję, mam się dobrze."
+        }
+    },
+    {
+        "chiński": "不",
+        "pinyin": "bù",
+        "polskie_znaczenie": "Nie (przeczenie)",
+        "id_lekcji": "04.02.2025",
+        "przykład": {
+            "chiński": "不去",
+            "pinyin": "bú qù",
+            "polski": "nie iść"
+        }
+    },
+    {
+        "chiński": "不客气",
+        "pinyin": "bú kè qì",
+        "polskie_znaczenie": "Nie ma za co",
+        "id_lekcji": "04.02.2025",
+        "przykład": {
+            "chiński": "A: 谢谢。 B: 不客气。",
+            "pinyin": "A: Xièxie. B: Bú kèqì.",
+            "polski": "A: Dziękuję. B: Nie ma za co."
+        }
+    },
+    {
+        "chiński": "叫",
+        "pinyin": "jiào",
+        "polskie_znaczenie": "Nazywać się",
+        "id_lekcji": "04.02.2025",
+        "przykład": {
+            "chiński": "你叫什么名字？",
+            "pinyin": "Nǐ jiào shénme míngzì?",
+            "polski": "Jak masz na imię?"
+        }
+    },
+    {
+        "chiński": "名字",
+        "pinyin": "míngzì",
+        "polskie_znaczenie": "Imię",
+        "id_lekcji": "04.02.2025",
+        "przykład": {
+            "chiński": "我的名字是...",
+            "pinyin": "Wǒ de míngzì shì...",
+            "polski": "Moje imię to..."
+        }
+    },
+    {
+        "chiński": "吗",
+        "pinyin": "ma",
+        "polskie_znaczenie": "Znak zdania pytającego (tak/nie)",
+        "id_lekcji": "16.03.2025",
+        "przykład": {
+            "chiński": "你是波兰人吗？",
+            "pinyin": "Nǐ shì Bōlánrén ma?",
+            "polski": "Czy jesteś Polakiem / Polką?"
+        }
+    },
+    {
+        "chiński": "呢",
+        "pinyin": "ne",
+        "polskie_znaczenie": "Znak zdania pytającego (a ty?)",
+        "id_lekcji": "16.03.2025",
+        "przykład": {
+            "chiński": "我很好。你呢？",
+            "pinyin": "Wǒ hěn hǎo. Nǐ ne?",
+            "polski": "Mam się dobrze. A ty?"
+        }
+    },
+    {
+        "chiński": "很",
+        "pinyin": "hěn",
+        "polskie_znaczenie": "Bardzo",
+        "id_lekcji": "16.03.2025",
+        "przykład": {
+            "chiński": "很好",
+            "pinyin": "hěn hǎo",
+            "polski": "Bardzo dobrze"
+        }
+    },
+    {
+        "chiński": "对不起",
+        "pinyin": "duìbuqǐ",
+        "polskie_znaczenie": "Przepraszam",
+        "id_lekcji": "16.03.2025",
+        "przykład": {
+            "chiński": "A: 对不起。 B: 没关系。",
+            "pinyin": "A: Duìbuqǐ. B: Méi guānxi.",
+            "polski": "A: Przepraszam. B: Nic się nie stało."
+        }
+    },
+    {
+        "chiński": "个",
+        "pinyin": "gè",
+        "polskie_znaczenie": "Najbardziej podstawowy klasyfikator",
+        "id_lekcji": "16.03.2025",
+        "przykład": {
+            "chiński": "一个人",
+            "pinyin": "yí gè rén",
+            "polski": "jedna osoba"
+        }
+    },
+    {
+        "chiński": "两",
+        "pinyin": "liǎng",
+        "polskie_znaczenie": "dwa (przed klasyfikatorem)",
+        "id_lekcji": "16.03.2025",
+        "przykład": {
+            "chiński": "两个人",
+            "pinyin": "liǎng ge rén",
+            "polski": "dwie osoby"
+        }
+    },
+    {
+        "chiński": "昨天",
+        "pinyin": "zuótiān",
+        "polskie_znaczenie": "Wczoraj",
+        "id_lekcji": "23.03.2025",
+        "przykład": {
+            "chiński": "昨天我去电影院。",
+            "pinyin": "Zuótiān wǒ qù diànyǐngyuàn.",
+            "polski": "Wczoraj poszedłem do kina."
+        }
+    },
+    {
+        "chiński": "今天",
+        "pinyin": "jīntiān",
+        "polskie_znaczenie": "Dziś, dzisiaj",
+        "id_lekcji": "23.03.2025",
+        "przykład": {
+            "chiński": "今天是周日。",
+            "pinyin": "Jīntiān shì zhōurì.",
+            "polski": "Dziś jest niedziela."
+        }
+    },
+    {
+        "chiński": "明天",
+        "pinyin": "míngtiān",
+        "polskie_znaczenie": "Jutro",
+        "id_lekcji": "23.03.2025",
+        "przykład": {
+            "chiński": "明天见！",
+            "pinyin": "Míngtiān jiàn!",
+            "polski": "Do zobaczenia jutro!"
+        }
+    },
+    {
+        "chiński": "中国",
+        "pinyin": "Zhōngguó",
+        "polskie_znaczenie": "Chiny",
+        "id_lekcji": "23.03.2025",
+        "przykład": {
+            "chiński": "我们要去中国旅行。",
+            "pinyin": "Wǒmen yào qù Zhōngguó lǚxíng.",
+            "polski": "Zamierzamy pojechać do Chin w podróż."
+        }
+    },
+    {
+        "chiński": "波兰",
+        "pinyin": "Bōlán",
+        "polskie_znaczenie": "Polska",
+        "id_lekcji": "23.03.2025",
+        "przykład": {
+            "chiński": "你是波兰人吗？",
+            "pinyin": "Nǐ shì Bōlánrén ma?",
+            "polski": "Czy jesteś Polakiem / Polką?"
+        }
+    },
+    {
+        "chiński": "哪",
+        "pinyin": "nǎ",
+        "polskie_znaczenie": "Który (w pytaniu o wybór)",
+        "id_lekcji": "30.03.2025",
+        "przykład": {
+            "chiński": "你是哪国人？",
+            "pinyin": "Nǐ shì nǎ guó rén?",
+            "polski": "Z jakiego kraju jesteś?"
+        }
+    },
+    {
+        "chiński": "会",
+        "pinyin": "huì",
+        "polskie_znaczenie": "Umieć, potrafić",
+        "id_lekcji": "30.03.2025",
+        "przykład": {
+            "chiński": "你会说汉语吗？",
+            "pinyin": "Nǐ huì shuō Hànyǔ ma?",
+            "polski": "Umiesz mówić po chińsku?"
+        }
+    },
+    {
+        "chiński": "学习",
+        "pinyin": "xuéxí",
+        "polskie_znaczenie": "Uczyć się",
+        "id_lekcji": "30.03.2025",
+        "przykład": {
+            "chiński": "我在学习汉语。",
+            "pinyin": "Wǒ zài xuéxí Hànyǔ.",
+            "polski": "Uczę się języka chińskiego."
+        }
+    },
+    {
+        "chiński": "喜欢",
+        "pinyin": "xǐhuān",
+        "polskie_znaczenie": "Lubić",
+        "id_lekcji": "30.03.2025",
+        "przykład": {
+            "chiński": "你喜欢什么？",
+            "pinyin": "Nǐ xǐhuān shénme?",
+            "polski": "Co lubisz?"
+        }
+    },
+    {
+        "chiński": "谁",
+        "pinyin": "shéi",
+        "polskie_znaczenie": "kto",
+        "id_lekcji": "11.05.2025",
+        "przykład": {
+            "chiński": "他是谁？",
+            "pinyin": "Tā shì shéi?",
+            "polski": "Kto to jest?"
+        }
+    },
+    {
+        "chiński": "朋友",
+        "pinyin": "péngyǒu",
+        "polskie_znaczenie": "przyjaciel / znajomy",
+        "id_lekcji": "11.05.2025",
+        "przykład": {
+            "chiński": "他是我朋友。",
+            "pinyin": "Tā shì wǒ péngyǒu.",
+            "polski": "On jest moim przyjacielem."
+        }
+    },
+    {
+        "chiński": "的",
+        "pinyin": "de",
+        "polskie_znaczenie": "partykuła przynależności/określenia cechy",
+        "id_lekcji": "11.05.2025",
+        "przykład": {
+            "chiński": "我的朋友",
+            "pinyin": "wǒ de péngyǒu",
+            "polski": "mój przyjaciel"
+        }
+    },
+    {
+        "chiński": "这",
+        "pinyin": "zhè",
+        "polskie_znaczenie": "To",
+        "id_lekcji": "18.05.2025",
+        "przykład": {
+            "chiński": "这是我的家。",
+            "pinyin": "Zhè shì wǒ de jiā.",
+            "polski": "To jest mój dom."
+        }
+    },
+    {
+        "chiński": "有",
+        "pinyin": "yǒu",
+        "polskie_znaczenie": "mieć, znajdować się",
+        "id_lekcji": "18.05.2025",
+        "przykład": {
+            "chiński": "我有两个姐姐。",
+            "pinyin": "Wǒ yǒu liǎng gè jiějie.",
+            "polski": "Mam dwie starsze siostry."
+        }
+    },
+    {
+        "chiński": "在",
+        "pinyin": "zài",
+        "polskie_znaczenie": "używane do wyrażenia czasu teraźniejszego / miejsce",
+        "id_lekcji": "08.06.2025",
+        "przykład": {
+            "chiński": "你住在哪里？",
+            "pinyin": "Nǐ zhù zài nǎlǐ?",
+            "polski": "Gdzie mieszkasz?"
+        }
+    },
+    {
+        "chiński": "现在",
+        "pinyin": "xiànzài",
+        "polskie_znaczenie": "teraz / obecnie",
+        "id_lekcji": "22.06.2025",
+        "przykład": {
+            "chiński": "现在我在学习中文。",
+            "pinyin": "Xiànzài wǒ zài xuéxí Zhōngwén.",
+            "polski": "Teraz uczę się chińskiego."
+        }
+    },
+    {
+        "chiński": "狗",
+        "pinyin": "gǒu",
+        "polskie_znaczenie": "pies",
+        "id_lekcji": "22.06.2025",
+        "przykład": {
+            "chiński": "我有一只狗。",
+            "pinyin": "Wǒ yǒu yì zhī gǒu.",
+            "polski": "Mam jednego psa."
+        }
+    },
+    {
+        "chiński": "起床",
+        "pinyin": "qǐ chuáng",
+        "polskie_znaczenie": "Wstawać z łóżka",
+        "id_lekcji": "29.06.2025",
+        "przykład": {
+            "chiński": "你几点起床？",
+            "pinyin": "Nǐ jǐ diǎn qǐchuáng?",
+            "polski": "O której wstajesz?"
+        }
+    },
+    {
+        "chiński": "上班",
+        "pinyin": "shàng bān",
+        "polskie_znaczenie": "Iść do pracy",
+        "id_lekcji": "29.06.2025",
+        "przykład": {
+            "chiński": "我明天早上8点上班。",
+            "pinyin": "Wǒ míngtiān zǎoshàng bā diǎn shàngbān.",
+            "polski": "Jutro idę do pracy o 8 rano."
+        }
+    },
+    {
+        "chiński": "下班",
+        "pinyin": "xià bān",
+        "polskie_znaczenie": "Kończyć pracę",
+        "id_lekcji": "29.06.2025",
+        "przykład": {
+            "chiński": "他下午五点下班。",
+            "pinyin": "Tā xiàwǔ wǔ diǎn xiàbān.",
+            "polski": "On kończy pracę o 17:00."
+        }
+    },
+    {
+        "chiński": "点",
+        "pinyin": "diǎn",
+        "polskie_znaczenie": "godzina",
+        "id_lekcji": "06.07.2025",
+        "przykład": {
+            "chiński": "现在几点？",
+            "pinyin": "Xiànzài jǐ diǎn?",
+            "polski": "Która jest teraz godzina?"
+        }
+    },
+    {
+        "chiński": "打算",
+        "pinyin": "dǎsuàn",
+        "polskie_znaczenie": "zamierzać, zamiar",
+        "id_lekcji": "11.08.2025",
+        "przykład": {
+            "chiński": "我打算下午两点去朋友家。",
+            "pinyin": "Wǒ dǎsuàn xiàwǔ liǎng diǎn qù péngyǒu jiā.",
+            "polski": "Zamierzam o 14:00 odwiedzić kolegę."
+        }
+    },
+    {
+        "chiński": "看",
+        "pinyin": "kàn",
+        "polskie_znaczenie": "patrzeć / oglądać",
+        "id_lekcji": "11.08.2025",
+        "przykład": {
+            "chiński": "晚上六点半我和朋友去看电影。",
+            "pinyin": "Wǎnshàng liù diǎn bàn wǒ hé péngyǒu qù kàn diànyǐng.",
+            "polski": "O 18:30 idę z przyjacielem do kina."
+        }
+    },
+    {
+        "chiński": "去",
+        "pinyin": "qù",
+        "polskie_znaczenie": "iść / jechać",
+        "id_lekcji": "11.08.2025",
+        "przykład": {
+            "chiński": "去北京",
+            "pinyin": "qù Běijīng",
+            "polski": "jechać do Pekinu"
+        }
+    },
+    {
+        "chiński": "周末",
+        "pinyin": "zhōumò",
+        "polskie_znaczenie": "weekend",
+        "id_lekcji": "24.08.2025",
+        "przykład": {
+            "chiński": "你周末有什么计划？",
+            "pinyin": "Nǐ zhōumò yǒu shénme jìhuà?",
+            "polski": "Jakie masz plany na weekend?"
+        }
+    },
+    {
+        "chiński": "想",
+        "pinyin": "xiǎng",
+        "polskie_znaczenie": "chcieć (pragnienie)",
+        "id_lekcji": "24.08.2025",
+        "przykład": {
+            "chiński": "你周末想做什么？",
+            "pinyin": "Nǐ zhōumò xiǎng zuò shénme?",
+            "polski": "Co chcesz robić w weekend?"
+        }
+    },
+    {
+        "chiński": "先",
+        "pinyin": "xiān",
+        "polskie_znaczenie": "Najpierw",
+        "id_lekcji": "31.08.2025",
+        "przykład": {
+            "chiński": "我周末喜欢先喝咖啡，然后看电影。",
+            "pinyin": "Wǒ zhōumò xǐhuān xiān hē kāfēi, ránhòu kàn diànyǐng.",
+            "polski": "W weekendy lubię najpierw wypić kawę, potem obejrzeć film."
+        }
+    },
+    {
+        "chiński": "然后",
+        "pinyin": "ránhòu",
+        "polskie_znaczenie": "Następnie",
+        "id_lekcji": "31.08.2025",
+        "przykład": {
+            "chiński": "先上课，然后吃午饭。",
+            "pinyin": "Xiān shàng kè, ránhòu chī wǔfàn.",
+            "polski": "Najpierw mieć lekcję, następnie zjeść obiad."
+        }
+    },
+    {
+        "chiński": "最后",
+        "pinyin": "zuìhòu",
+        "polskie_znaczenie": "Na końcu, ostatni",
+        "id_lekcji": "31.08.2025",
+        "przykład": {
+            "chiński": "最后晚上大约4点和朋友去电影院看电影。",
+            "pinyin": "Zuìhòu wǎnshàng dàyuē sì diǎn hé péngyǒu qù diànyǐngyuàn kàn diànyǐng.",
+            "polski": "A na końcu około 16:00 wieczorem idę z przyjacielem do kina."
+        }
+    },
+    {
+        "chiński": "电影院",
+        "pinyin": "diànyǐngyuàn",
+        "polskie_znaczenie": "kino",
+        "id_lekcji": "14.09.2025",
+        "przykład": {
+            "chiński": "我去电影院看电影。",
+            "pinyin": "Wǒ qù diànyǐngyuàn kàn diànyǐng.",
+            "polski": "Idę do kina obejrzeć film."
+        }
+    },
+    {
+        "chiński": "公司",
+        "pinyin": "gōngsī",
+        "polskie_znaczenie": "firma/biuro",
+        "id_lekcji": "14.09.2025",
+        "przykład": {
+            "chiński": "我在公司上班。",
+            "pinyin": "Wǒ zài gōngsī shàngbān.",
+            "polski": "Pracuję w firmie/biurze."
+        }
+    },
+    {
+        "chiński": "一起",
+        "pinyin": "yìqǐ",
+        "polskie_znaczenie": "razem",
+        "id_lekcji": "21.09.2025",
+        "przykład": {
+            "chiński": "我们打算一起庆祝她的生日。",
+            "pinyin": "Wǒmen dǎsuàn yìqǐ qìngzhù tā de shēngrì.",
+            "polski": "Zamierzamy razem świętować jej urodziny."
+        }
+    },
+    {
+        "chiński": "因为",
+        "pinyin": "yīnwèi",
+        "polskie_znaczenie": "ponieważ",
+        "id_lekcji": "21.09.2025",
+        "przykład": {
+            "chiński": "因为她非常喜欢看电影。",
+            "pinyin": "Yīnwèi tā fēicháng xǐhuān kàn diànyǐng.",
+            "polski": "Ponieważ bardzo lubi oglądać filmy."
+        }
+    },
+    {
+        "chiński": "放假",
+        "pinyin": "fàng jià",
+        "polskie_znaczenie": "mieć wolne, wakacje",
+        "id_lekcji": "05.10.2025",
+        "przykład": {
+            "chiński": "人们放假七天。",
+            "pinyin": "Rénmen fàngjià qī tiān.",
+            "polski": "Ludzie mają siedem dni wolnego."
+        }
+    },
+    {
+        "chiński": "所以",
+        "pinyin": "suǒyǐ",
+        "polskie_znaczenie": "więc, dlatego",
+        "id_lekcji": "05.10.2025",
+        "przykład": {
+            "chiński": "人们放假七天，所以很多人去旅行。",
+            "pinyin": "Rénmen fàngjià qī tiān, suǒyǐ hěn duō rén qù lǚxíng.",
+            "polski": "Ludzie mają siedem dni wolnego, więc wielu z nich wyjeżdża w podróż."
+        }
+    },
+    {
+        "chiński": "月饼",
+        "pinyin": "yuèbǐng",
+        "polskie_znaczenie": "ciasteczko księżycowe",
+        "id_lekcji": "05.10.2025",
+        "przykład": {
+            "chiński": "家人一起吃月饼。",
+            "pinyin": "Jiārén yìqǐ chī yuèbǐng.",
+            "polski": "Rodziny razem jedzą ciasteczka księżycowe."
+        }
+    },
+    {
+        "chiński": "了",
+        "pinyin": "le",
+        "polskie_znaczenie": "partykuła zakończenia akcji (czas przeszły)",
+        "id_lekcji": "12.10.2025",
+        "przykład": {
+            "chiński": "她吃了午饭。",
+            "pinyin": "Tā chī le wǔfàn.",
+            "polski": "Ona zjadła obiad."
+        }
+    },
+    {
+        "chiński": "过",
+        "pinyin": "guò",
+        "polskie_znaczenie": "partykuła doświadczenia w przeszłości",
+        "id_lekcji": "12.10.2025",
+        "przykład": {
+            "chiński": "我去过北京。",
+            "pinyin": "Wǒ qù guò Běijīng.",
+            "polski": "Byłem w Pekinie."
+        }
+    },
+    {
+        "chiński": "欢迎",
+        "pinyin": "huānyíng",
+        "polskie_znaczenie": "witaj",
+        "id_lekcji": "19.10.2025",
+        "przykład": {
+            "chiński": "欢迎来我家",
+            "pinyin": "Huānyíng lái wǒ jiā",
+            "polski": "Witaj w moim domu"
+        }
+    },
+    {
+        "chiński": "房子",
+        "pinyin": "fángzi",
+        "polskie_znaczenie": "dom (budynek)",
+        "id_lekcji": "19.10.2025",
+        "przykład": {
+            "chiński": "狗在房子外面。",
+            "pinyin": "Gǒu zài fángzi wàimiàn.",
+            "polski": "Pies jest na zewnątrz domu."
+        }
+    },
+    {
+        "chiński": "房间",
+        "pinyin": "fángjiān",
+        "polskie_znaczenie": "pokój",
+        "id_lekcji": "19.10.2025",
+        "przykład": {
+            "chiński": "我家有四个房间。",
+            "pinyin": "Wǒ jiā yǒu sì ge fángjiān.",
+            "polski": "W moim domu są cztery pokoje."
+        }
+    },
+    {
+        "chiński": "桌子",
+        "pinyin": "zhuōzi",
+        "polskie_znaczenie": "stół",
+        "id_lekcji": "19.10.2025",
+        "przykład": {
+            "chiński": "这个房间里有一张桌子。",
+            "pinyin": "Zhège fángjiān lǐ yǒu yì zhāng zhuōzi.",
+            "polski": "W tym pokoju jest jeden stół."
+        }
+    },
+    {
+        "chiński": "椅子",
+        "pinyin": "yǐzi",
+        "polskie_znaczenie": "krzesło",
+        "id_lekcji": "19.10.2025",
+        "przykład": {
+            "chiński": "四把椅子在那个房间。",
+            "pinyin": "Sì bǎ yǐzi zài nàge fángjiān.",
+            "polski": "Cztery krzesła są w tamtym pokoju."
+        }
+    },
+    {
+        "chiński": "门",
+        "pinyin": "mén",
+        "polskie_znaczenie": "drzwi",
+        "id_lekcji": "02.11.2025",
+        "przykład": {
+            "chiński": "一扇门",
+            "pinyin": "yí shàn mén",
+            "polski": "jedne drzwi"
+        }
+    },
+    {
+        "chiński": "窗",
+        "pinyin": "chuāng",
+        "polskie_znaczenie": "okno",
+        "id_lekcji": "02.11.2025",
+        "przykład": {
+            "chiński": "卧室里有一扇窗。",
+            "pinyin": "Wòshì lǐ yǒu yí shàn chuāng.",
+            "polski": "W sypialni jest okno."
+        }
+    },
+    {
+        "chiński": "上面",
+        "pinyin": "shàngmiàn",
+        "polskie_znaczenie": "na górze / nad",
+        "id_lekcji": "23.11.2025",
+        "przykład": {
+            "chiński": "水在桌子上面。",
+            "pinyin": "Shuǐ zài zhuōzi shàngmiàn.",
+            "polski": "Woda jest na stole."
+        }
+    },
+    {
+        "chiński": "左边",
+        "pinyin": "zuǒbiān",
+        "polskie_znaczenie": "lewa strona",
+        "id_lekcji": "23.11.2025",
+        "przykład": {
+            "chiński": "床在衣柜的左边。",
+            "pinyin": "Chuáng zài yīguì de zuǒbiān.",
+            "polski": "Łóżko jest po lewej stronie szafy."
+        }
+    },
+    {
+        "chiński": "楼",
+        "pinyin": "lóu",
+        "polskie_znaczenie": "budynek / piętro",
+        "id_lekcji": "30.11.2025",
+        "przykład": {
+            "chiński": "我住在七楼。",
+            "pinyin": "Wǒ zhù zài qī lóu.",
+            "polski": "Mieszkam na siódmym piętrze."
+        }
+    },
+    {
+        "chiński": "平安夜",
+        "pinyin": "Píng'ān Yè",
+        "polskie_znaczenie": "Wigilia",
+        "id_lekcji": "21.12.2025",
+        "przykład": {
+            "chiński": "圣诞快乐！",
+            "pinyin": "Shèngdàn kuàilè!",
+            "polski": "Wesołych Świąt Bożego Narodzenia!"
+        }
+    },
+    {
+        "chiński": "来",
+        "pinyin": "lái",
+        "polskie_znaczenie": "przyjść",
+        "id_lekcji": "19.10.2025",
+        "przykład": {
+            "chiński": "欢迎来我家。",
+            "pinyin": "Huānyíng lái wǒ jiā.",
+            "polski": "Witaj w moim domu."
+        }
+    },
+    {
+        "chiński": "客厅",
+        "pinyin": "kètīng",
+        "polskie_znaczenie": "salon",
+        "id_lekcji": "19.10.2025",
+        "przykład": {
+            "chiński": "这个房间是客厅吗？",
+            "pinyin": "Zhège fángjiān shì kètīng ma?",
+            "polski": "Czy ten pokój to salon?"
+        }
+    },
+    {
+        "chiński": "厨房",
+        "pinyin": "chúfáng",
+        "polskie_znaczenie": "kuchnia",
+        "id_lekcji": "19.10.2025",
+        "przykład": {
+            "chiński": "我在厨房做饭。",
+            "pinyin": "Wǒ zài chúfáng zuò fàn.",
+            "polski": "Gotuję w kuchni."
+        }
+    },
+    {
+        "chiński": "卧室",
+        "pinyin": "wòshì",
+        "polskie_znaczenie": "sypialnia",
+        "id_lekcji": "19.10.2025",
+        "przykład": {
+            "chiński": "这是你的卧室吗？",
+            "pinyin": "Zhè shì nǐ de wòshì ma?",
+            "polski": "Czy to jest twoja sypialnia?"
+        }
+    },
+    {
+        "chiński": "浴室",
+        "pinyin": "yùshì",
+        "polskie_znaczenie": "łazienka",
+        "id_lekcji": "19.10.2025",
+        "przykład": {
+            "chiński": "浴室在二楼。",
+            "pinyin": "Yùshì zài èr lóu.",
+            "polski": "Łazienka jest na drugim piętrze."
+        }
+    },
+    {
+        "chiński": "床",
+        "pinyin": "chuáng",
+        "polskie_znaczenie": "łóżko",
+        "id_lekcji": "19.10.2025",
+        "przykład": {
+            "chiński": "我的房间里有一张床。",
+            "pinyin": "Wǒ de fángjiān lǐ yǒu yì zhāng chuáng.",
+            "polski": "W moim pokoju jest jedno łóżko."
+        }
+    },
+    {
+        "chiński": "电视",
+        "pinyin": "diànshì",
+        "polskie_znaczenie": "telewizor",
+        "id_lekcji": "19.10.2025",
+        "przykład": {
+            "chiński": "我们在客厅看电视。",
+            "pinyin": "Wǒmen zài kètīng kàn diànshì.",
+            "polski": "Oglądamy telewizję w salonie."
+        }
+    },
+    {
+        "chiński": "书",
+        "pinyin": "shū",
+        "polskie_znaczenie": "książka",
+        "id_lekcji": "02.11.2025",
+        "przykład": {
+            "chiński": "一本书",
+            "pinyin": "yì běn shū",
+            "polski": "jedna książka"
+        }
+    },
+    {
+        "chiński": "书架",
+        "pinyin": "shūjià",
+        "polskie_znaczenie": "regał / półka na książki",
+        "id_lekcji": "02.11.2025",
+        "przykład": {
+            "chiński": "书在书架上。",
+            "pinyin": "Shū zài shūjià shàng.",
+            "polski": "Książka jest na regale."
+        }
+    },
+    {
+        "chiński": "沙发",
+        "pinyin": "shāfā",
+        "polskie_znaczenie": "kanapa / sofa",
+        "id_lekcji": "02.11.2025",
+        "przykład": {
+            "chiński": "客厅里有沙发。",
+            "pinyin": "Kètīng lǐ yǒu shāfā.",
+            "polski": "W salonie jest kanapa."
+        }
+    },
+    {
+        "chiński": "衣柜",
+        "pinyin": "yīguì",
+        "polskie_znaczenie": "szafa na ubrania",
+        "id_lekcji": "02.11.2025",
+        "przykład": {
+            "chiński": "卧室里有一个衣柜。",
+            "pinyin": "Wòshì lǐ yǒu yí gè yīguì.",
+            "polski": "W sypialni jest szafa na ubrania."
+        }
+    },
+    {
+        "chiński": "衣服",
+        "pinyin": "yī fu",
+        "polskie_znaczenie": "ubranie",
+        "id_lekcji": "02.11.2025",
+        "przykład": {
+            "chiński": "衣柜里有很多衣服。",
+            "pinyin": "Yīguì lǐ yǒu hěn duō yīfu.",
+            "polski": "W szafie jest dużo ubrań."
+        }
+    },
+    {
+        "chiński": "柜子",
+        "pinyin": "guìzi",
+        "polskie_znaczenie": "szafa / szafka",
+        "id_lekcji": "02.11.2025",
+        "przykład": {
+            "chiński": "书在柜子里。",
+            "pinyin": "Shū zài guìzi lǐ.",
+            "polski": "Książka jest w szafce."
+        }
+    },
+    {
+        "chiński": "面",
+        "pinyin": "miàn",
+        "polskie_znaczenie": "strona / powierzchnia",
+        "id_lekcji": "23.11.2025",
+        "przykład": {
+            "chiński": "上面",
+            "pinyin": "shàngmiàn",
+            "polski": "na górze"
+        }
+    },
+    {
+        "chiński": "边",
+        "pinyin": "biān",
+        "polskie_znaczenie": "bok / krawędź",
+        "id_lekcji": "23.11.2025",
+        "przykład": {
+            "chiński": "左边",
+            "pinyin": "zuǒbiān",
+            "polski": "lewa strona"
+        }
+    },
+    {
+        "chiński": "下面",
+        "pinyin": "xiàmiàn",
+        "polskie_znaczenie": "na dole / pod",
+        "id_lekcji": "23.11.2025",
+        "przykład": {
+            "chiński": "猫在桌子下面。",
+            "pinyin": "Māo zài zhuōzi xiàmiàn.",
+            "polski": "Kot jest pod stołem."
+        }
+    },
+    {
+        "chiński": "右边",
+        "pinyin": "yòubiān",
+        "polskie_znaczenie": "prawa strona",
+        "id_lekcji": "23.11.2025",
+        "przykład": {
+            "chiński": "浴室在卧室的右边。",
+            "pinyin": "Yùshì zài wòshì de yòubiān.",
+            "polski": "Łazienka jest po prawej stronie sypialni."
+        }
+    },
+    {
+        "chiński": "左右",
+        "pinyin": "zuǒ yòu",
+        "polskie_znaczenie": "około / mniej więcej",
+        "id_lekcji": "23.11.2025",
+        "przykład": {
+            "chiński": "下午两点左右",
+            "pinyin": "Xiàwǔ liǎng diǎn zuǒyòu",
+            "polski": "Około godziny 14:00"
+        }
+    },
+    {
+        "chiński": "前面",
+        "pinyin": "qiánmiàn",
+        "polskie_znaczenie": "z przodu",
+        "id_lekcji": "23.11.2025",
+        "przykład": {
+            "chiński": "你在我前面。",
+            "pinyin": "Nǐ zài wǒ qiánmiàn.",
+            "polski": "Jesteś przede mną."
+        }
+    },
+    {
+        "chiński": "后面",
+        "pinyin": "hòumiàn",
+        "polskie_znaczenie": "z tyłu",
+        "id_lekcji": "23.11.2025",
+        "przykład": {
+            "chiński": "妈妈在我后面。",
+            "pinyin": "Māma zài wǒ hòumiàn.",
+            "polski": "Mama jest za mną."
+        }
+    },
+    {
+        "chiński": "里面",
+        "pinyin": "lǐ miàn",
+        "polskie_znaczenie": "wewnątrz / w środku",
+        "id_lekcji": "23.11.2025",
+        "przykład": {
+            "chiński": "我在房间里面。",
+            "pinyin": "Wǒ zài fángjiān lǐmiàn.",
+            "polski": "Jestem w pokoju."
+        }
+    },
+    {
+        "chiński": "外面",
+        "pinyin": "wài miàn",
+        "polskie_znaczenie": "na zewnątrz",
+        "id_lekcji": "23.11.2025",
+        "przykład": {
+            "chiński": "狗在房子外面。",
+            "pinyin": "Gǒu zài fángzi wàimiàn.",
+            "polski": "Pies jest na zewnątrz domu."
+        }
+    },
+    {
+        "chiński": "外国人",
+        "pinyin": "wàiguórén",
+        "polskie_znaczenie": "cudzoziemiec",
+        "id_lekcji": "23.11.2025",
+        "przykład": {
+            "chiński": "他是外国人。",
+            "pinyin": "Tā shì wàiguórén.",
+            "polski": "On jest cudzoziemcem."
+        }
+    },
+    {
+        "chiński": "楼上",
+        "pinyin": "lóu shàng",
+        "polskie_znaczenie": "na górze (w budynku)",
+        "id_lekcji": "30.11.2025",
+        "przykład": {
+            "chiński": "卧室在楼上。",
+            "pinyin": "Wòshì zài lóu shàng.",
+            "polski": "Sypialnia jest na górze."
+        }
+    },
+    {
+        "chiński": "楼下",
+        "pinyin": "lóu xià",
+        "polskie_znaczenie": "na dole (w budynku)",
+        "id_lekcji": "30.11.2025",
+        "przykład": {
+            "chiński": "我在楼下等你。",
+            "pinyin": "Wǒ zài lóu xià děng nǐ.",
+            "polski": "Czekam na ciebie na dole."
+        }
+    },
+    {
+        "chiński": "一楼",
+        "pinyin": "yì lóu",
+        "polskie_znaczenie": "parter",
+        "id_lekcji": "30.11.2025",
+        "przykład": {
+            "chiński": "客厅在一楼。",
+            "pinyin": "Kètīng zài yì lóu.",
+            "polski": "Salon jest na parterze."
+        }
+    },
+    {
+        "chiński": "二楼",
+        "pinyin": "èr lóu",
+        "polskie_znaczenie": "pierwsze piętro (w Chinach drugie piętro)",
+        "id_lekcji": "30.11.2025",
+        "przykład": {
+            "chiński": "我住在二楼。",
+            "pinyin": "Wǒ zhù zài èr lóu.",
+            "polski": "Mieszkam na pierwszym piętrze."
+        }
+    },
+    {
+        "chiński": "圣诞",
+        "pinyin": "Shèngdàn",
+        "polskie_znaczenie": "Boże Narodzenie",
+        "id_lekcji": "21.12.2025",
+        "przykład": {
+            "chiński": "圣诞节",
+            "pinyin": "Shèngdàn Jié",
+            "polski": "Święta Bożego Narodzenia"
+        }
+    },
+    {
+        "chiński": "圣诞快乐",
+        "pinyin": "Shèngdàn kuàilè",
+        "polskie_znaczenie": "Wesołych Świąt Bożego Narodzenia",
+        "id_lekcji": "21.12.2025",
+        "przykład": {
+            "chiński": "祝你圣诞快乐！",
+            "pinyin": "Zhù nǐ Shèngdàn kuàilè!",
+            "polski": "Życzę Ci Wesołych Świąt!"
+        }
+    },
+    {
+        "chiński": "元旦快乐",
+        "pinyin": "Yuándàn kuàilè",
+        "polskie_znaczenie": "Szczęśliwego Nowego Roku",
+        "id_lekcji": "11.01.2026",
+        "przykład": {
+            "chiński": "大家元旦快乐！",
+            "pinyin": "Dàjiā Yuándàn kuàilè!",
+            "polski": "Szczęśliwego Nowego Roku wszystkim!"
+        }
+    },
+    {
+        "chiński": "直走",
+        "pinyin": "zhí zǒu",
+        "polskie_znaczenie": "Idź prosto",
+        "id_lekcji": "11.01.2025",
+        "przykład": {
+            "chiński": "一直走",
+            "pinyin": "Yìzhí zǒu",
+            "polski": "Idź cały czas prosto"
+        }
+    },
+    {
+        "chiński": "左转",
+        "pinyin": "zuǒ zhuǎn",
+        "polskie_znaczenie": "Skręć w lewo",
+        "id_lekcji": "11.01.2025",
+        "przykład": {
+            "chiński": "请左转。",
+            "pinyin": "Qǐng zuǒ zhuǎn.",
+            "polski": "Proszę skręcić w lewo."
+        }
+    },
+    {
+        "chiński": "右转",
+        "pinyin": "yòu zhuǎn",
+        "polskie_znaczenie": "Skręć w prawo",
+        "id_lekcji": "11.01.2025",
+        "przykład": {
+            "chiński": "请右转。",
+            "pinyin": "Qǐng yòu zhuǎn.",
+            "polski": "Proszę skręcić w prawo."
+        }
+    },
+    {
+        "chiński": "在前面",
+        "pinyin": "zài qiánmiàn",
+        "polskie_znaczenie": "Na przodzie / przed sobą",
+        "id_lekcji": "11.01.2025",
+        "przykład": {
+            "chiński": "学校在前面。",
+            "pinyin": "Xuéxiào zài qiánmiàn.",
+            "polski": "Szkoła jest przed nami."
+        }
+    },
+    {
+        "chiński": "在后面",
+        "pinyin": "zài hòumiàn",
+        "polskie_znaczenie": "Z tyłu",
+        "id_lekcji": "11.01.2025",
+        "przykład": {
+            "chiński": "服务员在后面。",
+            "pinyin": "Fúwùyuán zài hòumiàn.",
+            "polski": "Kelner jest z tyłu."
+        }
+    },
+    {
+        "chiński": "往前",
+        "pinyin": "wǎng qián",
+        "polskie_znaczenie": "Do przodu",
+        "id_lekcji": "11.01.2025",
+        "przykład": {
+            "chiński": "往前走。",
+            "pinyin": "Wǎng qián zǒu.",
+            "polski": "Idź do przodu."
+        }
+    },
+    {
+        "chiński": "一",
+        "pinyin": "yī",
+        "polskie_znaczenie": "jeden",
+        "id_lekcji": "26.01.2025",
+        "przykład": {
+            "chiński": "一个苹果",
+            "pinyin": "yí gè píngguǒ",
+            "polski": "jedno jabłko"
+        }
+    },
+    {
+        "chiński": "二",
+        "pinyin": "èr",
+        "polskie_znaczenie": "dwa",
+        "id_lekcji": "26.01.2025",
+        "przykład": {
+            "chiński": "二月",
+            "pinyin": "Èryuè",
+            "polski": "Luty"
+        }
+    },
+    {
+        "chiński": "三",
+        "pinyin": "sān",
+        "polskie_znaczenie": "trzy",
+        "id_lekcji": "26.01.2025",
+        "przykład": {
+            "chiński": "三个月",
+            "pinyin": "sān ge yuè",
+            "polski": "trzy miesiące"
+        }
+    },
+    {
+        "chiński": "四",
+        "pinyin": "sì",
+        "polskie_znaczenie": "cztery",
+        "id_lekcji": "26.01.2025",
+        "przykład": {
+            "chiński": "星期四",
+            "pinyin": "Xīngqīsì",
+            "polski": "Czwartek"
+        }
+    },
+    {
+        "chiński": "五",
+        "pinyin": "wǔ",
+        "polskie_znaczenie": "pięć",
+        "id_lekcji": "26.01.2025",
+        "przykład": {
+            "chiński": "五个人",
+            "pinyin": "wǔ ge rén",
+            "polski": "pięć osób"
+        }
+    },
+    {
+        "chiński": "六",
+        "pinyin": "liù",
+        "polskie_znaczenie": "sześć",
+        "id_lekcji": "26.01.2025",
+        "przykład": {
+            "chiński": "六点",
+            "pinyin": "liù diǎn",
+            "polski": "godzina szósta"
+        }
+    },
+    {
+        "chiński": "七",
+        "pinyin": "qī",
+        "polskie_znaczenie": "siedem",
+        "id_lekcji": "26.01.2025",
+        "przykład": {
+            "chiński": "七天",
+            "pinyin": "qī tiān",
+            "polski": "siedem dni"
+        }
+    },
+    {
+        "chiński": "八",
+        "pinyin": "bā",
+        "polskie_znaczenie": "osiem",
+        "id_lekcji": "26.01.2025",
+        "przykład": {
+            "chiński": "八点半",
+            "pinyin": "bā diǎn bàn",
+            "polski": "godzina 8:30"
+        }
+    },
+    {
+        "chiński": "九",
+        "pinyin": "jiǔ",
+        "polskie_znaczenie": "dziewięć",
+        "id_lekcji": "26.01.2025",
+        "przykład": {
+            "chiński": "九月",
+            "pinyin": "Jiǔyuè",
+            "polski": "Wrzesień"
+        }
+    },
+    {
+        "chiński": "十",
+        "pinyin": "shí",
+        "polskie_znaczenie": "dziesięć",
+        "id_lekcji": "26.01.2025",
+        "przykład": {
+            "chiński": "十个",
+            "pinyin": "shí ge",
+            "polski": "dziesięć sztuk"
+        }
+    },
+    {
+        "chiński": "零",
+        "pinyin": "líng",
+        "polskie_znaczenie": "zero",
+        "id_lekcji": "26.01.2025",
+        "przykład": {
+            "chiński": "二零二五年",
+            "pinyin": "èr líng èr wǔ nián",
+            "polski": "rok 2025"
+        }
+    },
+    {
+        "chiński": "请",
+        "pinyin": "qǐng",
+        "polskie_znaczenie": "prosić / zapraszać",
+        "id_lekcji": "04.02.2025",
+        "przykład": {
+            "chiński": "请进",
+            "pinyin": "qǐng jìn",
+            "polski": "proszę wejść"
+        }
+    },
+    {
+        "chiński": "请问",
+        "pinyin": "qǐngwèn",
+        "polskie_znaczenie": "przepraszam, mam pytanie",
+        "id_lekcji": "04.02.2025",
+        "przykład": {
+            "chiński": "请问，你在哪里？",
+            "pinyin": "Qǐngwèn, nǐ zài nǎlǐ?",
+            "polski": "Przepraszam, gdzie jesteś?"
+        }
+    },
+    {
+        "chiński": "哪儿",
+        "pinyin": "nǎr",
+        "polskie_znaczenie": "gdzie",
+        "id_lekcji": "30.03.2025",
+        "przykład": {
+            "chiński": "你去哪儿？",
+            "pinyin": "Nǐ qù nǎr?",
+            "polski": "Gdzie idziesz?"
+        }
+    },
+    {
+        "chiński": "爸爸",
+        "pinyin": "bàba",
+        "polskie_znaczenie": "tata",
+        "id_lekcji": "11.05.2025",
+        "przykład": {
+            "chiński": "我爸爸是医生。",
+            "pinyin": "Wǒ bàba shì yīshēng.",
+            "polski": "Mój tata jest lekarzem."
+        }
+    },
+    {
+        "chiński": "妈妈",
+        "pinyin": "māma",
+        "polskie_znaczenie": "mama",
+        "id_lekcji": "11.05.2025",
+        "przykład": {
+            "chiński": "我爱我的妈妈。",
+            "pinyin": "Wǒ ài wǒ de māma.",
+            "polski": "Kocham moją mamę."
+        }
+    },
+    {
+        "chiński": "家",
+        "pinyin": "jiā",
+        "polskie_znaczenie": "dom / rodzina",
+        "id_lekcji": "11.05.2025",
+        "przykład": {
+            "chiński": "我想回家。",
+            "pinyin": "Wǒ xiǎng huí jiā.",
+            "polski": "Chcę wrócić do domu."
+        }
+    },
+    {
+        "chiński": "几",
+        "pinyin": "jǐ",
+        "polskie_znaczenie": "ile (mniej niż 10)",
+        "id_lekcji": "18.05.2025",
+        "przykład": {
+            "chiński": "你有几个朋友？",
+            "pinyin": "Nǐ yǒu jǐ ge péngyǒu?",
+            "polski": "Ilu masz przyjaciół?"
+        }
+    },
+    {
+        "chiński": "岁",
+        "pinyin": "suì",
+        "polskie_znaczenie": "lat (wiek)",
+        "id_lekcji": "18.05.2025",
+        "przykład": {
+            "chiński": "你几岁？",
+            "pinyin": "Nǐ jǐ suì?",
+            "polski": "Ile masz lat?"
+        }
+    },
+    {
+        "chiński": "多",
+        "pinyin": "duō",
+        "polskie_znaczenie": "dużo / jak (w pytaniach)",
+        "id_lekcji": "18.05.2025",
+        "przykład": {
+            "chiński": "你多大？",
+            "pinyin": "Nǐ duō dà?",
+            "polski": "Ile masz lat? (do dorosłego)"
+        }
+    },
+    {
+        "chiński": "大",
+        "pinyin": "dà",
+        "polskie_znaczenie": "duży",
+        "id_lekcji": "18.05.2025",
+        "przykład": {
+            "chiński": "这个房子很大。",
+            "pinyin": "Zhège fángzi hěn dà.",
+            "polski": "Ten dom jest bardzo duży."
+        }
+    },
+    {
+        "chiński": "小",
+        "pinyin": "xiǎo",
+        "polskie_znaczenie": "mały",
+        "id_lekcji": "18.05.2025",
+        "przykład": {
+            "chiński": "小狗",
+            "pinyin": "xiǎo gǒu",
+            "polski": "mały piesek"
+        }
+    },
+    {
+        "chiński": "猫",
+        "pinyin": "māo",
+        "polskie_znaczenie": "kot",
+        "id_lekcji": "22.06.2025",
+        "przykład": {
+            "chiński": "我喜欢猫。",
+            "pinyin": "Wǒ xǐhuān māo.",
+            "polski": "Lubię koty."
+        }
+    },
+    {
+        "chiński": "睡觉",
+        "pinyin": "shuìjiào",
+        "polskie_znaczenie": "spać",
+        "id_lekcji": "29.06.2025",
+        "przykład": {
+            "chiński": "我想睡觉。",
+            "pinyin": "Wǒ xiǎng shuìjiào.",
+            "polski": "Chcę spać."
+        }
+    },
+    {
+        "chiński": "分",
+        "pinyin": "fēn",
+        "polskie_znaczenie": "minuta",
+        "id_lekcji": "06.07.2025",
+        "przykład": {
+            "chiński": "八点十分",
+            "pinyin": "bā diǎn shí fēn",
+            "polski": "godzina 8:10"
+        }
+    },
+    {
+        "chiński": "吃",
+        "pinyin": "chī",
+        "polskie_znaczenie": "jeść",
+        "id_lekcji": "31.08.2025",
+        "przykład": {
+            "chiński": "吃饭",
+            "pinyin": "chī fàn",
+            "polski": "jeść posiłek"
+        }
+    },
+    {
+        "chiński": "喝",
+        "pinyin": "hē",
+        "polskie_znaczenie": "pić",
+        "id_lekcji": "31.08.2025",
+        "przykład": {
+            "chiński": "喝水",
+            "pinyin": "hē shuǐ",
+            "polski": "pić wodę"
+        }
+    },
+    {
+        "chiński": "茶",
+        "pinyin": "chá",
+        "polskie_znaczenie": "herbata",
+        "id_lekcji": "31.08.2025",
+        "przykład": {
+            "chiński": "一杯茶",
+            "pinyin": "yì bēi chá",
+            "polski": "jedna filiżanka herbaty"
+        }
+    },
+    {
+        "chiński": "咖啡",
+        "pinyin": "kāfēi",
+        "polskie_znaczenie": "kawa",
+        "id_lekcji": "31.08.2025",
+        "przykład": {
+            "chiński": "你喜欢喝咖啡吗？",
+            "pinyin": "Nǐ xǐhuān hē kāfēi ma?",
+            "polski": "Czy lubisz pić kawę?"
+        }
+    },
+    {
+        "chiński": "饭店",
+        "pinyin": "fàndiàn",
+        "polskie_znaczenie": "restauracja / hotel",
+        "id_lekcji": "14.09.2025",
+        "przykład": {
+            "chiński": "我们在饭店吃饭。",
+            "pinyin": "Wǒmen zài fàndiàn chīfàn.",
+            "polski": "Jemy w restauracji."
+        }
+    },
+    {
+        "chiński": "商店",
+        "pinyin": "shāngdiàn",
+        "polskie_znaczenie": "sklep",
+        "id_lekcji": "14.09.2025",
+        "przykład": {
+            "chiński": "我去商店买东西。",
+            "pinyin": "Wǒ qù shāngdiàn mǎi dōngxi.",
+            "polski": "Idę do sklepu kupić rzeczy."
+        }
+    },
+    {
+        "chiński": "人们",
+        "pinyin": "rén men",
+        "polskie_znaczenie": "ludzie",
+        "id_lekcji": "26.01.2025",
+        "przykład": {
+            "chiński": "人们",
+            "pinyin": "rén men",
+            "polski": "ludzie"
+        }
+    },
+    {
+        "chiński": "我们",
+        "pinyin": "wǒ men",
+        "polskie_znaczenie": "my",
+        "id_lekcji": "26.01.2025",
+        "przykład": {
+            "chiński": "我们是朋友。",
+            "pinyin": "Wǒmen shì péngyǒu.",
+            "polski": "Jesteśmy przyjaciółmi."
+        }
+    },
+    {
+        "chiński": "你们",
+        "pinyin": "nǐ men",
+        "polskie_znaczenie": "wy",
+        "id_lekcji": "26.01.2025",
+        "przykład": {
+            "chiński": "你们好！",
+            "pinyin": "Nǐmen hǎo!",
+            "polski": "Cześć wam!"
+        }
+    },
+    {
+        "chiński": "她们",
+        "pinyin": "tā men",
+        "polskie_znaczenie": "one",
+        "id_lekcji": "26.01.2025",
+        "przykład": {
+            "chiński": "她们是同学。",
+            "pinyin": "Tāmen shì tóngxué.",
+            "polski": "One są koleżankami z klasy."
+        }
+    },
+    {
+        "chiński": "它",
+        "pinyin": "tā",
+        "polskie_znaczenie": "ono (o zwierzętach/rzeczach)",
+        "id_lekcji": "26.01.2025",
+        "przykład": {
+            "chiński": "它是一只猫。",
+            "pinyin": "Tā shì yì zhī māo.",
+            "polski": "To jest kot."
+        }
+    },
+    {
+        "chiński": "女",
+        "pinyin": "nǚ",
+        "polskie_znaczenie": "Kobieta / Żeński",
+        "id_lekcji": "04.02.2025",
+        "przykład": {
+            "chiński": "女人",
+            "pinyin": "nǚ rén",
+            "polski": "Kobieta"
+        }
+    },
+    {
+        "chiński": "您",
+        "pinyin": "nín",
+        "polskie_znaczenie": "Pan/Pani (forma grzecznościowa)",
+        "id_lekcji": "04.02.2025",
+        "przykład": {
+            "chiński": "您好",
+            "pinyin": "nín hǎo",
+            "polski": "Dzień dobry (do starszej osoby)"
+        }
+    },
+    {
+        "chiński": "早上",
+        "pinyin": "zǎo shàng",
+        "polskie_znaczenie": "Rano",
+        "id_lekcji": "02.03.2025",
+        "przykład": {
+            "chiński": "早上好",
+            "pinyin": "Zǎo shàng hǎo",
+            "polski": "Dzień dobry (rano)"
+        }
+    },
+    {
+        "chiński": "下午",
+        "pinyin": "xià wǔ",
+        "polskie_znaczenie": "Popołudnie",
+        "id_lekcji": "02.03.2025",
+        "przykład": {
+            "chiński": "下午好",
+            "pinyin": "Xià wǔ hǎo",
+            "polski": "Dzień dobry (po południu)"
+        }
+    },
+    {
+        "chiński": "晚上",
+        "pinyin": "wǎn shàng",
+        "polskie_znaczenie": "Wieczór",
+        "id_lekcji": "02.03.2025",
+        "przykład": {
+            "chiński": "晚上好",
+            "pinyin": "Wǎn shàng hǎo",
+            "polski": "Dobry wieczór"
+        }
+    },
+    {
+        "chiński": "一月",
+        "pinyin": "yīyuè",
+        "polskie_znaczenie": "Styczeń",
+        "id_lekcji": "09.03.2025",
+        "przykład": {
+            "chiński": "一月",
+            "pinyin": "yīyuè",
+            "polski": "Styczeń"
+        }
+    },
+    {
+        "chiński": "二月",
+        "pinyin": "èryuè",
+        "polskie_znaczenie": "Luty",
+        "id_lekcji": "09.03.2025",
+        "przykład": {
+            "chiński": "二月",
+            "pinyin": "èryuè",
+            "polski": "Luty"
+        }
+    },
+    {
+        "chiński": "三月",
+        "pinyin": "sānyuè",
+        "polskie_znaczenie": "Marzec",
+        "id_lekcji": "09.03.2025",
+        "przykład": {
+            "chiński": "三月",
+            "pinyin": "sānyuè",
+            "polski": "Marzec"
+        }
+    },
+    {
+        "chiński": "四月",
+        "pinyin": "sìyuè",
+        "polskie_znaczenie": "Kwiecień",
+        "id_lekcji": "09.03.2025",
+        "przykład": {
+            "chiński": "四月",
+            "pinyin": "sìyuè",
+            "polski": "Kwiecień"
+        }
+    },
+    {
+        "chiński": "五月",
+        "pinyin": "wǔyuè",
+        "polskie_znaczenie": "Maj",
+        "id_lekcji": "09.03.2025",
+        "przykład": {
+            "chiński": "五月",
+            "pinyin": "wǔyuè",
+            "polski": "Maj"
+        }
+    },
+    {
+        "chiński": "六月",
+        "pinyin": "liùyuè",
+        "polskie_znaczenie": "Czerwiec",
+        "id_lekcji": "09.03.2025",
+        "przykład": {
+            "chiński": "六月",
+            "pinyin": "liùyuè",
+            "polski": "Czerwiec"
+        }
+    },
+    {
+        "chiński": "七月",
+        "pinyin": "qīyuè",
+        "polskie_znaczenie": "Lipiec",
+        "id_lekcji": "09.03.2025",
+        "przykład": {
+            "chiński": "七月",
+            "pinyin": "qīyuè",
+            "polski": "Lipiec"
+        }
+    },
+    {
+        "chiński": "八月",
+        "pinyin": "bāyuè",
+        "polskie_znaczenie": "Sierpień",
+        "id_lekcji": "09.03.2025",
+        "przykład": {
+            "chiński": "八月",
+            "pinyin": "bāyuè",
+            "polski": "Sierpień"
+        }
+    },
+    {
+        "chiński": "九月",
+        "pinyin": "jiǔyuè",
+        "polskie_znaczenie": "Wrzesień",
+        "id_lekcji": "09.03.2025",
+        "przykład": {
+            "chiński": "九月",
+            "pinyin": "jiǔyuè",
+            "polski": "Wrzesień"
+        }
+    },
+    {
+        "chiński": "十月",
+        "pinyin": "shíyuè",
+        "polskie_znaczenie": "Październik",
+        "id_lekcji": "09.03.2025",
+        "przykład": {
+            "chiński": "十月",
+            "pinyin": "shíyuè",
+            "polski": "Październik"
+        }
+    },
+    {
+        "chiński": "十一月",
+        "pinyin": "shíyīyuè",
+        "polskie_znaczenie": "Listopad",
+        "id_lekcji": "09.03.2025",
+        "przykład": {
+            "chiński": "十一月",
+            "pinyin": "shíyīyuè",
+            "polski": "Listopad"
+        }
+    },
+    {
+        "chiński": "十二月",
+        "pinyin": "shí’èryuè",
+        "polskie_znaczenie": "Grudzień",
+        "id_lekcji": "09.03.2025",
+        "przykład": {
+            "chiński": "十二月",
+            "pinyin": "shí’èryuè",
+            "polski": "Grudzień"
+        }
+    },
+    {
+        "chiński": "周一",
+        "pinyin": "zhōuyī",
+        "polskie_znaczenie": "Poniedziałek",
+        "id_lekcji": "09.03.2025",
+        "przykład": {
+            "chiński": "今天是周一。",
+            "pinyin": "Jīntiān shì zhōuyī.",
+            "polski": "Dziś jest poniedziałek."
+        }
+    },
+    {
+        "chiński": "周二",
+        "pinyin": "zhōu’èr",
+        "polskie_znaczenie": "Wtorek",
+        "id_lekcji": "09.03.2025",
+        "przykład": {
+            "chiński": "周二",
+            "pinyin": "zhōu’èr",
+            "polski": "Wtorek"
+        }
+    },
+    {
+        "chiński": "周三",
+        "pinyin": "zhōusān",
+        "polskie_znaczenie": "Środa",
+        "id_lekcji": "09.03.2025",
+        "przykład": {
+            "chiński": "周三",
+            "pinyin": "zhōusān",
+            "polski": "Środa"
+        }
+    },
+    {
+        "chiński": "周四",
+        "pinyin": "zhōusì",
+        "polskie_znaczenie": "Czwartek",
+        "id_lekcji": "09.03.2025",
+        "przykład": {
+            "chiński": "周四",
+            "pinyin": "zhōusì",
+            "polski": "Czwartek"
+        }
+    },
+    {
+        "chiński": "周五",
+        "pinyin": "zhōuwǔ",
+        "polskie_znaczenie": "Piątek",
+        "id_lekcji": "09.03.2025",
+        "przykład": {
+            "chiński": "周五",
+            "pinyin": "zhōuwǔ",
+            "polski": "Piątek"
+        }
+    },
+    {
+        "chiński": "周六",
+        "pinyin": "zhōuliù",
+        "polskie_znaczenie": "Sobota",
+        "id_lekcji": "09.03.2025",
+        "przykład": {
+            "chiński": "周六",
+            "pinyin": "zhōuliù",
+            "polski": "Sobota"
+        }
+    },
+    {
+        "chiński": "周日",
+        "pinyin": "zhōurì",
+        "polskie_znaczenie": "Niedziela",
+        "id_lekcji": "09.03.2025",
+        "przykład": {
+            "chiński": "周日",
+            "pinyin": "zhōurì",
+            "polski": "Niedziela"
+        }
+    },
+    {
+        "chiński": "百",
+        "pinyin": "bǎi",
+        "polskie_znaczenie": "Sto",
+        "id_lekcji": "16.03.2025",
+        "przykład": {
+            "chiński": "一百",
+            "pinyin": "yì bǎi",
+            "polski": "jeden sto"
+        }
+    },
+    {
+        "chiński": "千",
+        "pinyin": "qiān",
+        "polskie_znaczenie": "Tysiąc",
+        "id_lekcji": "16.03.2025",
+        "przykład": {
+            "chiński": "一千",
+            "pinyin": "yì qiān",
+            "polski": "jeden tysiąc"
+        }
+    },
+    {
+        "chiński": "万",
+        "pinyin": "wàn",
+        "polskie_znaczenie": "Dziesięć tysięcy",
+        "id_lekcji": "16.03.2025",
+        "przykład": {
+            "chiński": "一万",
+            "pinyin": "yí wàn",
+            "polski": "dziesięć tysięcy"
+        }
+    },
+    {
+        "chiński": "中国人",
+        "pinyin": "Zhōngguórén",
+        "polskie_znaczenie": "Chińczyk / Chinka",
+        "id_lekcji": "23.03.2025",
+        "przykład": {
+            "chiński": "他是中国人。",
+            "pinyin": "Tā shì Zhōngguórén.",
+            "polski": "On jest Chińczykiem."
+        }
+    },
+    {
+        "chiński": "汉语",
+        "pinyin": "Hànyǔ",
+        "polskie_znaczenie": "Język chiński (mówiony)",
+        "id_lekcji": "23.03.2025",
+        "przykład": {
+            "chiński": "说汉语",
+            "pinyin": "shuō Hànyǔ",
+            "polski": "mówić po chińsku"
+        }
+    },
+    {
+        "chiński": "波兰语",
+        "pinyin": "Bōlányǔ",
+        "polskie_znaczenie": "Język polski",
+        "id_lekcji": "23.03.2025",
+        "przykład": {
+            "chiński": "我会说波兰语。",
+            "pinyin": "Wǒ huì shuō Bōlányǔ.",
+            "polski": "Mówię po polsku."
+        }
+    },
+    {
+        "chiński": "英国",
+        "pinyin": "Yīngguó",
+        "polskie_znaczenie": "Wielka Brytania",
+        "id_lekcji": "23.03.2025",
+        "przykład": {
+            "chiński": "英国人",
+            "pinyin": "Yīngguórén",
+            "polski": "Brytyjczyk"
+        }
+    },
+    {
+        "chiński": "英语",
+        "pinyin": "Yīngyǔ",
+        "polskie_znaczenie": "Język angielski",
+        "id_lekcji": "23.03.2025",
+        "przykład": {
+            "chiński": "说英语",
+            "pinyin": "shuō Yīngyǔ",
+            "polski": "mówić po angielsku"
+        }
+    },
+    {
+        "chiński": "韩国",
+        "pinyin": "Hánguó",
+        "polskie_znaczenie": "Korea Południowa",
+        "id_lekcji": "23.03.2025",
+        "przykład": {
+            "chiński": "韩国人",
+            "pinyin": "Hánguórén",
+            "polski": "Koreańczyk"
+        }
+    },
+    {
+        "chiński": "韩语",
+        "pinyin": "Hányǔ",
+        "polskie_znaczenie": "Język koreański",
+        "id_lekcji": "23.03.2025",
+        "przykład": {
+            "chiński": "韩语",
+            "pinyin": "Hányǔ",
+            "polski": "język koreański"
+        }
+    },
+    {
+        "chiński": "说",
+        "pinyin": "shuō",
+        "polskie_znaczenie": "Mówić",
+        "id_lekcji": "30.03.2025",
+        "przykład": {
+            "chiński": "说中文",
+            "pinyin": "shuō Zhōngwén",
+            "polski": "mówić po chińsku"
+        }
+    },
+    {
+        "chiński": "语言",
+        "pinyin": "yǔ yán",
+        "polskie_znaczenie": "Język (ogólnie)",
+        "id_lekcji": "30.03.2025",
+        "przykład": {
+            "chiński": "什么语言？",
+            "pinyin": "Shénme yǔyán?",
+            "polski": "Jaki język?"
+        }
+    },
+    {
+        "chiński": "和",
+        "pinyin": "hé",
+        "polskie_znaczenie": "i, oraz",
+        "id_lekcji": "30.03.2025",
+        "przykład": {
+            "chiński": "我和你",
+            "pinyin": "wǒ hé nǐ",
+            "polski": "ja i ty"
+        }
+    },
+    {
+        "chiński": "是",
+        "pinyin": "shì",
+        "polskie_znaczenie": "być / tak",
+        "id_lekcji": "30.03.2025",
+        "przykład": {
+            "chiński": "我是波兰人。",
+            "pinyin": "Wǒ shì Bōlánrén.",
+            "polski": "Jestem Polakiem."
+        }
+    },
+    {
+        "chiński": "对",
+        "pinyin": "duì",
+        "polskie_znaczenie": "tak / poprawnie",
+        "id_lekcji": "30.03.2025",
+        "przykład": {
+            "chiński": "对不对？",
+            "pinyin": "Duì bu duì?",
+            "polski": "Zgadza się?"
+        }
+    },
+    {
+        "chiński": "国家",
+        "pinyin": "guó jiā",
+        "polskie_znaczenie": "kraj, państwo",
+        "id_lekcji": "04.05.2025",
+        "przykład": {
+            "chiński": "哪个国家？",
+            "pinyin": "Nǎge guójiā?",
+            "polski": "Który kraj?"
+        }
+    },
+    {
+        "chiński": "大家",
+        "pinyin": "dà jiā",
+        "polskie_znaczenie": "wszyscy",
+        "id_lekcji": "04.05.2025",
+        "przykład": {
+            "chiński": "大家好！",
+            "pinyin": "Dàjiā hǎo!",
+            "polski": "Cześć wszystkim!"
+        }
+    },
+    {
+        "chiński": "男人",
+        "pinyin": "nán rén",
+        "polskie_znaczenie": "mężczyzna",
+        "id_lekcji": "04.05.2025",
+        "przykład": {
+            "chiński": "一个男人",
+            "pinyin": "yí gè nánrén",
+            "polski": "jeden mężczyzna"
+        }
+    },
+    {
+        "chiński": "女人",
+        "pinyin": "nǚ rén",
+        "polskie_znaczenie": "kobieta",
+        "id_lekcji": "04.05.2025",
+        "przykład": {
+            "chiński": "一个女人",
+            "pinyin": "yí gè nǚrén",
+            "polski": "jedna kobieta"
+        }
+    },
+    {
+        "chiński": "同学",
+        "pinyin": "tóngxué",
+        "polskie_znaczenie": "kolega/koleżanka z klasy",
+        "id_lekcji": "11.05.2025",
+        "przykład": {
+            "chiński": "她是我的同学。",
+            "pinyin": "Tā shì wǒ de tóngxué.",
+            "polski": "Ona jest moją koleżanką z klasy."
+        }
+    },
+    {
+        "chiński": "同事",
+        "pinyin": "tóngshì",
+        "polskie_znaczenie": "kolega/koleżanka z pracy",
+        "id_lekcji": "11.05.2025",
+        "przykład": {
+            "chiński": "我们是同事。",
+            "pinyin": "Wǒmen shì tóngshì.",
+            "polski": "Jesteśmy kolegami z pracy."
+        }
+    },
+    {
+        "chiński": "男朋友",
+        "pinyin": "nánpéngyǒu",
+        "polskie_znaczenie": "chłopak (partner)",
+        "id_lekcji": "11.05.2025",
+        "przykład": {
+            "chiński": "他是我男朋友。",
+            "pinyin": "Tā shì wǒ nánpéngyǒu.",
+            "polski": "On jest moim chłopakiem."
+        }
+    },
+    {
+        "chiński": "女朋友",
+        "pinyin": "nǚpéngyǒu",
+        "polskie_znaczenie": "dziewczyna (partnerka)",
+        "id_lekcji": "11.05.2025",
+        "przykład": {
+            "chiński": "她是我女朋友。",
+            "pinyin": "Tā shì wǒ nǚpéngyǒu.",
+            "polski": "Ona jest moją dziewczyną."
+        }
+    },
+    {
+        "chiński": "好吃",
+        "pinyin": "hǎo chī",
+        "polskie_znaczenie": "smaczny (jedzenie)",
+        "id_lekcji": "11.05.2025",
+        "przykład": {
+            "chiński": "很好吃",
+            "pinyin": "hěn hǎochī",
+            "polski": "bardzo smaczne"
+        }
+    },
+    {
+        "chiński": "哥哥",
+        "pinyin": "gēge",
+        "polskie_znaczenie": "starszy brat",
+        "id_lekcji": "18.05.2025",
+        "przykład": {
+            "chiński": "我有一个哥哥。",
+            "pinyin": "Wǒ yǒu yí gè gēge.",
+            "polski": "Mam jednego starszego brata."
+        }
+    },
+    {
+        "chiński": "弟弟",
+        "pinyin": "dìdi",
+        "polskie_znaczenie": "młodszy brat",
+        "id_lekcji": "18.05.2025",
+        "przykład": {
+            "chiński": "弟弟",
+            "pinyin": "dìdi",
+            "polski": "młodszy brat"
+        }
+    },
+    {
+        "chiński": "姐姐",
+        "pinyin": "jiějie",
+        "polskie_znaczenie": "starsza siostra",
+        "id_lekcji": "18.05.2025",
+        "przykład": {
+            "chiński": "姐姐",
+            "pinyin": "jiějie",
+            "polski": "starsza siostra"
+        }
+    },
+    {
+        "chiński": "妹妹",
+        "pinyin": "mèimei",
+        "polskie_znaczenie": "młodsza siostra",
+        "id_lekcji": "18.05.2025",
+        "przykład": {
+            "chiński": "妹妹",
+            "pinyin": "mèimei",
+            "polski": "młodsza siostra"
+        }
+    },
+    {
+        "chiński": "快乐",
+        "pinyin": "kuài lè",
+        "polskie_znaczenie": "szczęśliwy / radosny",
+        "id_lekcji": "01.06.2025",
+        "przykład": {
+            "chiński": "生日快乐",
+            "pinyin": "Shēngrì kuàilè",
+            "polski": "Wszystkiego najlepszego z okazji urodzin"
+        }
+    },
+    {
+        "chiński": "儿童",
+        "pinyin": "ér tóng",
+        "polskie_znaczenie": "dziecko (formalnie)",
+        "id_lekcji": "01.06.2025",
+        "przykład": {
+            "chiński": "儿童节",
+            "pinyin": "Értóng Jié",
+            "polski": "Dzień Dziecka"
+        }
+    },
+    {
+        "chiński": "生日",
+        "pinyin": "shēng rì",
+        "polskie_znaczenie": "urodziny",
+        "id_lekcji": "01.06.2025",
+        "przykład": {
+            "chiński": "我的生日",
+            "pinyin": "wǒ de shēngrì",
+            "polski": "moje urodziny"
+        }
+    },
+    {
+        "chiński": "苹果",
+        "pinyin": "píngguǒ",
+        "polskie_znaczenie": "jabłko",
+        "id_lekcji": "22.06.2025",
+        "przykład": {
+            "chiński": "一个苹果",
+            "pinyin": "yí gè píngguǒ",
+            "polski": "jedno jabłko"
+        }
+    },
+    {
+        "chiński": "手机",
+        "pinyin": "shǒujī",
+        "polskie_znaczenie": "telefon komórkowy",
+        "id_lekcji": "22.06.2025",
+        "przykład": {
+            "chiński": "这是我的手机。",
+            "pinyin": "Zhè shì wǒ de shǒujī.",
+            "polski": "To jest mój telefon."
+        }
+    },
+    {
+        "chiński": "半",
+        "pinyin": "bàn",
+        "polskie_znaczenie": "pół / połowa",
+        "id_lekcji": "06.07.2025",
+        "przykład": {
+            "chiński": "两点半",
+            "pinyin": "liǎng diǎn bàn",
+            "polski": "godzina 2:30"
+        }
+    },
+    {
+        "chiński": "年",
+        "pinyin": "nián",
+        "polskie_znaczenie": "rok",
+        "id_lekcji": "27.07.2025",
+        "przykład": {
+            "chiński": "一年",
+            "pinyin": "yì nián",
+            "polski": "jeden rok"
+        }
+    },
+    {
+        "chiński": "见面",
+        "pinyin": "jiàn miàn",
+        "polskie_znaczenie": "spotykać się",
+        "id_lekcji": "11.08.2025",
+        "przykład": {
+            "chiński": "我和朋友见面。",
+            "pinyin": "Wǒ hé péngyǒu jiànmiàn.",
+            "polski": "Spotykam się z przyjacielem."
+        }
+    },
+    {
+        "chiński": "跑步",
+        "pinyin": "pǎobù",
+        "polskie_znaczenie": "biegać",
+        "id_lekcji": "11.08.2025",
+        "przykład": {
+            "chiński": "去跑步",
+            "pinyin": "qù pǎobù",
+            "polski": "iść pobiegać"
+        }
+    },
+    {
+        "chiński": "买",
+        "pinyin": "mǎi",
+        "polskie_znaczenie": "kupować",
+        "id_lekcji": "24.08.2025",
+        "przykład": {
+            "chiński": "买东西",
+            "pinyin": "mǎi dōngxi",
+            "polski": "robić zakupy (kupować rzeczy)"
+        }
+    },
+    {
+        "chiński": "旅行",
+        "pinyin": "lǚ xíng",
+        "polskie_znaczenie": "podróżować",
+        "id_lekcji": "24.08.2025",
+        "przykład": {
+            "chiński": "去旅行",
+            "pinyin": "qù lǚxíng",
+            "polski": "jechać w podróż"
+        }
+    },
+    {
+        "chiński": "什么",
+        "pinyin": "shénme",
+        "polskie_znaczenie": "co / jaki",
+        "id_lekcji": "04.02.2025",
+        "przykład": {
+            "chiński": "这是什么？",
+            "pinyin": "Zhè shì shénme?",
+            "polski": "Co to jest?"
+        }
+    },
+    {
+        "chiński": "不是",
+        "pinyin": "bú shì",
+        "polskie_znaczenie": "nie jest / nie być",
+        "id_lekcji": "04.02.2025",
+        "przykład": {
+            "chiński": "我不是学生。",
+            "pinyin": "Wǒ bú shì xuéshēng.",
+            "polski": "Nie jestem uczniem."
+        }
+    },
+    {
+        "chiński": "没关系",
+        "pinyin": "méi guānxi",
+        "polskie_znaczenie": "nic się nie stało (odpowiedź na przepraszam)",
+        "id_lekcji": "16.03.2025",
+        "przykład": {
+            "chiński": "对不起。没关系。",
+            "pinyin": "Duìbuqǐ. Méi guānxi.",
+            "polski": "Przepraszam. Nic się nie stało."
+        }
+    },
+    {
+        "chiński": "学校",
+        "pinyin": "xuéxiào",
+        "polskie_znaczenie": "szkoła",
+        "id_lekcji": "08.06.2025",
+        "przykład": {
+            "chiński": "我在学校学习。",
+            "pinyin": "Wǒ zài xuéxiào xuéxí.",
+            "polski": "Uczę się w szkole."
+        }
+    },
+    {
+        "chiński": "医院",
+        "pinyin": "yīyuàn",
+        "polskie_znaczenie": "szpital",
+        "id_lekcji": "08.06.2025",
+        "przykład": {
+            "chiński": "他在医院工作。",
+            "pinyin": "Tā zài yīyuàn gōngzuò.",
+            "polski": "On pracuje w szpitalu."
+        }
+    },
+    {
+        "chiński": "超市",
+        "pinyin": "chāoshì",
+        "polskie_znaczenie": "supermarket",
+        "id_lekcji": "08.06.2025",
+        "przykład": {
+            "chiński": "我去超市买东西。",
+            "pinyin": "Wǒ qù chāoshì mǎi dōngxi.",
+            "polski": "Idę do supermarketu zrobić zakupy."
+        }
+    },
+    {
+        "chiński": "这里",
+        "pinyin": "zhèlǐ",
+        "polskie_znaczenie": "tutaj",
+        "id_lekcji": "22.06.2025",
+        "przykład": {
+            "chiński": "这里是我的家。",
+            "pinyin": "Zhèlǐ shì wǒ de jiā.",
+            "polski": "Tutaj jest mój dom."
+        }
+    },
+    {
+        "chiński": "那里",
+        "pinyin": "nàlǐ",
+        "polskie_znaczenie": "tam",
+        "id_lekcji": "22.06.2025",
+        "przykład": {
+            "chiński": "那里有一个苹果。",
+            "pinyin": "Nàlǐ yǒu yí gè píngguǒ.",
+            "polski": "Tam jest jedno jabłko."
+        }
+    },
+    {
+        "chiński": "哪里",
+        "pinyin": "nǎlǐ",
+        "polskie_znaczenie": "gdzie",
+        "id_lekcji": "22.06.2025",
+        "przykład": {
+            "chiński": "你住在哪里？",
+            "pinyin": "Nǐ zhù zài nǎlǐ?",
+            "polski": "Gdzie mieszkasz?"
+        }
+    },
+    {
+        "chiński": "只",
+        "pinyin": "zhī",
+        "polskie_znaczenie": "klasyfikator dla małych zwierząt (np. kot, pies)",
+        "id_lekcji": "29.06.2025",
+        "przykład": {
+            "chiński": "一只猫",
+            "pinyin": "yì zhī māo",
+            "polski": "jeden kot"
+        }
+    },
+    {
+        "chiński": "吃饭",
+        "pinyin": "chī fàn",
+        "polskie_znaczenie": "jeść posiłek",
+        "id_lekcji": "29.06.2025",
+        "przykład": {
+            "chiński": "我喜欢和家人一起吃饭。",
+            "pinyin": "Wǒ xǐhuān hé jiārén yìqǐ chīfàn.",
+            "polski": "Lubię jeść posiłek z rodziną."
+        }
+    },
+    {
+        "chiński": "上课",
+        "pinyin": "shàng kè",
+        "polskie_znaczenie": "zaczynać lekcję / mieć lekcję",
+        "id_lekcji": "29.06.2025",
+        "przykład": {
+            "chiński": "我们八点上课。",
+            "pinyin": "Wǒmen bā diǎn shàngkè.",
+            "polski": "Zaczynamy lekcję o ósmej."
+        }
+    },
+    {
+        "chiński": "下课",
+        "pinyin": "xià kè",
+        "polskie_znaczenie": "kończyć lekcję",
+        "id_lekcji": "29.06.2025",
+        "przykład": {
+            "chiński": "下课了！",
+            "pinyin": "Xiàkè le!",
+            "polski": "Koniec lekcji!"
+        }
+    },
+    {
+        "chiński": "邮局",
+        "pinyin": "yóujú",
+        "polskie_znaczenie": "poczta (urząd pocztowy)",
+        "id_lekcji": "14.09.2025",
+        "przykład": {
+            "chiński": "邮局在银行的旁边。",
+            "pinyin": "Yóujú zài yínháng de pángbiān.",
+            "polski": "Poczta jest obok banku."
+        }
+    },
+    {
+        "chiński": "银行",
+        "pinyin": "yínháng",
+        "polskie_znaczenie": "bank",
+        "id_lekcji": "14.09.2025",
+        "przykład": {
+            "chiński": "我去银行。",
+            "pinyin": "Wǒ qù yínháng.",
+            "polski": "Idę do banku."
+        }
+    },
+    {
+        "chiński": "庆祝",
+        "pinyin": "qìngzhù",
+        "polskie_znaczenie": "świętować",
+        "id_lekcji": "21.09.2025",
+        "przykład": {
+            "chiński": "我们打算一起庆祝生日。",
+            "pinyin": "Wǒmen dǎsuàn yìqǐ qìngzhù shēngrì.",
+            "polski": "Zamierzamy razem świętować urodziny."
+        }
+    },
+    {
+        "chiński": "怎么",
+        "pinyin": "zěnme",
+        "polskie_znaczenie": "jak / w jaki sposób",
+        "id_lekcji": "28.09.2025",
+        "przykład": {
+            "chiński": "你怎么去上班？",
+            "pinyin": "Nǐ zěnme qù shàngbān?",
+            "polski": "Jak (czym) jeździsz do pracy?"
+        }
+    },
+    {
+        "chiński": "坐",
+        "pinyin": "zuò",
+        "polskie_znaczenie": "siedzieć / jechać (np. autobusem, pociągiem)",
+        "id_lekcji": "28.09.2025",
+        "przykład": {
+            "chiński": "坐火车",
+            "pinyin": "zuò huǒchē",
+            "polski": "jechać pociągiem"
+        }
+    },
+    {
+        "chiński": "火车",
+        "pinyin": "huǒchē",
+        "polskie_znaczenie": "pociąg",
+        "id_lekcji": "28.09.2025",
+        "przykład": {
+            "chiński": "我坐火车去北京。",
+            "pinyin": "Wǒ zuò huǒchē qù Běijīng.",
+            "polski": "Jadę pociągiem do Pekinu."
+        }
+    },
+    {
+        "chiński": "出租车",
+        "pinyin": "chūzūchē",
+        "polskie_znaczenie": "taksówka",
+        "id_lekcji": "28.09.2025",
+        "przykład": {
+            "chiński": "坐出租车",
+            "pinyin": "zuò chūzūchē",
+            "polski": "jechać taksówką"
+        }
+    },
+    {
+        "chiński": "飞机",
+        "pinyin": "fēijī",
+        "polskie_znaczenie": "samolot",
+        "id_lekcji": "28.09.2025",
+        "przykład": {
+            "chiński": "坐飞机",
+            "pinyin": "zuò fēijī",
+            "polski": "lecieć samolotem"
+        }
+    },
+    {
+        "chiński": "船",
+        "pinyin": "chuán",
+        "polskie_znaczenie": "statek / łódź",
+        "id_lekcji": "28.09.2025",
+        "przykład": {
+            "chiński": "坐船",
+            "pinyin": "zuò chuán",
+            "polski": "płynąć statkiem"
+        }
+    },
+    {
+        "chiński": "中秋节",
+        "pinyin": "Zhōngqiū Jié",
+        "polskie_znaczenie": "Święto Środka Jesieni",
+        "id_lekcji": "05.10.2025",
+        "przykład": {
+            "chiński": "中秋节吃月饼。",
+            "pinyin": "Zhōngqiū Jié chī yuèbǐng.",
+            "polski": "W Święto Środka Jesieni je się ciasteczka księżycowe."
+        }
+    },
+    {
+        "chiński": "贵",
+        "pinyin": "guì",
+        "polskie_znaczenie": "drogi (o cenie)",
+        "id_lekcji": "09.11.2025",
+        "przykład": {
+            "chiński": "太贵了！",
+            "pinyin": "Tài guì le!",
+            "polski": "Zbyt drogie!"
+        }
+    },
+    {
+        "chiński": "便宜",
+        "pinyin": "piányi",
+        "polskie_znaczenie": "tani",
+        "id_lekcji": "09.11.2025",
+        "przykład": {
+            "chiński": "这个很便宜。",
+            "pinyin": "Zhège hěn piányi.",
+            "polski": "To jest bardzo tanie."
+        }
+    },
+    {
+        "chiński": "忙",
+        "pinyin": "máng",
+        "polskie_znaczenie": "zajęty",
+        "id_lekcji": "09.11.2025",
+        "przykład": {
+            "chiński": "我很忙。",
+            "pinyin": "Wǒ hěn máng.",
+            "polski": "Jestem bardzo zajęty."
+        }
+    },
+    {
+        "chiński": "卖",
+        "pinyin": "mài",
+        "polskie_znaczenie": "sprzedawać",
+        "id_lekcji": "16.11.2025",
+        "przykład": {
+            "chiński": "买卖",
+            "pinyin": "mǎimài",
+            "polski": "handel (kupno-sprzedaż)"
+        }
+    },
+    {
+        "chiński": "给",
+        "pinyin": "gěi",
+        "polskie_znaczenie": "dawać",
+        "id_lekcji": "16.11.2025",
+        "przykład": {
+            "chiński": "我给你一本书。",
+            "pinyin": "Wǒ gěi nǐ yì běn shū.",
+            "polski": "Daję ci książkę."
+        }
+    },
+    {
+        "chiński": "送",
+        "pinyin": "sòng",
+        "polskie_znaczenie": "podarować / wysłać",
+        "id_lekcji": "16.11.2025",
+        "przykład": {
+            "chiński": "送礼物",
+            "pinyin": "sòng lǐwù",
+            "polski": "wręczyć prezent"
+        }
+    },
+    {
+        "chiński": "她",
+        "pinyin": "tā",
+        "polskie_znaczenie": "ona",
+        "id_lekcji": "26.01.2025",
+        "przykład": {
+            "chiński": "她是我的老师。",
+            "pinyin": "Tā shì wǒ de lǎoshī.",
+            "polski": "Ona jest moją nauczycielką."
+        }
+    },
+    {
+        "chiński": "您好",
+        "pinyin": "nín hǎo",
+        "polskie_znaczenie": "Dzień dobry (grzecznościowo)",
+        "id_lekcji": "04.02.2025",
+        "przykład": {
+            "chiński": "老师，您好！",
+            "pinyin": "Lǎoshī, nín hǎo!",
+            "polski": "Dzień dobry, nauczycielu!"
+        }
+    },
+    {
+        "chiński": "一天",
+        "pinyin": "yì tiān",
+        "polskie_znaczenie": "jeden dzień",
+        "id_lekcji": "02.03.2025",
+        "przykład": {
+            "chiński": "一天有24小时。",
+            "pinyin": "Yì tiān yǒu èrshísì xiǎoshí.",
+            "polski": "Dzień ma 24 godziny."
+        }
+    },
+    {
+        "chiński": "早上好",
+        "pinyin": "zǎo shàng hǎo",
+        "polskie_znaczenie": "Dzień dobry (rano)",
+        "id_lekcji": "02.03.2025",
+        "przykład": {
+            "chiński": "早上好！",
+            "pinyin": "Zǎoshàng hǎo!",
+            "polski": "Dzień dobry!"
+        }
+    },
+    {
+        "chiński": "下午好",
+        "pinyin": "xià wǔ hǎo",
+        "polskie_znaczenie": "Dzień dobry (po południu)",
+        "id_lekcji": "02.03.2025",
+        "przykład": {
+            "chiński": "下午好！",
+            "pinyin": "Xiàwǔ hǎo!",
+            "polski": "Dzień dobry (po południu)!"
+        }
+    },
+    {
+        "chiński": "晚上好",
+        "pinyin": "wǎn shàng hǎo",
+        "polskie_znaczenie": "Dobry wieczór",
+        "id_lekcji": "02.03.2025",
+        "przykład": {
+            "chiński": "晚上好！",
+            "pinyin": "Wǎnshàng hǎo!",
+            "polski": "Dobry wieczór!"
+        }
+    },
+    {
+        "chiński": "哈喽",
+        "pinyin": "hā lóu",
+        "polskie_znaczenie": "Cześć (Hello)",
+        "id_lekcji": "02.03.2025",
+        "przykład": {
+            "chiński": "哈喽！",
+            "pinyin": "Hā lóu!",
+            "polski": "Cześć!"
+        }
+    },
+    {
+        "chiński": "拜拜",
+        "pinyin": "bái bái",
+        "polskie_znaczenie": "Papa / Cześć (na pożegnanie)",
+        "id_lekcji": "02.03.2025",
+        "przykład": {
+            "chiński": "拜拜，明天见。",
+            "pinyin": "Báibái, míngtiān jiàn.",
+            "polski": "Pa, do jutra."
+        }
+    },
+    {
+        "chiński": "周",
+        "pinyin": "zhōu",
+        "polskie_znaczenie": "tydzień",
+        "id_lekcji": "09.03.2025",
+        "przykład": {
+            "chiński": "这周",
+            "pinyin": "zhè zhōu",
+            "polski": "ten tydzień"
+        }
+    },
+    {
+        "chiński": "家人",
+        "pinyin": "jiā rén",
+        "polskie_znaczenie": "członkowie rodziny",
+        "id_lekcji": "04.05.2025",
+        "przykład": {
+            "chiński": "我和家人一起吃饭。",
+            "pinyin": "Wǒ hé jiārén yìqǐ chīfàn.",
+            "polski": "Jem posiłek z rodziną."
+        }
+    },
+    {
+        "chiński": "好喝",
+        "pinyin": "hǎo hē",
+        "polskie_znaczenie": "smaczny (o napojach)",
+        "id_lekcji": "11.05.2025",
+        "przykład": {
+            "chiński": "这个茶很好喝。",
+            "pinyin": "Zhège chá hěn hǎohē.",
+            "polski": "Ta herbata jest bardzo smaczna."
+        }
+    },
+    {
+        "chiński": "好听",
+        "pinyin": "hǎo tīng",
+        "polskie_znaczenie": "przyjemny dla ucha / ładnie brzmiący",
+        "id_lekcji": "11.05.2025",
+        "przykład": {
+            "chiński": "这首歌很好听。",
+            "pinyin": "Zhè shǒu gē hěn hǎotīng.",
+            "polski": "Ta piosenka jest bardzo ładna."
+        }
+    },
+    {
+        "chiński": "节日",
+        "pinyin": "jié rì",
+        "polskie_znaczenie": "święto",
+        "id_lekcji": "01.06.2025",
+        "przykład": {
+            "chiński": "今天是节日。",
+            "pinyin": "Jīntiān shì jiérì.",
+            "polski": "Dziś jest święto."
+        }
+    },
+    {
+        "chiński": "你也是",
+        "pinyin": "nǐ yě shì",
+        "polskie_znaczenie": "Ty też / Tobie też",
+        "id_lekcji": "01.06.2025",
+        "przykład": {
+            "chiński": "A: 周末愉快！ B: 你也是！",
+            "pinyin": "A: Zhōumò yúkuài! B: Nǐ yě shì!",
+            "polski": "A: Miłego weekendu! B: Tobie też!"
+        }
+    },
+    {
+        "chiński": "吃午饭",
+        "pinyin": "chī wǔfàn",
+        "polskie_znaczenie": "jeść obiad",
+        "id_lekcji": "06.07.2025",
+        "przykład": {
+            "chiński": "我们去吃午饭吧。",
+            "pinyin": "Wǒmen qù chī wǔfàn ba.",
+            "polski": "Chodźmy zjeść obiad."
+        }
+    },
+    {
+        "chiński": "吃早饭",
+        "pinyin": "chī zǎofàn",
+        "polskie_znaczenie": "jeść śniadanie",
+        "id_lekcji": "06.07.2025",
+        "przykład": {
+            "chiński": "我不吃早饭。",
+            "pinyin": "Wǒ bù chī zǎofàn.",
+            "polski": "Nie jem śniadania."
+        }
+    },
+    {
+        "chiński": "吃晚饭",
+        "pinyin": "chī wǎnfàn",
+        "polskie_znaczenie": "jeść kolację",
+        "id_lekcji": "06.07.2025",
+        "przykład": {
+            "chiński": "晚上七点吃晚饭。",
+            "pinyin": "Wǎnshàng qī diǎn chī wǎnfàn.",
+            "polski": "Jem kolację o 19:00."
+        }
+    },
+    {
+        "chiński": "计划",
+        "pinyin": "jì huà",
+        "polskie_znaczenie": "plan",
+        "id_lekcji": "11.08.2025",
+        "przykład": {
+            "chiński": "这是我的计划。",
+            "pinyin": "Zhè shì wǒ de jìhuà.",
+            "polski": "To jest mój plan."
+        }
+    },
+    {
+        "chiński": "电影",
+        "pinyin": "diàn yǐng",
+        "polskie_znaczenie": "film",
+        "id_lekcji": "11.08.2025",
+        "przykład": {
+            "chiński": "看电影",
+            "pinyin": "kàn diànyǐng",
+            "polski": "oglądać film"
+        }
+    },
+    {
+        "chiński": "看书",
+        "pinyin": "kàn shū",
+        "polskie_znaczenie": "czytać książkę",
+        "id_lekcji": "24.08.2025",
+        "przykład": {
+            "chiński": "我很喜欢看书。",
+            "pinyin": "Wǒ hěn xǐhuān kàn shū.",
+            "polski": "Bardzo lubię czytać książki."
+        }
+    },
+    {
+        "chiński": "要",
+        "pinyin": "yào",
+        "polskie_znaczenie": "chcieć / musieć / zamierzać",
+        "id_lekcji": "24.08.2025",
+        "przykład": {
+            "chiński": "我要去商店。",
+            "pinyin": "Wǒ yào qù shāngdiàn.",
+            "polski": "Chcę iść do sklepu."
+        }
+    },
+    {
+        "chiński": "大约",
+        "pinyin": "dà yuē",
+        "polskie_znaczenie": "około (o liczbach)",
+        "id_lekcji": "31.08.2025",
+        "przykład": {
+            "chiński": "大约一百人",
+            "pinyin": "dàyuē yì bǎi rén",
+            "polski": "około stu osób"
+        }
+    },
+    {
+        "chiński": "商场",
+        "pinyin": "shāngchǎng",
+        "polskie_znaczenie": "centrum handlowe",
+        "id_lekcji": "14.09.2025",
+        "przykład": {
+            "chiński": "我们在商场见面。",
+            "pinyin": "Wǒmen zài shāngchǎng jiànmiàn.",
+            "polski": "Spotykamy się w centrum handlowym."
+        }
+    },
+    {
+        "chiński": "咖啡馆",
+        "pinyin": "kāfēiguǎn",
+        "polskie_znaczenie": "kawiarnia",
+        "id_lekcji": "14.09.2025",
+        "przykład": {
+            "chiński": "去咖啡馆喝咖啡",
+            "pinyin": "qù kāfēiguǎn hē kāfēi",
+            "polski": "iść do kawiarni napić się kawy"
+        }
+    },
+    {
+        "chiński": "饭馆",
+        "pinyin": "fànguǎn",
+        "polskie_znaczenie": "restauracja (mała)",
+        "id_lekcji": "14.09.2025",
+        "przykład": {
+            "chiński": "这家饭馆的菜很好吃。",
+            "pinyin": "Zhè jiā fànguǎn de cài hěn hǎohē.",
+            "polski": "Jedzenie w tej restauracji jest bardzo smaczne."
+        }
+    },
+    {
+        "chiński": "中国菜",
+        "pinyin": "Zhōngguó cài",
+        "polskie_znaczenie": "kuchnia chińska",
+        "id_lekcji": "21.09.2025",
+        "przykład": {
+            "chiński": "我喜欢吃中国菜。",
+            "pinyin": "Wǒ xǐhuān chī Zhōngguó cài.",
+            "polski": "Lubię jeść chińskie jedzenie."
+        }
+    },
+    {
+        "chiński": "非常",
+        "pinyin": "fēi cháng",
+        "polskie_znaczenie": "bardzo / niezwykle",
+        "id_lekcji": "21.09.2025",
+        "przykład": {
+            "chiński": "非常好",
+            "pinyin": "fēicháng hǎo",
+            "polski": "niezwykle dobrze"
+        }
+    },
+    {
+        "chiński": "国庆节",
+        "pinyin": "Guóqìng Jié",
+        "polskie_znaczenie": "Święto Narodowe",
+        "id_lekcji": "05.10.2025",
+        "przykład": {
+            "chiński": "中国的国庆节是十月一日。",
+            "pinyin": "Zhōngguó de Guóqìng Jié shì shíyuè yī rì.",
+            "polski": "Chińskie Święto Narodowe jest 1 października."
+        }
+    },
+    {
+        "chiński": "传统",
+        "pinyin": "chuán tǒng",
+        "polskie_znaczenie": "tradycja / tradycyjny",
+        "id_lekcji": "05.10.2025",
+        "przykład": {
+            "chiński": "传统节日",
+            "pinyin": "chuántǒng jiérì",
+            "polski": "tradycyjne święto"
+        }
+    },
+    {
+        "chiński": "回家",
+        "pinyin": "huí jiā",
+        "polskie_znaczenie": "wracać do domu",
+        "id_lekcji": "05.10.2025",
+        "przykład": {
+            "chiński": "我想回家。",
+            "pinyin": "Wǒ xiǎng huí jiā.",
+            "polski": "Chcę wrócić do domu."
+        }
+    },
+    {
+        "chiński": "月亮",
+        "pinyin": "yuè liàng",
+        "polskie_znaczenie": "księżyc",
+        "id_lekcji": "05.10.2025",
+        "przykład": {
+            "chiński": "看月亮",
+            "pinyin": "kàn yuèliàng",
+            "polski": "patrzeć na księżyc"
+        }
+    },
+    {
+        "chiński": "很好",
+        "pinyin": "hěn hǎo",
+        "polskie_znaczenie": "Bardzo dobrze",
+        "id_lekcji": "16.03.2025",
+        "przykład": {
+            "chiński": "你好吗？我很好。",
+            "pinyin": "Nǐ hǎo ma? Wǒ hěn hǎo.",
+            "polski": "Jak się masz? Bardzo dobrze."
+        }
+    },
+    {
+        "chiński": "你好吗",
+        "pinyin": "Nǐ hǎo ma",
+        "polskie_znaczenie": "Jak się masz?",
+        "id_lekcji": "16.03.2025",
+        "przykład": {
+            "chiński": "你好吗",
+            "pinyin": "Nǐ hǎo ma",
+            "polski": "Jak się masz?"
+        }
+    },
+    {
+        "chiński": "你呢",
+        "pinyin": "Nǐ ne",
+        "polskie_znaczenie": "A ty?",
+        "id_lekcji": "16.03.2025",
+        "przykład": {
+            "chiński": "我很好，你呢？",
+            "pinyin": "Wǒ hěn hǎo, nǐ ne?",
+            "polski": "Mam się dobrze, a ty?"
+        }
+    },
+    {
+        "chiński": "两百",
+        "pinyin": "liǎng bǎi",
+        "polskie_znaczenie": "Dwieście",
+        "id_lekcji": "23.03.2025",
+        "przykład": {
+            "chiński": "两百块",
+            "pinyin": "liǎng bǎi kuài",
+            "polski": "200 juanów"
+        }
+    },
+    {
+        "chiński": "英国人",
+        "pinyin": "Yīngguórén",
+        "polskie_znaczenie": "Brytyjczyk",
+        "id_lekcji": "23.03.2025",
+        "przykład": {
+            "chiński": "他是英国人。",
+            "pinyin": "Tā shì Yīngguórén.",
+            "polski": "On jest Brytyjczykiem."
+        }
+    },
+    {
+        "chiński": "韩国人",
+        "pinyin": "Hánguórén",
+        "polskie_znaczenie": "Koreańczyk",
+        "id_lekcji": "23.03.2025",
+        "przykład": {
+            "chiński": "她是韩国人。",
+            "pinyin": "Tā shì Hánguórén.",
+            "polski": "Ona jest Koreanką."
+        }
+    },
+    {
+        "chiński": "是不是",
+        "pinyin": "shì bu shì",
+        "polskie_znaczenie": "Czy tak jest? / Czy to prawda?",
+        "id_lekcji": "04.05.2025",
+        "przykład": {
+            "chiński": "你是不是中国人？",
+            "pinyin": "Nǐ shì bu shì Zhōngguórén?",
+            "polski": "Czy ty jesteś Chińczykiem?"
+        }
+    },
+    {
+        "chiński": "对不对",
+        "pinyin": "duì bu duì",
+        "polskie_znaczenie": "Zgadza się? / Prawda?",
+        "id_lekcji": "04.05.2025",
+        "przykład": {
+            "chiński": "你是波兰人，对不对？",
+            "pinyin": "Nǐ shì Bōlánrén, duì bu duì?",
+            "polski": "Jesteś Polakiem, zgadza się?"
+        }
+    },
+    {
+        "chiński": "会不会",
+        "pinyin": "huì bu huì",
+        "polskie_znaczenie": "Czy umiesz? / Czy potrafisz?",
+        "id_lekcji": "04.05.2025",
+        "przykład": {
+            "chiński": "你会不会说中文？",
+            "pinyin": "Nǐ huì bu huì shuō Zhōngwén?",
+            "polski": "Czy umiesz mówić po chińsku?"
+        }
+    },
+    {
+        "chiński": "大家好",
+        "pinyin": "dàjiā hǎo",
+        "polskie_znaczenie": "Cześć wszystkim",
+        "id_lekcji": "04.05.2025",
+        "przykład": {
+            "chiński": "大家好！",
+            "pinyin": "Dàjiā hǎo!",
+            "polski": "Cześć wszystkim!"
+        }
+    },
+    {
+        "chiński": "田",
+        "pinyin": "tián",
+        "polskie_znaczenie": "pole",
+        "id_lekcji": "04.05.2025",
+        "przykład": {
+            "chiński": "田地",
+            "pinyin": "tiándì",
+            "polski": "pole uprawne"
+        }
+    },
+    {
+        "chiński": "力",
+        "pinyin": "lì",
+        "polskie_znaczenie": "siła",
+        "id_lekcji": "04.05.2025",
+        "przykład": {
+            "chiński": "力量",
+            "pinyin": "lìliàng",
+            "polski": "siła"
+        }
+    },
+    {
+        "chiński": "好学",
+        "pinyin": "hǎo xué",
+        "polskie_znaczenie": "łatwy do nauczenia się",
+        "id_lekcji": "11.05.2025",
+        "przykład": {
+            "chiński": "中文很好学。",
+            "pinyin": "Zhōngwén hěn hǎo xué.",
+            "polski": "Chiński jest łatwy do nauczenia."
+        }
+    },
+    {
+        "chiński": "儿童节",
+        "pinyin": "Értóng Jié",
+        "polskie_znaczenie": "Dzień Dziecka",
+        "id_lekcji": "01.06.2025",
+        "przykład": {
+            "chiński": "六月一日是儿童节。",
+            "pinyin": "Liùyuè yī rì shì Értóng Jié.",
+            "polski": "Pierwszego czerwca jest Dzień Dziecka."
+        }
+    },
+    {
+        "chiński": "见",
+        "pinyin": "jiàn",
+        "polskie_znaczenie": "widzieć / spotkać",
+        "id_lekcji": "11.08.2025",
+        "przykład": {
+            "chiński": "明天见",
+            "pinyin": "míngtiān jiàn",
+            "polski": "do zobaczenia jutro"
+        }
+    },
+    {
+        "chiński": "买东西",
+        "pinyin": "mǎi dōngxi",
+        "polskie_znaczenie": "robić zakupy",
+        "id_lekcji": "24.08.2025",
+        "przykład": {
+            "chiński": "我去超市买东西。",
+            "pinyin": "Wǒ qù chāoshì mǎi dōngxi.",
+            "polski": "Idę do supermarketu na zakupy."
+        }
+    },
+    {
+        "chiński": "喝咖啡",
+        "pinyin": "hē kāfēi",
+        "polskie_znaczenie": "pić kawę",
+        "id_lekcji": "24.08.2025",
+        "przykład": {
+            "chiński": "我们去喝咖啡吧。",
+            "pinyin": "Wǒmen qù hē kāfēi ba.",
+            "polski": "Chodźmy napić się kawy."
+        }
+    },
+    {
+        "chiński": "好朋友",
+        "pinyin": "hǎo péngyǒu",
+        "polskie_znaczenie": "dobry przyjaciel",
+        "id_lekcji": "21.09.2025",
+        "przykład": {
+            "chiński": "他是我最好的朋友。",
+            "pinyin": "Tā shì wǒ zuì hǎo de péngyǒu.",
+            "polski": "On jest moim najlepszym przyjacielem."
+        }
+    },
+    {
+        "chiński": "电话",
+        "pinyin": "diànhuà",
+        "polskie_znaczenie": "telefon",
+        "id_lekcji": "24.10.2025",
+        "przykład": {
+            "chiński": "打电话",
+            "pinyin": "dǎ diànhuà",
+            "polski": "dzwonić"
+        }
+    },
+    {
+        "chiński": "婚礼",
+        "pinyin": "hūnlǐ",
+        "polskie_znaczenie": "ślub / wesele",
+        "id_lekcji": "24.10.2025",
+        "przykład": {
+            "chiński": "参加婚礼",
+            "pinyin": "cānjiā hūnlǐ",
+            "polski": "uczestniczyć w weselu"
+        }
+    },
+    {
+        "chiński": "往后",
+        "pinyin": "wǎng hòu",
+        "polskie_znaczenie": "do tyłu",
+        "id_lekcji": "11.01.2025",
+        "przykład": {
+            "chiński": "往后走",
+            "pinyin": "wǎng hòu zǒu",
+            "polski": "iść do tyłu"
+        }
+    },
+    {
+        "chiński": "我很好",
+        "pinyin": "wǒ hěn hǎo",
+        "polskie_znaczenie": "Mam się dobrze",
+        "id_lekcji": "16.03.2025",
+        "przykład": {
+            "chiński": "你好吗？我很好。",
+            "pinyin": "Nǐ hǎo ma? Wǒ hěn hǎo.",
+            "polski": "Jak się masz? Mam się dobrze."
+        }
+    },
+    {
+        "chiński": "波兰人",
+        "pinyin": "Bōlánrén",
+        "polskie_znaczenie": "Polak / Polka",
+        "id_lekcji": "23.03.2025",
+        "przykład": {
+            "chiński": "我是波兰人。",
+            "pinyin": "Wǒ shì Bōlánrén.",
+            "polski": "Jestem Polakiem."
+        }
+    },
+    {
+        "chiński": "你喜欢什么",
+        "pinyin": "nǐ xǐhuān shénme",
+        "polskie_znaczenie": "Co lubisz?",
+        "id_lekcji": "30.03.2025",
+        "przykład": {
+            "chiński": "你喜欢什么？",
+            "pinyin": "Nǐ xǐhuān shénme?",
+            "polski": "Co lubisz?"
+        }
+    },
+    {
+        "chiński": "儿童节快乐",
+        "pinyin": "Értóng Jié kuàilè",
+        "polskie_znaczenie": "Wesołego Dnia Dziecka",
+        "id_lekcji": "01.06.2025",
+        "przykład": {
+            "chiński": "祝你儿童节快乐！",
+            "pinyin": "Zhù nǐ Értóng Jié kuàilè!",
+            "polski": "Życzę Ci Wesołego Dnia Dziecka!"
+        }
+    },
+    {
+        "chiński": "生日快乐",
+        "pinyin": "shēngrì kuàilè",
+        "polskie_znaczenie": "Wszystkiego najlepszego z okazji urodzin",
+        "id_lekcji": "01.06.2025",
+        "przykład": {
+            "chiński": "祝你生日快乐！",
+            "pinyin": "Zhù nǐ shēngrì kuàilè!",
+            "polski": "Życzę Ci wszystkiego najlepszego z okazji urodzin!"
+        }
+    },
+    {
+        "chiński": "一年",
+        "pinyin": "yì nián",
+        "polskie_znaczenie": "jeden rok",
+        "id_lekcji": "27.07.2025",
+        "przykład": {
+            "chiński": "我在中国住了一年。",
+            "pinyin": "Wǒ zài Zhōngguó zhù le yì nián.",
+            "polski": "Mieszkałem w Chinach przez rok."
+        }
+    },
+    {
+        "chiński": "两年",
+        "pinyin": "liǎng nián",
+        "polskie_znaczenie": "dwa lata",
+        "id_lekcji": "27.07.2025",
+        "przykład": {
+            "chiński": "我们认识两年了。",
+            "pinyin": "Wǒmen rènshi liǎng nián le.",
+            "polski": "Znamy się od dwóch lat."
+        }
+    },
+    {
+        "chiński": "五年",
+        "pinyin": "wǔ nián",
+        "polskie_znaczenie": "pięć lat",
+        "id_lekcji": "27.07.2025",
+        "przykład": {
+            "chiński": "他在公司工作了五年。",
+            "pinyin": "Tā zài gōngsī gōngzuò le wǔ nián.",
+            "polski": "On pracował w firmie przez pięć lat."
+        }
+    },
+    {
+        "chiński": "桌子的上面",
+        "pinyin": "zhuōzi de shàngmiàn",
+        "polskie_znaczenie": "na stole (dokładnie: na powierzchni stołu)",
+        "id_lekcji": "21.12.2025",
+        "przykład": {
+            "chiński": "书在桌子的上面。",
+            "pinyin": "Shū zài zhuōzi de shàngmiàn.",
+            "polski": "Książka jest na stole."
+        }
+    },
+    {
+        "chiński": "桌子上面",
+        "pinyin": "zhuōzi shàngmiàn",
+        "polskie_znaczenie": "na stole (potocznie)",
+        "id_lekcji": "21.12.2025",
+        "przykład": {
+            "chiński": "手机在桌子上面。",
+            "pinyin": "Shǒujī zài zhuōzi shàngmiàn.",
+            "polski": "Telefon jest na stole."
+        }
+    },
+    {
+        "chiński": "往前直走",
+        "pinyin": "wǎng qián zhí zǒu",
+        "polskie_znaczenie": "idź prosto do przodu",
+        "id_lekcji": "11.01.2025",
+        "przykład": {
+            "chiński": "一直往前直走。",
+            "pinyin": "Yìzhí wǎng qián zhí zǒu.",
+            "polski": "Idź cały czas prosto przed siebie."
+        }
+    },
+    {
+        "chiński": "小朋友",
+        "pinyin": "xiǎo péngyǒu",
+        "polskie_znaczenie": "dzieciaczki / małe dzieci (pieszczotliwe)",
+        "id_lekcji": "01.06.2025",
+        "przykład": {
+            "chiński": "小朋友们好！",
+            "pinyin": "Xiǎopéngyǒumen hǎo!",
+            "polski": "Cześć dzieciaki!"
+        }
+    },
+    {
+        "chiński": "这个",
+        "pinyin": "zhè ge",
+        "polskie_znaczenie": "to / ten",
+        "id_lekcji": "22.06.2025",
+        "przykład": {
+            "chiński": "这个是什么？",
+            "pinyin": "Zhège shì shénme?",
+            "polski": "Co to jest?"
+        }
+    },
+    {
+        "chiński": "那个",
+        "pinyin": "nà ge",
+        "polskie_znaczenie": "tamto / tamten",
+        "id_lekcji": "22.06.2025",
+        "przykład": {
+            "chiński": "那个是苹果。",
+            "pinyin": "Nàge shì píngguǒ.",
+            "polski": "Tamto to jabłko."
+        }
+    },
+    {
+        "chiński": "哪个",
+        "pinyin": "nǎ ge",
+        "polskie_znaczenie": "który",
+        "id_lekcji": "22.06.2025",
+        "przykład": {
+            "chiński": "哪个是你的手机？",
+            "pinyin": "Nǎge shì nǐ de shǒujī?",
+            "polski": "Który to twój telefon?"
+        }
+    },
+    {
+        "chiński": "不会",
+        "pinyin": "bú huì",
+        "polskie_znaczenie": "nie potrafić / nie umieć",
+        "id_lekcji": "08.06.2025",
+        "przykład": {
+            "chiński": "我不会。",
+            "pinyin": "Wǒ bú huì.",
+            "polski": "Nie potrafię."
+        }
+    }
+]

@@ -1,0 +1,90 @@
+{
+    "matcha-latte": {
+        "name": "Matcha Latte",
+        "colors": {
+            "primary": "#526442",
+            "secondary": "#ebead8",
+            "accent": "#4b351e"
+        }
+    },
+    "light-blue-sky": {
+        "name": "Light Blue Sky",
+        "colors": {
+            "primary": "#315e75",
+            "secondary": "#e6f4f1",
+            "accent": "#5a8ca0"
+        }
+    },
+    "soft-ruby": {
+        "name": "Soft Ruby",
+        "colors": {
+            "primary": "#82384a",
+            "secondary": "#f7e6e9",
+            "accent": "#b0576b"
+        }
+    },
+    "neon-city": {
+        "name": "Neon City",
+        "colors": {
+            "primary": "#8a509e",
+            "secondary": "#fa99c5",
+            "accent": "#0a2670"
+        }
+    },
+    "end-of-summer": {
+        "name": "End of Summer",
+        "colors": {
+            "primary": "#82384a",
+            "secondary": "#f7e6e9",
+            "accent": "#b0576b"
+        }
+    },
+    "retro-90s": {
+        "name": "Retro 90s",
+        "colors": {
+            "primary": "#000080",
+            "secondary": "#c0c0c0",
+            "accent": "#008080"
+        }
+    },
+    "y2k-cyber": {
+        "name": "Y2K Cyber",
+        "colors": {
+            "primary": "#0033cc",
+            "secondary": "#f0faff",
+            "accent": "#ff3399"
+        }
+    },
+    "classic-white": {
+        "name": "Classic White",
+        "colors": {
+            "primary": "#171717",
+            "secondary": "#ffffff",
+            "accent": "#525252"
+        }
+    },
+    "midnight-black": {
+        "name": "Midnight Black",
+        "colors": {
+            "primary": "#f5f5f5",
+            "secondary": "#0a0a0a",
+            "accent": "#737373"
+        }
+    },
+    "soft-beige": {
+        "name": "Soft Beige",
+        "colors": {
+            "primary": "#5d4037",
+            "secondary": "#f5f5dc",
+            "accent": "#a1887f"
+        }
+    },
+    "deep-navy": {
+        "name": "Deep Navy",
+        "colors": {
+            "primary": "#e2e8f0",
+            "secondary": "#0f172a",
+            "accent": "#38bdf8"
+        }
+    }
+}
