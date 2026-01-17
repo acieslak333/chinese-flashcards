@@ -60,7 +60,7 @@ const SettingsPanel = ({
         if (selectedYears.length === 0 && uniqueYears.length > 0) {
             setSelectedYears(uniqueYears);
         }
-    }, [uniqueYears.length]);
+    }, [uniqueYears, selectedYears.length]);
 
 
     const toggleYear = (year) => {

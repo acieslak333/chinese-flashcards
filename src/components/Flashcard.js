@@ -16,11 +16,7 @@ const Flashcard = ({
     direction
 }) => {
 
-    const getCardBackground = () => {
-        if (difficulty === 'łatwe') return 'bg-gradient-to-br from-emerald-50 via-teal-50 to-green-100';
-        if (difficulty === 'trudne') return 'bg-gradient-to-br from-rose-50 via-red-50 to-orange-100';
-        return 'bg-gradient-to-br from-amber-50 via-yellow-50 to-orange-50';
-    };
+
 
     const getContentStyle = (field, isVisible) => {
         if (isVisible || revealedFields[field]) return '';
