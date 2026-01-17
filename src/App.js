@@ -85,6 +85,12 @@ const FlashcardApp = () => {
             root.style.setProperty('--color-primary', theme.colors.primary);
             root.style.setProperty('--color-secondary', theme.colors.secondary);
             root.style.setProperty('--color-accent', theme.colors.accent);
+
+            // Update mobile browser theme color
+            const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+            if (metaThemeColor) {
+                metaThemeColor.setAttribute('content', theme.colors.secondary);
+            }
         }
     }, [currentTheme]);
 
@@ -346,7 +352,7 @@ const FlashcardApp = () => {
     if (!currentCard) return null;
 
     return (
-        <div className="h-screen bg-secondary text-primary flex flex-col overflow-hidden transition-colors duration-500 relative">
+        <div className="h-[100dvh] bg-secondary text-primary flex flex-col overflow-hidden transition-colors duration-500 relative">
             {/* Main Interactive Content - Inert when settings open */}
             <div className={`flex flex-col h-full w-full ${showSettings ? 'pointer-events-none opacity-50' : ''}`}>
                 <Header
@@ -373,6 +379,9 @@ const FlashcardApp = () => {
                 <Navigation
                     handlePrev={handlePrev}
                     handleNext={handleNext}
+                    showExample={showExample}
+                    setShowExample={setShowExample}
+                    onRevealAll={revealAll}
                 />
             </div>
 

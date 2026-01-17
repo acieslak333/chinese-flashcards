@@ -1,5 +1,4 @@
 import React from 'react';
-import { Eye, EyeOff } from 'lucide-react';
 
 const Flashcard = ({
     currentCard,
@@ -54,16 +53,7 @@ const Flashcard = ({
                         {currentCard.polskie_znaczenie}
                     </div>
 
-                    <button
-                        onClick={() => {
-                            setShowExample(!showExample);
-                            onRevealAll();
-                        }}
-                        className="flex items-center gap-2 px-6 py-3 bg-accent text-secondary rounded-full hover:bg-primary transition-all duration-300 font-semibold"
-                    >
-                        {showExample ? <EyeOff size={18} /> : <Eye size={18} />}
-                        {showExample ? 'Ukryj' : 'Przykład'}
-                    </button>
+
 
                     <div 
                         className={`transition-all duration-500 ease-in-out overflow-hidden w-full ${
