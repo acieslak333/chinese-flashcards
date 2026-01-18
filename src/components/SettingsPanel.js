@@ -227,8 +227,11 @@ const SettingsPanel = ({
                             <div className="flex justify-between items-center mb-3">
                                 <h3 className="font-semibold text-primary">Lekcje</h3>
                                 <div className="flex gap-2 text-xs">
-                                    <button onClick={selectAllLessons} className="text-accent hover:underline hover:text-accent font-bold">Zaznacz wszystkie</button>
-                                    <button onClick={deselectAllLessons} className="text-secondary opacity-60 hover:opacity-100 hover:text-accent">Odznacz</button>
+                                    {selectedLessons.length === allLessons.length ? (
+                                        <button onClick={deselectAllLessons} className="text-accent hover:underline hover:text-accent font-bold">Odznacz wszystkie</button>
+                                    ) : (
+                                        <button onClick={selectAllLessons} className="text-accent hover:underline hover:text-accent font-bold">Zaznacz wszystkie</button>
+                                    )}
                                 </div>
                             </div>
 

@@ -90,7 +90,7 @@ const FlashcardApp = () => {
         if (!syncCode) return;
         try {
             const { data, error } = await supabase
-                .from('sync_data')
+                .from('sync_table')
                 .select('json_data')
                 .eq('user_id', syncCode)
                 .single();
@@ -136,7 +136,7 @@ const FlashcardApp = () => {
             };
 
             const { error } = await supabase
-                .from('sync_data')
+                .from('sync_table')
                 .upsert({ 
                     user_id: syncCode,
                     json_data: payload,
