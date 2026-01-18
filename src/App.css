@@ -1,15 +1,5 @@
 /* App.css */
 
-.bg-main-gradient {
-  background-image: linear-gradient(to bottom right, #0f172a, #1e293b, #0f172a);
-}
-
-.bg-card-gradient {
-  background-image: linear-gradient(to bottom right, #fef3c7, #e7e5e4);
-}
-
-
-
 /* Custom scrollbar for settings panel if needed */
 .scrollbar-hide::-webkit-scrollbar {
     display: none;

@@ -4,6 +4,7 @@ import Header from './components/Header';
 import SettingsPanel from './components/SettingsPanel';
 import Flashcard from './components/Flashcard';
 import Navigation from './components/Navigation';
+import Catalogue from './components/Catalogue';
 import './App.css';
 import chineseData from './data/chinese.json';
 import themes from './data/themes.json';
@@ -346,6 +347,9 @@ const FlashcardApp = () => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [filteredCards, currentIndex, displayMode, revealedFields, difficulties, currentCardId, isRandomBlur, randomDisplayMode, isAnyHidden]); // Added isAnyHidden dependency
 
+    // State for Catalogue View
+    const [showCatalogue, setShowCatalogue] = useState(false);
+
     // Safety check - if no cards match filters
     if (filteredCards.length === 0) {
         return (
@@ -376,7 +380,15 @@ const FlashcardApp = () => {
                     deselectAllLessons={deselectAllLessons}
                     selectAllDifficulties={selectAllDifficulties}
                     deselectAllDifficulties={deselectAllDifficulties}
+                    onOpenCatalogue={() => setShowCatalogue(true)}
                 />
+
+                {showCatalogue && (
+                     <Catalogue 
+                        cards={filteredCards} 
+                        onClose={() => setShowCatalogue(false)} 
+                     />
+                )}
 
                 <div className="flex-1 flex flex-col items-center justify-center p-8 text-center opacity-60">
                     <div className="text-2xl font-bold mb-4">Brak kart spełniających kryteria</div>
@@ -386,6 +398,12 @@ const FlashcardApp = () => {
                         className="mt-6 px-6 py-3 bg-secondary text-secondary rounded-full font-bold hover:opacity-90 transition"
                     >
                         Otwórz ustawienia
+                    </button>
+                    <button
+                        onClick={() => setShowCatalogue(true)}
+                        className="mt-4 text-primary underline hover:opacity-80"
+                    >
+                        Otwórz Katalog
                     </button>
                 </div>
             </div>
@@ -433,6 +451,22 @@ const FlashcardApp = () => {
                 />
             </div>
 
+            {/* Catalogue Overlay */}
+            {showCatalogue && (
+                <Catalogue 
+                    cards={filteredCards} 
+                    onClose={() => setShowCatalogue(false)}
+                    showSettings={showSettings}
+                    setShowSettings={setShowSettings}
+                    // New props for enhancements
+                    difficulties={difficulties}
+                    allCards={flashcards} // Needed to match indices for difficulty
+                    displayMode={displayMode}
+                    isRandomBlur={isRandomBlur}
+                    isRandom={isRandom}
+                />
+            )}
+
             {/* Settings Panel - Outside the inert wrapper */}
             <SettingsPanel
                 showSettings={showSettings}
@@ -455,6 +489,10 @@ const FlashcardApp = () => {
                 deselectAllLessons={deselectAllLessons}
                 selectAllDifficulties={selectAllDifficulties}
                 deselectAllDifficulties={deselectAllDifficulties}
+                onOpenCatalogue={() => {
+                    setShowCatalogue(prev => !prev);
+                    setShowSettings(false);
+                }}
             />
         </div>
     );

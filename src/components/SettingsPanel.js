@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, ListOrdered, Shuffle, Search, Maximize, Minimize } from 'lucide-react';
+import { X, ListOrdered, Shuffle, Search, Maximize, Minimize, Grid } from 'lucide-react';
 
 const SettingsPanel = ({
     showSettings,
@@ -21,7 +21,8 @@ const SettingsPanel = ({
     selectAllLessons,
     deselectAllLessons,
     selectAllDifficulties,
-    deselectAllDifficulties
+    deselectAllDifficulties,
+    onOpenCatalogue
 }) => {
     const [lessonSearch, setLessonSearch] = useState('');
     const [lessonView, setLessonView] = useState('all'); // 'all' or 'selected'
@@ -117,7 +118,7 @@ const SettingsPanel = ({
     return (
         <>
             <div
-                className={`fixed top-0 right-0 h-full w-80 bg-secondary transform transition-transform duration-300 z-50 border-l-4 border-accent ${showSettings ? 'translate-x-0' : 'translate-x-full'
+                className={`fixed top-0 right-0 h-full w-80 bg-secondary transform transition-transform duration-300 z-50 ${showSettings ? 'translate-x-0' : 'translate-x-full'
                     }`}
                 onClick={(e) => e.stopPropagation()}
                 onMouseDown={(e) => e.stopPropagation()}
@@ -129,6 +130,13 @@ const SettingsPanel = ({
                     <div className="flex items-center justify-between mb-6">
                         <h2 className="text-xl font-bold text-primary">Ustawienia</h2>
                         <div className="flex items-center gap-2">
+                             <button
+                                onClick={onOpenCatalogue}
+                                className="p-2 rounded-full hover:bg-accent hover:text-secondary transition"
+                                title="Otwórz Katalog"
+                            >
+                                <Grid size={24} />
+                            </button>
                             <button
                                 onClick={toggleFullscreen}
                                 className="p-2 rounded-full hover:bg-accent hover:text-secondary transition"
@@ -189,7 +197,7 @@ const SettingsPanel = ({
                             <div className="flex gap-2">
                                 <button
                                     onClick={() => setIsRandom(false)}
-                                    className={`flex-1 flex items-center justify-center gap-2 px-3 py-2 rounded-full text-sm transition font-semibold ${!isRandom ? 'bg-primary text-secondary' : 'bg-transparent border border-primary text-primary hover:bg-accent hover:border-accent hover:text-secondary'
+                                    className={`flex-1 flex items-center justify-center gap-2 px-3 py-2 rounded-full text-sm transition font-semibold ${!isRandom ? 'bg-primary text-secondary hover:bg-accent hover:border-accent hover:text-secondary' : 'bg-transparent border border-primary text-primary hover:bg-accent hover:border-accent hover:text-secondary'
                                         }`}
                                 >
                                     <ListOrdered size={16} />
@@ -197,7 +205,7 @@ const SettingsPanel = ({
                                 </button>
                                 <button
                                     onClick={() => setIsRandom(true)}
-                                    className={`flex-1 flex items-center justify-center gap-2 px-3 py-2 rounded-full text-sm transition font-semibold ${isRandom ? 'bg-primary text-secondary' : 'bg-transparent border border-primary text-primary hover:bg-accent hover:border-accent hover:text-secondary'
+                                    className={`flex-1 flex items-center justify-center gap-2 px-3 py-2 rounded-full text-sm transition font-semibold ${isRandom ? 'bg-primary text-secondary hover:bg-accent hover:border-accent hover:text-secondary' : 'bg-transparent border border-primary text-primary hover:bg-accent hover:border-accent hover:text-secondary'
                                         }`}
                                 >
                                     <Shuffle size={16} />
@@ -271,16 +279,16 @@ const SettingsPanel = ({
                                 </div>
 
 
-                                <div className="flex p-1 bg-primary bg-opacity-10 rounded-full mt-2">
+                                <div className="flex p-1 bg-primary rounded-full mt-2">
                                     <button
                                         onClick={() => setLessonView('all')}
-                                        className={`flex-1 py-1 text-xs font-bold rounded-full transition ${lessonView === 'all' ? 'bg-primary text-secondary' : 'text-primary hover:bg-accent hover:text-secondary'}`}
+                                        className={`flex-1 py-1 text-xs font-bold rounded-full transition ${lessonView === 'all' ? 'bg-secondary text-primary' : 'bg-primary text-secondary hover:bg-accent hover:text-secondary'}`}
                                     >
                                         Wszystkie
                                     </button>
                                     <button
                                         onClick={() => setLessonView('selected')}
-                                        className={`flex-1 py-1 text-xs font-bold rounded-full transition ${lessonView === 'selected' ? 'bg-primary text-secondary' : 'text-primary hover:bg-accent hover:text-secondary'}`}
+                                        className={`flex-1 py-1 text-xs font-bold rounded-full transition ${lessonView === 'selected' ? 'bg-secondary text-primary' : 'bg-primary text-secondary hover:bg-accent hover:text-secondary'}`}
                                     >
                                         Wybrane ({selectedLessons.length})
                                     </button>
@@ -294,7 +302,7 @@ const SettingsPanel = ({
                                             key={lesson}
                                             onClick={() => toggleLesson(lesson)}
                                             className={`px-3 py-1 rounded-full text-sm transition font-semibold ${selectedLessons.includes(lesson)
-                                                ? 'bg-primary text-secondary border border-transparent'
+                                                ? 'bg-primary text-secondary border border-transparent hover:bg-accent hover:border-accent hover:text-secondary'
                                                 : 'bg-transparent border border-primary text-primary hover:bg-accent hover:border-accent hover:text-secondary'
                                                 }`}
                                         >
@@ -323,7 +331,7 @@ const SettingsPanel = ({
                                         key={diff}
                                         onClick={() => toggleDifficulty(diff)}
                                         className={`px-3 py-1 rounded-full text-sm transition font-semibold capitalize ${selectedDifficulties.includes(diff)
-                                            ? 'bg-primary text-secondary border border-primary'
+                                            ? 'bg-primary text-secondary border border-primary hover:bg-accent hover:border-accent hover:text-secondary'
                                             : 'bg-transparent border border-primary text-primary hover:bg-accent hover:border-accent hover:text-secondary'
                                             }`}
                                     >
@@ -341,15 +349,15 @@ const SettingsPanel = ({
                                     key={key}
                                     onClick={() => setCurrentTheme(key)}
                                     className={`px-3 py-2 rounded-full text-sm transition font-semibold flex items-center justify-between ${currentTheme === key
-                                        ? 'bg-primary text-secondary'
+                                        ? 'bg-primary text-secondary hover:bg-accent hover:border-accent hover:text-secondary'
                                         : 'bg-transparent border border-primary text-primary hover:bg-accent hover:border-accent hover:text-secondary'
                                         }`}
                                 >
                                     <span>{theme.name}</span>
                                     <div className="flex gap-1">
-                                        <div className="w-3 h-3 rounded-full" style={{ backgroundColor: theme.colors.primary }}></div>
-                                        <div className="w-3 h-3 rounded-full" style={{ backgroundColor: theme.colors.secondary }}></div>
-                                        <div className="w-3 h-3 rounded-full" style={{ backgroundColor: theme.colors.accent }}></div>
+                                        <div className="w-3 h-3 rounded-full border-2 border-secondary" style={{ backgroundColor: theme.colors.primary }}></div>
+                                        <div className="w-3 h-3 rounded-full border-2 border-secondary" style={{ backgroundColor: theme.colors.secondary }}></div>
+                                        <div className="w-3 h-3 rounded-full border-2 border-secondary" style={{ backgroundColor: theme.colors.accent }}></div>
                                     </div>
                                 </button>
                             ))}
