@@ -26,7 +26,8 @@ const SettingsPanel = ({
     onOpenCatalogue,
     syncCode,
     setSyncCode,
-    onForceSync
+    onForceSync,
+    difficulties = {}
 }) => {
     const [lessonSearch, setLessonSearch] = useState('');
     const [lessonView, setLessonView] = useState('all'); // 'all' or 'selected'
@@ -355,19 +356,24 @@ const SettingsPanel = ({
                                     )}
                                 </div>
                             </div>
-                            <div className="flex flex-wrap gap-2">
-                                {['łatwe', 'średnie', 'trudne'].map(diff => (
-                                    <button
-                                        key={diff}
-                                        onClick={() => toggleDifficulty(diff)}
-                                        className={`px-3 py-1 rounded-full text-sm transition font-semibold capitalize ${selectedDifficulties.includes(diff)
-                                            ? 'bg-primary text-secondary border border-primary hover:bg-accent hover:border-accent hover:text-secondary'
-                                            : 'bg-transparent border border-primary text-primary hover:bg-accent hover:border-accent hover:text-secondary'
-                                            }`}
-                                    >
-                                        {diff}
-                                    </button>
-                                ))}
+
+                            <div className="flex gap-2 w-full">
+                                {['łatwe', 'średnie', 'trudne'].map(diff => {
+                                    const count = Object.values(difficulties).filter(d => d === diff).length;
+                                    return (
+                                        <button
+                                            key={diff}
+                                            onClick={() => toggleDifficulty(diff)}
+                                            className={`flex-1 flex items-center justify-center gap-1 px-2 py-2 rounded-full text-xs sm:text-sm transition font-semibold capitalize ${selectedDifficulties.includes(diff)
+                                                ? 'bg-primary text-secondary border border-primary hover:bg-accent hover:border-accent hover:text-secondary'
+                                                : 'bg-transparent border border-primary text-primary hover:bg-accent hover:border-accent hover:text-secondary'
+                                                }`}
+                                        >
+                                            <span>{diff}</span>
+                                            <span className="opacity-70">({count})</span>
+                                        </button>
+                                    );
+                                })}
                             </div>
                         </div>
                     </div>

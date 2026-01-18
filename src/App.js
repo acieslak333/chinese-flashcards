@@ -577,6 +577,7 @@ const FlashcardApp = () => {
                 syncCode={syncCode}
                 setSyncCode={setSyncCode}
                 onForceSync={loadCloudData}
+                difficulties={difficulties}
             />
         </div>
     );
