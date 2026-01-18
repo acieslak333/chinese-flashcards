@@ -228,6 +228,16 @@ const FlashcardApp = () => {
     const selectAllDifficulties = () => setSelectedDifficulties(['łatwe', 'średnie', 'trudne']);
     const deselectAllDifficulties = () => setSelectedDifficulties([]);
 
+    const handleReset = () => {
+        setShowExample(false);
+        setRevealedFields({ chinese: false, pinyin: false, polish: false });
+    };
+
+    const effectiveDisplayForRender = isRandomBlur ? randomDisplayMode : displayMode;
+    const isAnyHidden = ['chinese', 'pinyin', 'polish'].some(
+        field => !effectiveDisplayForRender[field] && !revealedFields[field]
+    );
+
     useEffect(() => {
         setRevealedFields({ chinese: false, pinyin: false, polish: false });
     }, [currentIndex]); // Reset on card change
@@ -249,13 +259,6 @@ const FlashcardApp = () => {
                     break;
                 case ' ':
                     e.preventDefault();
-                    // Check if there are any unrevealed fields that should be visible
-                    // Use effective display mode (random or manual)
-                    const effectiveDisplay = isRandomBlur ? randomDisplayMode : displayMode;
-                    const isAnyHidden = ['chinese', 'pinyin', 'polish'].some(
-                        field => !effectiveDisplay[field] && !revealedFields[field]
-                    );
-
                     if (isAnyHidden) {
                         revealAll();
                     } else {
@@ -268,12 +271,7 @@ const FlashcardApp = () => {
                 case 'S':
                 case 'ArrowDown':
                     e.preventDefault();
-                    const effectiveDisplayForUnblur = isRandomBlur ? randomDisplayMode : displayMode;
-                    const isAnyHiddenForUnblur = ['chinese', 'pinyin', 'polish'].some(
-                        field => !effectiveDisplayForUnblur[field] && !revealedFields[field]
-                    );
-
-                    if (isAnyHiddenForUnblur) {
+                    if (isAnyHidden) {
                         revealAll();
                     } else {
                         setShowExample(prev => !prev);
@@ -290,8 +288,7 @@ const FlashcardApp = () => {
                     break;
                 case 'r':
                 case 'R':
-                    setShowExample(false);
-                    setRevealedFields({ chinese: false, pinyin: false, polish: false });
+                    handleReset();
                     break;
                 default:
                     break;
@@ -301,7 +298,7 @@ const FlashcardApp = () => {
         window.addEventListener('keydown', handleKeyDown);
         return () => window.removeEventListener('keydown', handleKeyDown);
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [filteredCards, currentIndex, displayMode, revealedFields, difficulties, currentCardId, isRandomBlur, randomDisplayMode]);
+    }, [filteredCards, currentIndex, displayMode, revealedFields, difficulties, currentCardId, isRandomBlur, randomDisplayMode, isAnyHidden]); // Added isAnyHidden dependency
 
     // Safety check - if no cards match filters
     if (filteredCards.length === 0) {
@@ -382,6 +379,8 @@ const FlashcardApp = () => {
                     showExample={showExample}
                     setShowExample={setShowExample}
                     onRevealAll={revealAll}
+                    isAnyHidden={isAnyHidden}
+                    handleReset={handleReset}
                 />
             </div>
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, ListOrdered, Shuffle, Search } from 'lucide-react';
+import { X, ListOrdered, Shuffle, Search, Maximize, Minimize } from 'lucide-react';
 
 const SettingsPanel = ({
     showSettings,
@@ -25,6 +25,28 @@ const SettingsPanel = ({
 }) => {
     const [lessonSearch, setLessonSearch] = useState('');
     const [lessonView, setLessonView] = useState('all'); // 'all' or 'selected'
+    const [isFullscreen, setIsFullscreen] = useState(!!document.fullscreenElement);
+
+    const toggleFullscreen = () => {
+        if (!document.fullscreenElement) {
+            document.documentElement.requestFullscreen().then(() => setIsFullscreen(true)).catch(err => {
+                console.error(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
+            });
+        } else {
+            if (document.exitFullscreen) {
+                document.exitFullscreen().then(() => setIsFullscreen(false));
+            }
+        }
+    };
+
+    // Listen for fullscreen change events (e.g. user presses Esc)
+    React.useEffect(() => {
+        const handleFullscreenChange = () => {
+            setIsFullscreen(!!document.fullscreenElement);
+        };
+        document.addEventListener('fullscreenchange', handleFullscreenChange);
+        return () => document.removeEventListener('fullscreenchange', handleFullscreenChange);
+    }, []);
 
     // Helper to parse DD.MM.YYYY
     const parseDate = (dateStr) => {
@@ -106,12 +128,21 @@ const SettingsPanel = ({
                 <div className="p-6 h-full overflow-y-auto text-primary custom-scrollbar">
                     <div className="flex items-center justify-between mb-6">
                         <h2 className="text-xl font-bold text-primary">Ustawienia</h2>
-                        <button
-                            onClick={() => setShowSettings(false)}
-                            className="p-1 rounded-full hover:bg-accent hover:text-secondary transition"
-                        >
-                            <X size={24} />
-                        </button>
+                        <div className="flex items-center gap-2">
+                            <button
+                                onClick={toggleFullscreen}
+                                className="p-2 rounded-full hover:bg-accent hover:text-secondary transition"
+                                title={isFullscreen ? "Wyłącz pełny ekran" : "Włącz pełny ekran"}
+                            >
+                                {isFullscreen ? <Minimize size={24} /> : <Maximize size={24} />}
+                            </button>
+                            <button
+                                onClick={() => setShowSettings(false)}
+                                className="p-1 rounded-full hover:bg-accent hover:text-secondary transition"
+                            >
+                                <X size={24} />
+                            </button>
+                        </div>
                     </div>
 
                     <div className="space-y-6">
