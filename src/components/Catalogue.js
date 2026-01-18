@@ -140,7 +140,7 @@ const Catalogue = ({
 
             {/* Grid Content */}
             <div className="flex-1 overflow-y-auto p-2 pb-20">
-                <div className="grid grid-cols-7 gap-4">
+                <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 gap-2 sm:gap-4">
                     {finalCards.map((card, index) => (
                         <CatalogueItem 
                             key={index}
