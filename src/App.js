@@ -15,7 +15,30 @@ const FlashcardApp = () => {
 
 
 
-    const [currentIndex, setCurrentIndex] = useState(0);
+    // Persistent State: Current Index (Last Flashcard)
+    const [currentIndex, setCurrentIndex] = useState(() => {
+        const saved = localStorage.getItem('currentIndex');
+        return saved ? parseInt(saved, 10) : 0;
+    });
+
+    // ... (other state)
+
+    // ... (inside loadCloudData)
+    if (cloudData.currentTheme) setCurrentTheme(cloudData.currentTheme);
+    if (cloudData.currentIndex !== undefined) setCurrentIndex(cloudData.currentIndex); // Restore index
+
+    // ... (inside saveData payload)
+    const payload = {
+        // ...
+        currentTheme,
+        currentIndex // Save index
+    };
+    
+    // ... (inside persistence effect)
+    useEffect(() => {
+        // ...
+        localStorage.setItem('currentIndex', currentIndex);
+    }, [displayMode, ..., currentIndex]);
     const [showExample, setShowExample] = useState(false);
     const [showSettings, setShowSettings] = useState(false);
 
@@ -86,7 +109,7 @@ const FlashcardApp = () => {
         localStorage.setItem('syncCode', syncCode);
     }, [syncCode]);
 
-    const loadCloudData = async () => {
+    const loadCloudData = async (isSilent = false) => {
         if (!syncCode) return;
         try {
             const { data, error } = await supabase
@@ -97,7 +120,7 @@ const FlashcardApp = () => {
 
             if (error && error.code !== 'PGRST116') { 
                 console.error("Error loading data:", error);
-                alert("Błąd pobierania danych z chmury");
+                if (!isSilent) alert("Błąd pobierania danych z chmury");
                 return;
             }
 
@@ -110,15 +133,25 @@ const FlashcardApp = () => {
                 if (cloudData.isRandomBlur) setIsRandomBlur(cloudData.isRandomBlur);
                 if (cloudData.displayMode) setDisplayMode(cloudData.displayMode);
                 if (cloudData.currentTheme) setCurrentTheme(cloudData.currentTheme);
+                if (cloudData.currentIndex !== undefined) setCurrentIndex(cloudData.currentIndex);
                 
-                alert("Dane pobrane z chmury!");
+                console.log("✅ Data loaded from cloud (Auto: " + isSilent + ")");
+                if (!isSilent) alert("Dane pobrane z chmury!");
             } else {
-                alert("Nie znaleziono danych dla tego kodu. Zapisz coś najpierw!");
+                if (!isSilent) alert("Nie znaleziono danych dla tego kodu. Zapisz coś najpierw!");
             }
         } catch (e) {
             console.error("Unexpected error loading:", e);
         }
     };
+
+    // Auto-load on startup
+    useEffect(() => {
+        if (syncCode) {
+            loadCloudData(true); // Silent auto-load
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []); // Run once on mount
 
     // Debounced Save Effect
     useEffect(() => {
@@ -132,7 +165,8 @@ const FlashcardApp = () => {
                 isRandom,
                 isRandomBlur,
                 displayMode,
-                currentTheme
+                currentTheme,
+                currentIndex
             };
 
             const { error } = await supabase
@@ -149,7 +183,7 @@ const FlashcardApp = () => {
         const timeoutId = setTimeout(saveData, 2000); // 2 second debounce
 
         return () => clearTimeout(timeoutId);
-    }, [syncCode, difficulties, selectedLessons, selectedDifficulties, isRandom, isRandomBlur, displayMode, currentTheme]);
+    }, [syncCode, difficulties, selectedLessons, selectedDifficulties, isRandom, isRandomBlur, displayMode, currentTheme, currentIndex]);
 
     const allLessons = [...new Set(flashcards.map(card => card.id_lekcji))];
 
@@ -181,8 +215,9 @@ const FlashcardApp = () => {
         localStorage.setItem('selectedDifficulties', JSON.stringify(selectedDifficulties));
         localStorage.setItem('difficulties', JSON.stringify(difficulties));
         localStorage.setItem('currentTheme', currentTheme);
+        localStorage.setItem('currentIndex', currentIndex);
         localStorage.setItem('isRandomBlur', JSON.stringify(isRandomBlur));
-    }, [displayMode, isRandom, selectedLessons, selectedDifficulties, difficulties, currentTheme, isRandomBlur]);
+    }, [displayMode, isRandom, selectedLessons, selectedDifficulties, difficulties, currentTheme, isRandomBlur, currentIndex]);
 
     // 1. Filtering Logic
     useEffect(() => {
