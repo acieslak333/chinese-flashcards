@@ -291,6 +291,9 @@ const FlashcardApp = () => {
 
     useEffect(() => {
         const handleKeyDown = (e) => {
+            // Ignore shortcuts if user is typing in an input or textarea
+            if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+
             if (filteredCards.length === 0) return;
 
             switch (e.key) {
@@ -471,6 +474,7 @@ const FlashcardApp = () => {
             <SettingsPanel
                 showSettings={showSettings}
                 setShowSettings={setShowSettings}
+                showCatalogue={showCatalogue}
                 displayMode={displayMode}
                 setDisplayMode={setDisplayMode}
                 isRandom={isRandom}

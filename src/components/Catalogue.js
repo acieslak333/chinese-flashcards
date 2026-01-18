@@ -97,15 +97,25 @@ const Catalogue = ({
 
         const normalizedSearch = normalizeText(searchTerm);
 
-        return cards.filter(card => {
-            const chinese = normalizeText(card.chiński);
-            const pinyin = normalizeText(card.pinyin);
-            const polish = normalizeText(card.polskie_znaczenie);
-            
-            return chinese.includes(normalizedSearch) || 
-                   pinyin.includes(normalizedSearch) || 
-                   polish.includes(normalizedSearch);
-        });
+        try {
+            // Escape special regex chars (like ., +, ?) but split by * to treat it as wildcard
+            const escapeRegExp = (string) => string.replace(/[.+?^${}()|[\]\\]/g, '\\$&');
+            const pattern = normalizedSearch.split('*').map(escapeRegExp).join('.*');
+            const regex = new RegExp(pattern);
+
+            return cards.filter(card => {
+                const chinese = normalizeText(card.chiński);
+                const pinyin = normalizeText(card.pinyin);
+                const polish = normalizeText(card.polskie_znaczenie);
+                
+                return regex.test(chinese) || 
+                       regex.test(pinyin) || 
+                       regex.test(polish);
+            });
+        } catch (e) {
+            console.warn("Invalid Regex pattern", e);
+            return cards;
+        }
     }, [cards, searchTerm]);
 
     // 2. Random Sort Logic

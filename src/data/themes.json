@@ -35,8 +35,8 @@
         "name": "End of Summer",
         "colors": {
             "primary": "#82384a",
-            "secondary": "#f7e6e9",
-            "accent": "#b0576b"
+            "secondary": "#f5f5dc",
+            "accent": "#526442"
         }
     },
     "retro-90s": {
@@ -85,22 +85,6 @@
             "primary": "#ff8a00",
             "secondary": "#373a3e",
             "accent": "#fff2df"
-        }
-    },
-    "love-poison": {
-        "name": "Love Poison",
-        "colors": {
-            "primary": "#00ff43",
-            "secondary": "#484c51",
-            "accent": "#c2c4c8"
-        }
-    },
-    "velvet-orb": {
-        "name": "Velvet Orb",
-        "colors": {
-            "primary": "#363636",
-            "secondary": "#7e041d",
-            "accent": "#efdfce"
         }
     },
     "hotel-swimming-pool": {

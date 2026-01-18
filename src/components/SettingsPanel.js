@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { X, ListOrdered, Shuffle, Search, Maximize, Minimize, Grid } from 'lucide-react';
+import { X, ListOrdered, Shuffle, Search, Maximize, Minimize, Grid, ChevronDown, ChevronUp, RectangleVertical } from 'lucide-react';
 
 const SettingsPanel = ({
     showSettings,
     setShowSettings,
+    showCatalogue,
     displayMode,
     setDisplayMode,
     isRandom,
@@ -27,6 +28,8 @@ const SettingsPanel = ({
     const [lessonSearch, setLessonSearch] = useState('');
     const [lessonView, setLessonView] = useState('all'); // 'all' or 'selected'
     const [isFullscreen, setIsFullscreen] = useState(!!document.fullscreenElement);
+    const [showDateFilters, setShowDateFilters] = useState(false);
+    const [showThemes, setShowThemes] = useState(false);
 
     const toggleFullscreen = () => {
         if (!document.fullscreenElement) {
@@ -128,14 +131,16 @@ const SettingsPanel = ({
             >
                 <div className="p-6 h-full overflow-y-auto text-primary custom-scrollbar">
                     <div className="flex items-center justify-between mb-6">
-                        <h2 className="text-xl font-bold text-primary">Ustawienia</h2>
+                        <div className="flex flex-col">
+                            <h2 className="text-xl font-bold text-primary">Ustawienia</h2>
+                        </div>
                         <div className="flex items-center gap-2">
                              <button
                                 onClick={onOpenCatalogue}
                                 className="p-2 rounded-full hover:bg-accent hover:text-secondary transition"
-                                title="Otwórz Katalog"
+                                title={showCatalogue ? "Wróć do Fiszek" : "Otwórz Katalog"}
                             >
-                                <Grid size={24} />
+                                {showCatalogue ? <RectangleVertical size={24} /> : <Grid size={24} />}
                             </button>
                             <button
                                 onClick={toggleFullscreen}
@@ -156,7 +161,7 @@ const SettingsPanel = ({
                     <div className="space-y-6">
 
                         <div>
-                            <h3 className="font-semibold mb-3 text-primary">Tryb wyświetlania:</h3>
+                            <h3 className="font-semibold mb-3 text-primary">Tryb wyświetlania</h3>
                             <div className="space-y-4">
                                 <label className="flex items-center space-x-3 cursor-pointer group">
                                     <div className={`w-5 h-5 rounded border transition flex items-center justify-center ${isRandomBlur ? 'bg-primary border-primary' : 'border-primary group-hover:border-accent'}`}>
@@ -193,7 +198,7 @@ const SettingsPanel = ({
                         </div>
 
                         <div>
-                            <h3 className="font-semibold mb-3 text-primary">Tryb nauki:</h3>
+                            <h3 className="font-semibold mb-3 text-primary">Tryb nauki</h3>
                             <div className="flex gap-2">
                                 <button
                                     onClick={() => setIsRandom(false)}
@@ -216,7 +221,7 @@ const SettingsPanel = ({
 
                         <div>
                             <div className="flex justify-between items-center mb-3">
-                                <h3 className="font-semibold text-primary">Lekcje:</h3>
+                                <h3 className="font-semibold text-primary">Lekcje</h3>
                                 <div className="flex gap-2 text-xs">
                                     <button onClick={selectAllLessons} className="text-accent hover:underline hover:text-accent font-bold">Zaznacz wszystkie</button>
                                     <button onClick={deselectAllLessons} className="text-secondary opacity-60 hover:opacity-100 hover:text-accent">Odznacz</button>
@@ -236,46 +241,61 @@ const SettingsPanel = ({
                                     />
                                 </div>
 
-                                {/* Years Multi-Select */}
-                                <div className="space-y-1">
-                                    <h4 className="text-xs font-semibold opacity-70 mb-1">Filtruj wg roku:</h4>
-                                    <div className="flex flex-wrap gap-2">
-                                        {uniqueYears.map(year => (
-                                            <label key={year} className="flex items-center space-x-2 cursor-pointer group">
-                                                <div className={`w-4 h-4 rounded border transition flex items-center justify-center ${selectedYears.includes(year) ? 'bg-primary border-primary' : 'border-primary group-hover:border-accent'}`}>
-                                                    {selectedYears.includes(year) && <div className="w-2 h-2 bg-secondary rounded-sm" />}
+                                {/* Expandable Date Filters */}
+                                <div className="border border-primary rounded-lg overflow-hidden">
+                                     <button 
+                                        onClick={() => setShowDateFilters(!showDateFilters)}
+                                        className="w-full flex items-center justify-between p-3 bg-secondary hover:bg-primary hover:text-secondary transition-colors"
+                                     >
+                                         <span className="text-sm font-bold">Filtruj wg daty</span>
+                                         {showDateFilters ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+                                     </button>
+                                     
+                                     {showDateFilters && (
+                                        <div className="p-3 bg-secondary border-t border-primary space-y-4">
+                                            {/* Years Multi-Select */}
+                                            <div className="space-y-1">
+                                                <h4 className="text-xs font-semibold opacity-70 mb-1">Rok</h4>
+                                                <div className="flex flex-wrap gap-2">
+                                                    {uniqueYears.map(year => (
+                                                        <label key={year} className="flex items-center space-x-2 cursor-pointer group">
+                                                            <div className={`w-4 h-4 rounded border transition flex items-center justify-center ${selectedYears.includes(year) ? 'bg-primary border-primary' : 'border-primary group-hover:border-accent'}`}>
+                                                                {selectedYears.includes(year) && <div className="w-2 h-2 bg-secondary rounded-sm" />}
+                                                            </div>
+                                                            <input
+                                                                type="checkbox"
+                                                                checked={selectedYears.includes(year)}
+                                                                onChange={() => toggleYear(year)}
+                                                                className="hidden"
+                                                            />
+                                                            <span className={`text-sm group-hover:text-accent ${selectedYears.includes(year) ? 'font-bold' : ''}`}>{year}</span>
+                                                        </label>
+                                                    ))}
                                                 </div>
-                                                <input
-                                                    type="checkbox"
-                                                    checked={selectedYears.includes(year)}
-                                                    onChange={() => toggleYear(year)}
-                                                    className="hidden"
-                                                />
-                                                <span className={`text-sm group-hover:text-accent ${selectedYears.includes(year) ? 'font-bold' : ''}`}>{year}</span>
-                                            </label>
-                                        ))}
-                                    </div>
-                                </div>
+                                            </div>
 
-                                {/* Months Multi-Select */}
-                                <div className="space-y-1">
-                                    <h4 className="text-xs font-semibold opacity-70 mb-1">Filtruj wg miesiąca:</h4>
-                                    <div className="grid grid-cols-2 gap-2">
-                                        {months.map(m => (
-                                            <label key={m.val} className="flex items-center space-x-2 cursor-pointer group">
-                                                <div className={`w-4 h-4 rounded border transition flex items-center justify-center ${selectedMonths.includes(m.val) ? 'bg-primary border-primary' : 'border-primary group-hover:border-accent'}`}>
-                                                    {selectedMonths.includes(m.val) && <div className="w-2 h-2 bg-secondary rounded-sm" />}
+                                            {/* Months Multi-Select */}
+                                            <div className="space-y-1">
+                                                <h4 className="text-xs font-semibold opacity-70 mb-1">Miesiąc</h4>
+                                                <div className="grid grid-cols-2 gap-2">
+                                                    {months.map(m => (
+                                                        <label key={m.val} className="flex items-center space-x-2 cursor-pointer group">
+                                                            <div className={`w-4 h-4 rounded border transition flex items-center justify-center ${selectedMonths.includes(m.val) ? 'bg-primary border-primary' : 'border-primary group-hover:border-accent'}`}>
+                                                                {selectedMonths.includes(m.val) && <div className="w-2 h-2 bg-secondary rounded-sm" />}
+                                                            </div>
+                                                            <input
+                                                                type="checkbox"
+                                                                checked={selectedMonths.includes(m.val)}
+                                                                onChange={() => toggleMonth(m.val)}
+                                                                className="hidden"
+                                                            />
+                                                            <span className={`text-sm group-hover:text-accent ${selectedMonths.includes(m.val) ? 'font-bold' : ''}`}>{m.name}</span>
+                                                        </label>
+                                                    ))}
                                                 </div>
-                                                <input
-                                                    type="checkbox"
-                                                    checked={selectedMonths.includes(m.val)}
-                                                    onChange={() => toggleMonth(m.val)}
-                                                    className="hidden"
-                                                />
-                                                <span className={`text-sm group-hover:text-accent ${selectedMonths.includes(m.val) ? 'font-bold' : ''}`}>{m.name}</span>
-                                            </label>
-                                        ))}
-                                    </div>
+                                            </div>
+                                        </div>
+                                     )}
                                 </div>
 
 
@@ -319,10 +339,13 @@ const SettingsPanel = ({
 
                         <div>
                             <div className="flex justify-between items-center mb-3">
-                                <h3 className="font-semibold text-primary">Trudność:</h3>
+                                <h3 className="font-semibold text-primary">Trudność</h3>
                                 <div className="flex gap-2 text-xs">
-                                    <button onClick={selectAllDifficulties} className="text-accent hover:underline hover:text-accent font-bold">Zaznacz wszystkie</button>
-                                    <button onClick={deselectAllDifficulties} className="text-secondary opacity-60 hover:opacity-100 hover:text-accent">Odznacz</button>
+                                    {selectedDifficulties.length === 3 ? (
+                                        <button onClick={deselectAllDifficulties} className="text-accent hover:underline hover:text-accent font-bold">Odznacz wszystkie</button>
+                                    ) : (
+                                        <button onClick={selectAllDifficulties} className="text-accent hover:underline hover:text-accent font-bold">Zaznacz wszystkie</button>
+                                    )}
                                 </div>
                             </div>
                             <div className="flex flex-wrap gap-2">
@@ -341,27 +364,37 @@ const SettingsPanel = ({
                             </div>
                         </div>
                     </div>
-                    <div>
-                        <h3 className="font-semibold mb-3 text-primary">Motyw:</h3>
-                        <div className="grid grid-cols-1 gap-2">
-                            {Object.entries(themes).map(([key, theme]) => (
-                                <button
-                                    key={key}
-                                    onClick={() => setCurrentTheme(key)}
-                                    className={`px-3 py-2 rounded-full text-sm transition font-semibold flex items-center justify-between ${currentTheme === key
-                                        ? 'bg-primary text-secondary hover:bg-accent hover:border-accent hover:text-secondary'
-                                        : 'bg-transparent border border-primary text-primary hover:bg-accent hover:border-accent hover:text-secondary'
-                                        }`}
-                                >
-                                    <span>{theme.name}</span>
-                                    <div className="flex gap-1">
-                                        <div className="w-3 h-3 rounded-full border-2 border-secondary" style={{ backgroundColor: theme.colors.primary }}></div>
-                                        <div className="w-3 h-3 rounded-full border-2 border-secondary" style={{ backgroundColor: theme.colors.secondary }}></div>
-                                        <div className="w-3 h-3 rounded-full border-2 border-secondary" style={{ backgroundColor: theme.colors.accent }}></div>
-                                    </div>
-                                </button>
-                            ))}
-                        </div>
+                    {/* Expandable Theme List */}
+                    <div className="border border-primary rounded-lg overflow-hidden mt-6">
+                        <button 
+                            onClick={() => setShowThemes(!showThemes)}
+                            className="w-full flex items-center justify-between p-3 bg-secondary hover:bg-primary hover:text-secondary transition-colors"
+                        >
+                            <span className="text-sm font-bold">Wybierz motyw</span>
+                            {showThemes ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+                        </button>
+                        
+                        {showThemes && (
+                            <div className="p-3 bg-secondary border-t border-primary grid grid-cols-1 gap-2">
+                                {Object.entries(themes).map(([key, theme]) => (
+                                    <button
+                                        key={key}
+                                        onClick={() => setCurrentTheme(key)}
+                                        className={`px-3 py-2 rounded-full text-sm transition font-semibold flex items-center justify-between ${currentTheme === key
+                                            ? 'bg-primary text-secondary hover:bg-accent hover:border-accent hover:text-secondary'
+                                            : 'bg-transparent border border-primary text-primary hover:bg-accent hover:border-accent hover:text-secondary'
+                                            }`}
+                                    >
+                                        <span>{theme.name}</span>
+                                        <div className="flex gap-1">
+                                            <div className="w-3 h-3 rounded-full border-2 border-secondary" style={{ backgroundColor: theme.colors.primary }}></div>
+                                            <div className="w-3 h-3 rounded-full border-2 border-secondary" style={{ backgroundColor: theme.colors.secondary }}></div>
+                                            <div className="w-3 h-3 rounded-full border-2 border-secondary" style={{ backgroundColor: theme.colors.accent }}></div>
+                                        </div>
+                                    </button>
+                                ))}
+                            </div>
+                        )}
                     </div>
                 </div>
             </div>
