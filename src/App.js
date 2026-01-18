@@ -21,11 +21,7 @@ const FlashcardApp = () => {
         return saved ? parseInt(saved, 10) : 0;
     });
 
-    // ... (other state)
 
-    // ... (inside loadCloudData)
-    if (cloudData.currentTheme) setCurrentTheme(cloudData.currentTheme);
-    if (cloudData.currentIndex !== undefined) setCurrentIndex(cloudData.currentIndex); // Restore index
 
 
     const [showExample, setShowExample] = useState(false);
