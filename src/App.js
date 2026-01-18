@@ -27,18 +27,7 @@ const FlashcardApp = () => {
     if (cloudData.currentTheme) setCurrentTheme(cloudData.currentTheme);
     if (cloudData.currentIndex !== undefined) setCurrentIndex(cloudData.currentIndex); // Restore index
 
-    // ... (inside saveData payload)
-    const payload = {
-        // ...
-        currentTheme,
-        currentIndex // Save index
-    };
-    
-    // ... (inside persistence effect)
-    useEffect(() => {
-        // ...
-        localStorage.setItem('currentIndex', currentIndex);
-    }, [displayMode, ..., currentIndex]);
+
     const [showExample, setShowExample] = useState(false);
     const [showSettings, setShowSettings] = useState(false);
 
@@ -154,36 +143,50 @@ const FlashcardApp = () => {
     }, []); // Run once on mount
 
     // Debounced Save Effect
-    useEffect(() => {
+    const saveData = React.useCallback(async () => {
         if (!syncCode) return;
-
-        const saveData = async () => {
-            const payload = {
-                difficulties,
-                selectedLessons,
-                selectedDifficulties,
-                isRandom,
-                isRandomBlur,
-                displayMode,
-                currentTheme,
-                currentIndex
-            };
-
-            const { error } = await supabase
-                .from('sync_table')
-                .upsert({ 
-                    user_id: syncCode,
-                    json_data: payload,
-                    updated_at: new Date().toISOString()
-                }, { onConflict: 'user_id' });
-
-            if (error) console.error("Error saving to cloud:", error);
+        
+        const payload = {
+            difficulties,
+            selectedLessons,
+            selectedDifficulties,
+            isRandom,
+            isRandomBlur,
+            displayMode,
+            currentTheme,
+            currentIndex
         };
 
-        const timeoutId = setTimeout(saveData, 2000); // 2 second debounce
+        const { error } = await supabase
+            .from('sync_table')
+            .upsert({ 
+                user_id: syncCode,
+                json_data: payload,
+                updated_at: new Date().toISOString()
+            }, { onConflict: 'user_id' });
 
-        return () => clearTimeout(timeoutId);
+        if (error) console.error("Error saving to cloud:", error);
     }, [syncCode, difficulties, selectedLessons, selectedDifficulties, isRandom, isRandomBlur, displayMode, currentTheme, currentIndex]);
+
+    // Debounced Save Effect (Auto-save while working)
+    useEffect(() => {
+        if (!syncCode) return;
+        const timeoutId = setTimeout(saveData, 2000); 
+        return () => clearTimeout(timeoutId);
+    }, [saveData, syncCode]); // saveData changes whenever dependencies change
+
+    // Save on Tab Switch / Minimize / Mobile App Switch
+    useEffect(() => {
+        const handleVisibilityChange = () => {
+            if (document.visibilityState === 'hidden') {
+                console.log("☁️ App hidden, saving immediately...");
+                saveData();
+            }
+        };
+
+        document.addEventListener("visibilitychange", handleVisibilityChange);
+        return () => document.removeEventListener("visibilitychange", handleVisibilityChange);
+    }, [saveData]);
 
     const allLessons = [...new Set(flashcards.map(card => card.id_lekcji))];
 
