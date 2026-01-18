@@ -24,6 +24,21 @@ const Flashcard = ({
 
     const animationClass = direction === 'next' ? 'animate-slide-right' : 'animate-slide-left';
 
+    const highlightText = (text, keyword) => {
+        if (!text || !keyword) return text;
+        const parts = text.split(keyword);
+        return parts.map((part, index) => (
+            <React.Fragment key={index}>
+                {part}
+                {index < parts.length - 1 && (
+                    <span className="bg-secondary text-accent px-1 rounded-sm mx-0.5 font-bold shadow-sm">
+                        {keyword}
+                    </span>
+                )}
+            </React.Fragment>
+        ));
+    };
+
     return (
         <div className="flex-1 flex flex-col justify-center items-center p-4 overflow-y-auto w-full">
             <div className={`bg-secondary rounded-3xl p-8 max-w-2xl w-full border-4 border-secondary ${animationClass}`}>
@@ -61,7 +76,7 @@ const Flashcard = ({
                         }`}
                     >
                         <div className="bg-accent backdrop-blur-sm p-4 sm:p-6 rounded-3xl w-full space-y-2 border-2 border-accent">
-                            <div className="text-xl sm:text-2xl text-center text-secondary font-bold">{currentCard.przykład.chiński}</div>
+                            <div className="text-xl sm:text-2xl text-center text-secondary font-bold">{highlightText(currentCard.przykład.chiński, currentCard.chiński)}</div>
                             <div className="text-base sm:text-lg text-center text-secondary">{currentCard.przykład.pinyin}</div>
                             <div className="text-sm sm:text-base text-center text-secondary font-semibold">{currentCard.przykład.polski}</div>
                         </div>
