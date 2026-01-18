@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useSwipeable } from 'react-swipeable';
 import Header from './components/Header';
 import SettingsPanel from './components/SettingsPanel';
 import Flashcard from './components/Flashcard';
@@ -175,6 +176,53 @@ const FlashcardApp = () => {
         }
     }, [filteredCards.length, currentIndex]);
 
+
+    // State to track if example has been shown at least once for current card
+    // Used for the Swipe Up cycle: Unblur -> Show Ex -> Hide Ex -> Reset
+    const [hasViewedExample, setHasViewedExample] = useState(false);
+
+    // ... (existing effects)
+
+    // Reset hasViewedExample on card change
+    useEffect(() => {
+        setHasViewedExample(false);
+    }, [currentIndex]);
+
+    // Track when example is shown
+    useEffect(() => {
+        if (showExample) {
+            setHasViewedExample(true);
+        }
+    }, [showExample]);
+
+    const handleReset = () => {
+        setShowExample(false);
+        setRevealedFields({ chinese: false, pinyin: false, polish: false });
+        setHasViewedExample(false); // Also reset the cycle
+    };
+
+    const swipeHandlers = useSwipeable({
+        onSwipedLeft: () => handleNext(),
+        onSwipedRight: () => handlePrev(),
+        onSwipedUp: () => {
+            if (isAnyHidden) {
+                // Stage 1: Reveal All
+                revealAll();
+            } else if (!showExample && !hasViewedExample) {
+                // Stage 2: Show Example
+                setShowExample(true);
+            } else if (showExample) {
+                // Stage 3: Hide Example
+                setShowExample(false);
+            } else if (!showExample && hasViewedExample) {
+                // Stage 4: Reset
+                handleReset();
+            }
+        },
+        preventDefaultTouchmoveEvent: true, // Prevent scrolling while swiping
+        trackMouse: false // Only touch for now, or true if user wants mouse swipes too
+    });
+
     const handleNext = () => {
         setDirection('next');
         setCurrentIndex((currentIndex + 1) % filteredCards.length);
@@ -228,10 +276,8 @@ const FlashcardApp = () => {
     const selectAllDifficulties = () => setSelectedDifficulties(['łatwe', 'średnie', 'trudne']);
     const deselectAllDifficulties = () => setSelectedDifficulties([]);
 
-    const handleReset = () => {
-        setShowExample(false);
-        setRevealedFields({ chinese: false, pinyin: false, polish: false });
-    };
+    // handleReset is defined above with swipe handlers
+    // const handleReset = ... (removed to avoid duplicate)
 
     const effectiveDisplayForRender = isRandomBlur ? randomDisplayMode : displayMode;
     const isAnyHidden = ['chinese', 'pinyin', 'polish'].some(
@@ -349,7 +395,10 @@ const FlashcardApp = () => {
     if (!currentCard) return null;
 
     return (
-        <div className="h-[100dvh] bg-secondary text-primary flex flex-col overflow-hidden transition-colors duration-500 relative">
+        <div 
+            {...swipeHandlers}
+            className="h-[100dvh] bg-secondary text-primary flex flex-col overflow-hidden transition-colors duration-500 relative"
+        >
             {/* Main Interactive Content - Inert when settings open */}
             <div className={`flex flex-col h-full w-full ${showSettings ? 'pointer-events-none opacity-50' : ''}`}>
                 <Header
