@@ -8,9 +8,12 @@ import Catalogue from './components/Catalogue';
 import './App.css';
 import chineseData from './data/chinese.json';
 import themes from './data/themes.json';
+import { supabase } from './supabaseClient';
 
 const FlashcardApp = () => {
     const [flashcards] = useState(chineseData);
+
+
 
     const [currentIndex, setCurrentIndex] = useState(0);
     const [showExample, setShowExample] = useState(false);
@@ -73,6 +76,80 @@ const FlashcardApp = () => {
         pinyin: false,
         polish: false
     });
+
+    // State for Cloud Sync
+    const [syncCode, setSyncCode] = useState(() => {
+        return localStorage.getItem('syncCode') || '';
+    });
+
+    useEffect(() => {
+        localStorage.setItem('syncCode', syncCode);
+    }, [syncCode]);
+
+    const loadCloudData = async () => {
+        if (!syncCode) return;
+        try {
+            const { data, error } = await supabase
+                .from('sync_data')
+                .select('json_data')
+                .eq('user_id', syncCode)
+                .single();
+
+            if (error && error.code !== 'PGRST116') { 
+                console.error("Error loading data:", error);
+                alert("Błąd pobierania danych z chmury");
+                return;
+            }
+
+            if (data?.json_data) {
+                const cloudData = data.json_data;
+                if (cloudData.difficulties) setDifficulties(cloudData.difficulties);
+                if (cloudData.selectedLessons) setSelectedLessons(cloudData.selectedLessons);
+                if (cloudData.selectedDifficulties) setSelectedDifficulties(cloudData.selectedDifficulties);
+                if (cloudData.isRandom) setIsRandom(cloudData.isRandom);
+                if (cloudData.isRandomBlur) setIsRandomBlur(cloudData.isRandomBlur);
+                if (cloudData.displayMode) setDisplayMode(cloudData.displayMode);
+                if (cloudData.currentTheme) setCurrentTheme(cloudData.currentTheme);
+                
+                alert("Dane pobrane z chmury!");
+            } else {
+                alert("Nie znaleziono danych dla tego kodu. Zapisz coś najpierw!");
+            }
+        } catch (e) {
+            console.error("Unexpected error loading:", e);
+        }
+    };
+
+    // Debounced Save Effect
+    useEffect(() => {
+        if (!syncCode) return;
+
+        const saveData = async () => {
+            const payload = {
+                difficulties,
+                selectedLessons,
+                selectedDifficulties,
+                isRandom,
+                isRandomBlur,
+                displayMode,
+                currentTheme
+            };
+
+            const { error } = await supabase
+                .from('sync_data')
+                .upsert({ 
+                    user_id: syncCode,
+                    json_data: payload,
+                    updated_at: new Date().toISOString()
+                }, { onConflict: 'user_id' });
+
+            if (error) console.error("Error saving to cloud:", error);
+        };
+
+        const timeoutId = setTimeout(saveData, 2000); // 2 second debounce
+
+        return () => clearTimeout(timeoutId);
+    }, [syncCode, difficulties, selectedLessons, selectedDifficulties, isRandom, isRandomBlur, displayMode, currentTheme]);
 
     const allLessons = [...new Set(flashcards.map(card => card.id_lekcji))];
 
@@ -497,6 +574,9 @@ const FlashcardApp = () => {
                     setShowCatalogue(prev => !prev);
                     setShowSettings(false);
                 }}
+                syncCode={syncCode}
+                setSyncCode={setSyncCode}
+                onForceSync={loadCloudData}
             />
         </div>
     );

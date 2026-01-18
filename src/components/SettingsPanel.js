@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, ListOrdered, Shuffle, Search, Maximize, Minimize, Grid, ChevronDown, ChevronUp, RectangleVertical } from 'lucide-react';
+import { X, ListOrdered, Shuffle, Search, Maximize, Minimize, Grid, ChevronDown, ChevronUp, RectangleVertical, Cloud, Download } from 'lucide-react';
 
 const SettingsPanel = ({
     showSettings,
@@ -23,13 +23,17 @@ const SettingsPanel = ({
     deselectAllLessons,
     selectAllDifficulties,
     deselectAllDifficulties,
-    onOpenCatalogue
+    onOpenCatalogue,
+    syncCode,
+    setSyncCode,
+    onForceSync
 }) => {
     const [lessonSearch, setLessonSearch] = useState('');
     const [lessonView, setLessonView] = useState('all'); // 'all' or 'selected'
     const [isFullscreen, setIsFullscreen] = useState(!!document.fullscreenElement);
     const [showDateFilters, setShowDateFilters] = useState(false);
     const [showThemes, setShowThemes] = useState(false);
+    const [showSync, setShowSync] = useState(false);
 
     const toggleFullscreen = () => {
         if (!document.fullscreenElement) {
@@ -395,6 +399,42 @@ const SettingsPanel = ({
                                 ))}
                             </div>
                         )}
+                    </div>
+                    {/* Expandable Cloud Sync (Small) */}
+                    <div className="border border-primary rounded-lg overflow-hidden mt-6">
+                         <button 
+                            onClick={() => setShowSync(!showSync)}
+                            className="w-full flex items-center justify-between p-3 bg-secondary hover:bg-primary hover:text-secondary transition-colors"
+                         >
+                             <div className="flex items-center gap-2">
+                                <Cloud size={16} />
+                                <span className="text-sm font-bold">Synchronizacja</span>
+                             </div>
+                             {showSync ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+                         </button>
+                         
+                         {showSync && (
+                            <div className="p-3 bg-secondary border-t border-primary">
+                                <div className="text-xs mb-2 text-primary font-semibold">Hasło synchronizacji</div>
+                                <div className="flex gap-2">
+                                    <input
+                                        type="text"
+                                        value={syncCode}
+                                        onChange={(e) => setSyncCode(e.target.value)}
+                                        placeholder="Hasło"
+                                        className="flex-1 px-2 py-1 rounded bg-secondary border border-primary text-primary focus:outline-none focus:border-accent text-sm"
+                                    />
+                                    <button 
+                                        onClick={onForceSync}
+                                        className="p-2 bg-primary text-secondary rounded hover:bg-accent transition disabled:opacity-50"
+                                        disabled={!syncCode}
+                                        title="Pobierz dane"
+                                    >
+                                        <Download size={20} />
+                                    </button>
+                                </div>
+                            </div>
+                         )}
                     </div>
                 </div>
             </div>
