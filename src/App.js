@@ -5,6 +5,7 @@ import SettingsPanel from './components/SettingsPanel';
 import Flashcard from './components/Flashcard';
 import Navigation from './components/Navigation';
 import Catalogue from './components/Catalogue';
+import Quiz from './components/Quiz.js';
 import './App.css';
 import chineseData from './data/chinese.json';
 import themes from './data/themes.json';
@@ -77,6 +78,22 @@ const FlashcardApp = () => {
         chinese: true,
         pinyin: true,
         polish: true
+    });
+
+    // Persistent State: Quiz Mode
+    const [isQuizMode, setIsQuizMode] = useState(() => {
+        const saved = localStorage.getItem('isQuizMode');
+        return saved ? JSON.parse(saved) : false;
+    });
+
+    // Persistent State: Quiz Config
+    const [quizConfig, setQuizConfig] = useState(() => {
+        const saved = localStorage.getItem('quizConfig');
+        return saved ? JSON.parse(saved) : {
+            optionsCount: 4,               // 2, 3, 4
+            questionType: 'chinese',       // chinese, pinyin, polish
+            answerType: 'polish'           // chinese, pinyin, polish
+        };
     });
 
     // Lifted state for revealed fields
@@ -217,7 +234,8 @@ const FlashcardApp = () => {
         localStorage.setItem('currentTheme', currentTheme);
         localStorage.setItem('currentIndex', currentIndex);
         localStorage.setItem('isRandomBlur', JSON.stringify(isRandomBlur));
-    }, [displayMode, isRandom, selectedLessons, selectedDifficulties, difficulties, currentTheme, isRandomBlur, currentIndex]);
+        localStorage.setItem('quizConfig', JSON.stringify(quizConfig));
+    }, [displayMode, isRandom, selectedLessons, selectedDifficulties, difficulties, currentTheme, isRandomBlur, currentIndex, quizConfig]);
 
     // 1. Filtering Logic
     useEffect(() => {
@@ -476,6 +494,22 @@ const FlashcardApp = () => {
     // State for Catalogue View
     const [showCatalogue, setShowCatalogue] = useState(false);
 
+    const handleSetIsQuizMode = (newValue) => {
+        setIsQuizMode(newValue);
+        if (newValue === true) {
+            setShowCatalogue(false);
+        }
+    };
+
+    const handleToggleCatalogue = () => {
+        if (showCatalogue) {
+            setShowCatalogue(false);
+        } else {
+            setShowCatalogue(true);
+            setIsQuizMode(false);
+        }
+    };
+
     // Safety check - if no cards match filters
     if (filteredCards.length === 0) {
         return (
@@ -483,6 +517,8 @@ const FlashcardApp = () => {
                 <Header
                     showSettings={showSettings}
                     setShowSettings={setShowSettings}
+                    isQuizMode={isQuizMode}
+                    setIsQuizMode={handleSetIsQuizMode}
                 />
 
                 <SettingsPanel
@@ -508,7 +544,11 @@ const FlashcardApp = () => {
                     deselectAllLessons={deselectAllLessons}
                     selectAllDifficulties={selectAllDifficulties}
                     deselectAllDifficulties={deselectAllDifficulties}
-                    onOpenCatalogue={() => setShowCatalogue(true)}
+                    onOpenCatalogue={handleToggleCatalogue}
+                    isQuizMode={isQuizMode}
+                    setIsQuizMode={handleSetIsQuizMode}
+                    quizConfig={quizConfig}
+                    setQuizConfig={setQuizConfig}
                 />
 
                 {showCatalogue && (
@@ -550,34 +590,48 @@ const FlashcardApp = () => {
                 <Header
                     showSettings={showSettings}
                     setShowSettings={setShowSettings}
+                    isQuizMode={isQuizMode}
+                    setIsQuizMode={handleSetIsQuizMode}
                 />
 
-                <Flashcard
-                    currentCard={currentCard}
-                    currentIndex={currentIndex}
-                    totalCards={filteredCards.length}
-                    displayMode={isRandomBlur ? randomDisplayMode : displayMode}
-                    showExample={showExample}
-                    setShowExample={setShowExample}
-                    difficulty={difficulties[currentCardId]}
-                    onDifficultyChange={setDifficulty}
-                    revealedFields={revealedFields}
-                    onReveal={handleReveal}
-                    onRevealAll={revealAll}
-                    direction={direction}
-                    shouldAnimate={shouldAnimate}
-                    onIndexChange={handleManualIndexChange}
-                />
+                {isQuizMode ? (
+                    <Quiz
+                        currentCard={currentCard}
+                        allCards={filteredCards} // Pass filtered cards as pool for distractors
+                        onNext={handleNext}
+                        onIndexChange={handleManualIndexChange}
+                        config={quizConfig}
+                    />
+                ) : (
+                    <Flashcard
+                        currentCard={currentCard}
+                        currentIndex={currentIndex}
+                        totalCards={filteredCards.length}
+                        displayMode={isRandomBlur ? randomDisplayMode : displayMode}
+                        showExample={showExample}
+                        setShowExample={setShowExample}
+                        difficulty={difficulties[currentCardId]}
+                        onDifficultyChange={setDifficulty}
+                        revealedFields={revealedFields}
+                        onReveal={handleReveal}
+                        onRevealAll={revealAll}
+                        direction={direction}
+                        shouldAnimate={shouldAnimate}
+                        onIndexChange={handleManualIndexChange}
+                    />
+                )}
 
-                <Navigation
-                    handlePrev={handlePrev}
-                    handleNext={handleNext}
-                    showExample={showExample}
-                    setShowExample={setShowExample}
-                    onRevealAll={revealAll}
-                    isAnyHidden={isAnyHidden}
-                    handleReset={handleReset}
-                />
+                {!isQuizMode && (
+                    <Navigation
+                        handlePrev={handlePrev}
+                        handleNext={handleNext}
+                        showExample={showExample}
+                        setShowExample={setShowExample}
+                        onRevealAll={revealAll}
+                        isAnyHidden={isAnyHidden}
+                        handleReset={handleReset}
+                    />
+                )}
             </div>
 
             {/* Catalogue Overlay */}
@@ -620,14 +674,15 @@ const FlashcardApp = () => {
                 deselectAllLessons={deselectAllLessons}
                 selectAllDifficulties={selectAllDifficulties}
                 deselectAllDifficulties={deselectAllDifficulties}
-                onOpenCatalogue={() => {
-                    setShowCatalogue(prev => !prev);
-                    setShowSettings(false);
-                }}
+                onOpenCatalogue={handleToggleCatalogue}
                 syncCode={syncCode}
                 setSyncCode={setSyncCode}
-                onForceSync={loadCloudData}
+                onForceSync={() => loadCloudData(false)}
                 difficulties={difficulties}
+                isQuizMode={isQuizMode}
+                setIsQuizMode={handleSetIsQuizMode}
+                quizConfig={quizConfig}
+                setQuizConfig={setQuizConfig}
             />
         </div>
     );

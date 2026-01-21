@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, ListOrdered, Shuffle, Search, Maximize, Minimize, Grid, ChevronDown, ChevronUp, RectangleVertical, Cloud, Download } from 'lucide-react';
+import { X, ListOrdered, Shuffle, Search, Maximize, Minimize, Grid, ChevronDown, ChevronUp, RectangleVertical, Cloud, Download, GraduationCap, ArrowLeft } from 'lucide-react';
 
 const SettingsPanel = ({
     showSettings,
@@ -28,7 +28,11 @@ const SettingsPanel = ({
     setSyncCode,
     onForceSync,
     difficulties = {},
-    totalCards = 0
+    totalCards = 0,
+    isQuizMode,
+    setIsQuizMode,
+    quizConfig,
+    setQuizConfig
 }) => {
     const [lessonSearch, setLessonSearch] = useState('');
     const [lessonView, setLessonView] = useState('all'); // 'all' or 'selected'
@@ -156,6 +160,13 @@ const SettingsPanel = ({
                                 {isFullscreen ? <Minimize size={24} /> : <Maximize size={24} />}
                             </button>
                             <button
+                                onClick={() => setIsQuizMode(!isQuizMode)}
+                                className="p-2 rounded-full hover:bg-accent hover:text-secondary transition"
+                                title={isQuizMode ? 'Wróć do Fiszek' : 'Włącz Tryb Quizu'}
+                            >
+                                {isQuizMode ? <ArrowLeft size={24} /> : <GraduationCap size={24} />}
+                            </button>
+                            <button
                                 onClick={() => setShowSettings(false)}
                                 className="p-1 rounded-full hover:bg-accent hover:text-secondary transition"
                             >
@@ -166,64 +177,108 @@ const SettingsPanel = ({
 
                     <div className="space-y-6">
 
-                        <div>
-                            <h3 className="font-semibold mb-3 text-primary">Tryb wyświetlania</h3>
-                            <div className="space-y-4">
-                                <label className="flex items-center space-x-3 cursor-pointer group">
-                                    <div className={`w-5 h-5 rounded border transition flex items-center justify-center ${isRandomBlur ? 'bg-primary border-primary' : 'border-primary group-hover:border-accent'}`}>
-                                        {isRandomBlur && <div className="w-2.5 h-2.5 bg-secondary rounded-sm" />}
-                                    </div>
-                                    <input
-                                        type="checkbox"
-                                        checked={isRandomBlur}
-                                        onChange={(e) => setIsRandomBlur(e.target.checked)}
-                                        className="hidden"
-                                    />
-                                    <span className={`transition ${isRandomBlur ? 'font-bold' : ''} group-hover:text-accent`}>Losowe ukrywanie (1-2 pola)</span>
-                                </label>
+                        {!isQuizMode && (
+                            <div>
+                                <h3 className="font-semibold mb-3 text-primary">Tryb wyświetlania</h3>
+                                <div className="space-y-4">
+                                    <label className="flex items-center space-x-3 cursor-pointer group">
+                                        <div className={`w-5 h-5 rounded border transition flex items-center justify-center ${isRandomBlur ? 'bg-primary border-primary' : 'border-primary group-hover:border-accent'}`}>
+                                            {isRandomBlur && <div className="w-2.5 h-2.5 bg-secondary rounded-sm" />}
+                                        </div>
+                                        <input
+                                            type="checkbox"
+                                            checked={isRandomBlur}
+                                            onChange={(e) => setIsRandomBlur(e.target.checked)}
+                                            className="hidden"
+                                        />
+                                        <span className={`transition ${isRandomBlur ? 'font-bold' : ''} group-hover:text-accent`}>Losowe ukrywanie (1-2 pola)</span>
+                                    </label>
 
-                                <div className={`space-y-2 pl-2 border-l-2 border-primary border-opacity-20 transition-opacity duration-300 ${isRandomBlur ? 'opacity-40 pointer-events-none' : 'opacity-100'}`}>
-                                    {['chinese', 'pinyin', 'polish'].map(field => (
-                                        <label key={field} className="flex items-center space-x-2 cursor-pointer group">
-                                            <div className={`w-4 h-4 rounded border transition flex items-center justify-center ${displayMode[field] ? 'bg-primary border-primary' : 'border-primary group-hover:border-accent'}`}>
-                                                {displayMode[field] && <div className="w-2 h-2 bg-secondary rounded-sm" />}
-                                            </div>
-                                            <input
-                                                type="checkbox"
-                                                checked={displayMode[field]}
-                                                onChange={(e) => setDisplayMode({ ...displayMode, [field]: e.target.checked })}
-                                                className="hidden"
-                                            />
-                                            <span className="group-hover:text-accent capitalize">
-                                                {field === 'chinese' ? 'Chiński' : field === 'pinyin' ? 'Pinyin' : 'Polski'}
-                                            </span>
-                                        </label>
-                                    ))}
+                                    <div className={`space-y-2 pl-2 border-l-2 border-primary border-opacity-20 transition-opacity duration-300 ${isRandomBlur ? 'opacity-40 pointer-events-none' : 'opacity-100'}`}>
+                                        {['chinese', 'pinyin', 'polish'].map(field => (
+                                            <label key={field} className="flex items-center space-x-2 cursor-pointer group">
+                                                <div className={`w-4 h-4 rounded border transition flex items-center justify-center ${displayMode[field] ? 'bg-primary border-primary' : 'border-primary group-hover:border-accent'}`}>
+                                                    {displayMode[field] && <div className="w-2 h-2 bg-secondary rounded-sm" />}
+                                                </div>
+                                                <input
+                                                    type="checkbox"
+                                                    checked={displayMode[field]}
+                                                    onChange={(e) => setDisplayMode({ ...displayMode, [field]: e.target.checked })}
+                                                    className="hidden"
+                                                />
+                                                <span className="group-hover:text-accent capitalize">
+                                                    {field === 'chinese' ? 'Chiński' : field === 'pinyin' ? 'Pinyin' : 'Polski'}
+                                                </span>
+                                            </label>
+                                        ))}
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        )}
 
-                        <div>
-                            <h3 className="font-semibold mb-3 text-primary">Tryb nauki</h3>
-                            <div className="flex gap-2">
-                                <button
-                                    onClick={() => setIsRandom(false)}
-                                    className={`flex-1 flex items-center justify-center gap-2 px-3 py-2 rounded-full text-sm transition font-semibold ${!isRandom ? 'bg-primary text-secondary hover:bg-accent hover:border-accent hover:text-secondary' : 'bg-transparent border border-primary text-primary hover:bg-accent hover:border-accent hover:text-secondary'
-                                        }`}
-                                >
-                                    <ListOrdered size={16} />
-                                    Kolejność
-                                </button>
-                                <button
-                                    onClick={() => setIsRandom(true)}
-                                    className={`flex-1 flex items-center justify-center gap-2 px-3 py-2 rounded-full text-sm transition font-semibold ${isRandom ? 'bg-primary text-secondary hover:bg-accent hover:border-accent hover:text-secondary' : 'bg-transparent border border-primary text-primary hover:bg-accent hover:border-accent hover:text-secondary'
-                                        }`}
-                                >
-                                    <Shuffle size={16} />
-                                    Losowo
-                                </button>
+                        {/* Quiz Configuration - ONLY in Quiz Mode */}
+                        {isQuizMode && (
+                            <div>
+                                <h3 className="font-semibold mb-3 text-primary">Konfiguracja Quizu</h3>
+
+                                {/* Options Count */}
+                                <div className="mb-4">
+                                    <label className="text-sm font-semibold mb-2 block opacity-80">Liczba odpowiedzi</label>
+                                    <div className="flex bg-primary rounded-lg p-1">
+                                        {[2, 3, 4].map(count => (
+                                            <button
+                                                key={count}
+                                                onClick={() => setQuizConfig({ ...quizConfig, optionsCount: count })}
+                                                className={`flex-1 py-1 text-sm font-bold rounded-md transition ${quizConfig.optionsCount === count
+                                                    ? 'bg-secondary text-primary'
+                                                    : 'text-secondary hover:bg-accent'
+                                                    }`}
+                                            >
+                                                {count}
+                                            </button>
+                                        ))}
+                                    </div>
+                                </div>
+
+                                {/* Question Type */}
+                                <div className="mb-4">
+                                    <label className="text-sm font-semibold mb-2 block opacity-80">Pytanie (Co widzisz?)</label>
+                                    <div className="flex bg-primary rounded-lg p-1">
+                                        {['chinese', 'pinyin', 'polish'].map(type => (
+                                            <button
+                                                key={type}
+                                                onClick={() => setQuizConfig({ ...quizConfig, questionType: type })}
+                                                className={`flex-1 py-1 text-xs font-bold rounded-md transition capitalize ${quizConfig.questionType === type
+                                                    ? 'bg-secondary text-primary'
+                                                    : 'text-secondary hover:bg-accent'
+                                                    }`}
+                                            >
+                                                {type === 'chinese' ? 'Znak' : type}
+                                            </button>
+                                        ))}
+                                    </div>
+                                </div>
+
+                                {/* Answer Type */}
+                                <div className="mb-2">
+                                    <label className="text-sm font-semibold mb-2 block opacity-80">Odpowiedź (Co wybierasz?)</label>
+                                    <div className="flex bg-primary rounded-lg p-1">
+                                        {['chinese', 'pinyin', 'polish'].map(type => (
+                                            <button
+                                                key={type}
+                                                onClick={() => setQuizConfig({ ...quizConfig, answerType: type })}
+                                                className={`flex-1 py-1 text-xs font-bold rounded-md transition capitalize ${quizConfig.answerType === type
+                                                    ? 'bg-secondary text-primary'
+                                                    : 'text-secondary hover:bg-accent'
+                                                    }`}
+                                            >
+                                                {type === 'chinese' ? 'Znak' : type}
+                                            </button>
+                                        ))}
+                                    </div>
+                                </div>
                             </div>
-                        </div>
+                        )}
 
                         <div>
                             <div className="flex justify-between items-center mb-3">
