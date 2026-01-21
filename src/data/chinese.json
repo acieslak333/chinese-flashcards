@@ -3298,5 +3298,126 @@
             "pinyin": "Wǒ bú huì.",
             "polski": "Nie potrafię."
         }
+    },
+    {
+        "chiński": "直走",
+        "pinyin": "zhí zǒu",
+        "polskie_znaczenie": "Idź prosto",
+        "id_lekcji": "18.01.2025",
+        "przykład": {
+            "chiński": "你先直走，然后右转。",
+            "pinyin": "Nǐ xiān zhí zǒu, ránhòu yòu zhuǎn.",
+            "polski": "Najpierw idź prosto, potem skręć w prawo."
+        }
+    },
+    {
+        "chiński": "左转",
+        "pinyin": "zuǒ zhuǎn",
+        "polskie_znaczenie": "Skręć w lewo",
+        "id_lekcji": "18.01.2025",
+        "przykład": {
+            "chiński": "在十字路口左转。",
+            "pinyin": "Zài shízì lùkǒu zuǒ zhuǎn.",
+            "polski": "Skręć w lewo na skrzyżowaniu."
+        }
+    },
+    {
+        "chiński": "右转",
+        "pinyin": "yòu zhuǎn",
+        "polskie_znaczenie": "Skręć w prawo",
+        "id_lekcji": "18.01.2025",
+        "przykład": {
+            "chiński": "然后右转，咖啡馆在左边。",
+            "pinyin": "Ránhòu yòu zhuǎn, kāfēiguǎn zài zuǒbiān.",
+            "polski": "Potem skręć w prawo, kawiarnia jest po lewej."
+        }
+    },
+    {
+        "chiński": "在前面",
+        "pinyin": "zài qiánmiàn",
+        "polskie_znaczenie": "Na przodzie / przed sobą",
+        "id_lekcji": "18.01.2025",
+        "przykład": {
+            "chiński": "学校在前面。",
+            "pinyin": "Xuéxiào zài qiánmiàn.",
+            "polski": "Szkoła jest przed nami."
+        }
+    },
+    {
+        "chiński": "在后面",
+        "pinyin": "zài hòumiàn",
+        "polskie_znaczenie": "Z tyłu",
+        "id_lekcji": "18.01.2025",
+        "przykład": {
+            "chiński": "这是在后面。",
+            "pinyin": "Zhè shì zài hòumiàn.",
+            "polski": "To jest z tyłu."
+        }
+    },
+    {
+        "chiński": "往前",
+        "pinyin": "wǎng qián",
+        "polskie_znaczenie": "Do przodu",
+        "id_lekcji": "18.01.2025",
+        "przykład": {
+            "chiński": "往前走。",
+            "pinyin": "Wǎng qián zǒu.",
+            "polski": "Idź do przodu."
+        }
+    },
+    {
+        "chiński": "往后",
+        "pinyin": "wǎng hòu",
+        "polskie_znaczenie": "Do tyłu",
+        "id_lekcji": "18.01.2025",
+        "przykład": {
+            "chiński": "往后退。",
+            "pinyin": "Wǎng hòu tuì.",
+            "polski": "Cofnij się."
+        }
+    },
+    {
+        "chiński": "往前直走",
+        "pinyin": "wǎng qián zhí zǒu",
+        "polskie_znaczenie": "Idź prosto do przodu",
+        "id_lekcji": "18.01.2025",
+        "przykład": {
+            "chiński": "你直走，往前直走。",
+            "pinyin": "Nǐ zhí zǒu, wǎng qián zhí zǒu.",
+            "polski": "Idź prosto, idź prosto przed siebie."
+        }
+    },
+    {
+        "chiński": "十字路口",
+        "pinyin": "shízì lùkǒu",
+        "polskie_znaczenie": "Skrzyżowanie",
+        "id_lekcji": "18.01.2025",
+        "przykład": {
+            "chiński": "在十字路口右转。",
+            "pinyin": "Zài shízì lùkǒu yòu zhuǎn.",
+            "polski": "Na skrzyżowaniu skręć w prawo."
+        }
+    },
+    {
+        "chiński": "入口",
+        "pinyin": "rù kǒu",
+        "polskie_znaczenie": "wejście",
+        "id_lekcji": "18.01.2025",
+        "przykład": {
+            "chiński": "入口在哪里？",
+            "pinyin": "Rù kǒu zài nǎlǐ?",
+            "polski": "Gdzie jest wejście?"
+        }
+    },
+    {
+        "chiński": "出口",
+        "pinyin": "chū kǒu",
+        "polskie_znaczenie": "wyjście",
+        "id_lekcji": "18.01.2025",
+        "przykład": {
+            "chiński": "这是出口。",
+            "pinyin": "Zhè shì chū kǒu.",
+            "polski": "To jest wyjście."
+        }
     }
 ]
