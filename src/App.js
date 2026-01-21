@@ -553,7 +553,7 @@ const FlashcardApp = () => {
                     onReveal={handleReveal}
                     onRevealAll={revealAll}
                     direction={direction}
-                    key={currentCardId}
+                    onIndexChange={setCurrentIndex}
                 />
 
                 <Navigation
