@@ -66,6 +66,7 @@ const FlashcardApp = () => {
     });
 
     const [direction, setDirection] = useState('next');
+    const [shouldAnimate, setShouldAnimate] = useState(true);
 
     // Persistent State: Random Blur
     const [isRandomBlur, setIsRandomBlur] = useState(() => {
@@ -337,14 +338,25 @@ const FlashcardApp = () => {
 
     const handleNext = () => {
         setDirection('next');
+        setShouldAnimate(true);
         setCurrentIndex((currentIndex + 1) % filteredCards.length);
         setShowExample(false);
     };
 
     const handlePrev = () => {
         setDirection('prev');
+        setShouldAnimate(true);
         setCurrentIndex((currentIndex - 1 + filteredCards.length) % filteredCards.length);
         setShowExample(false);
+    };
+
+    const handleManualIndexChange = (index, meta) => {
+        if (meta?.isScrubbing) {
+            setShouldAnimate(false);
+        } else {
+            setShouldAnimate(true);
+        }
+        setCurrentIndex(index);
     };
 
     const revealAll = () => {
@@ -553,7 +565,8 @@ const FlashcardApp = () => {
                     onReveal={handleReveal}
                     onRevealAll={revealAll}
                     direction={direction}
-                    onIndexChange={setCurrentIndex}
+                    shouldAnimate={shouldAnimate}
+                    onIndexChange={handleManualIndexChange}
                 />
 
                 <Navigation

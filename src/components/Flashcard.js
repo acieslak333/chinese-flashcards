@@ -13,7 +13,8 @@ const Flashcard = ({
     onReveal,
     onRevealAll,
     direction,
-    onIndexChange
+    onIndexChange,
+    shouldAnimate = true
 }) => {
     // Fast Scroll Scrubber State
     const [isDragging, setIsDragging] = React.useState(false);
@@ -47,7 +48,7 @@ const Flashcard = ({
             setFractionalIndex(prev => {
                 const target = Math.round(prev);
                 setDragIndex(target);
-                if (onIndexChange) onIndexChange(target);
+                if (onIndexChange) onIndexChange(target, { isScrubbing: true });
                 return target;
             });
             return;
@@ -69,7 +70,8 @@ const Flashcard = ({
             const rounded = Math.round(next);
             if (rounded !== dragIndex) {
                 setDragIndex(rounded);
-                if (onIndexChange) onIndexChange(rounded);
+                if (onIndexChange) onIndexChange(rounded, { isScrubbing: true });
+                if (navigator.vibrate) navigator.vibrate(5);
             }
             return next;
         });
@@ -135,7 +137,7 @@ const Flashcard = ({
 
         if (newIndex !== dragIndex) {
             setDragIndex(newIndex);
-            if (onIndexChange) onIndexChange(newIndex);
+            if (onIndexChange) onIndexChange(newIndex, { isScrubbing: true });
 
             if (navigator.vibrate) {
                 navigator.vibrate(5);
@@ -195,7 +197,10 @@ const Flashcard = ({
 
     return (
         <div className="flex-1 flex flex-col justify-center items-center p-4 overflow-y-auto w-full">
-            <div className={`bg-secondary rounded-3xl p-8 max-w-2xl w-full border-4 border-secondary ${animationClass}`}>
+            <div
+                key={shouldAnimate ? currentIndex : 'scrubbing-view'}
+                className={`bg-secondary rounded-3xl p-8 max-w-2xl w-full border-4 border-secondary ${shouldAnimate ? animationClass : ''}`}
+            >
                 <div className="text-center mb-6 relative h-10 flex items-center justify-center overflow-hidden">
 
                     {/* Container for the pill shape to hold directional pulses */}
