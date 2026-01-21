@@ -21,14 +21,79 @@ const Flashcard = ({
     const [initialIndex, setInitialIndex] = React.useState(0);
     const [dragIndex, setDragIndex] = React.useState(currentIndex);
     const [fractionalIndex, setFractionalIndex] = React.useState(currentIndex);
+    const [isScrubbing, setIsScrubbing] = React.useState(false);
+
+    // Physics State
+    const velocityRef = React.useRef(0);
+    const lastXRef = React.useRef(0);
+    const lastTimeRef = React.useRef(0);
+    const requestRef = React.useRef();
+
+    const applyMomentum = () => {
+        // Friction factor (0.95 = slippery, 0.8 = rough)
+        const friction = 0.98;
+
+        // Apply friction
+        velocityRef.current *= friction;
+
+        if (Math.abs(velocityRef.current) < 0.005) {
+            // Stop
+            cancelAnimationFrame(requestRef.current);
+            setIsScrubbing(false);
+            // Snap to nearest integer when stopping for clean view?
+            // User requested "scroll when let go", so let's let it drift. 
+            // We can snap only if very slow or let it be continuous.
+            // Let's snap lightly at the very end to align.
+            setFractionalIndex(prev => {
+                const target = Math.round(prev);
+                setDragIndex(target);
+                if (onIndexChange) onIndexChange(target);
+                return target;
+            });
+            return;
+        }
+
+        setFractionalIndex(prev => {
+            let next = prev + velocityRef.current;
+            // Clamp
+            if (next < 0) {
+                next = 0;
+                velocityRef.current = 0;
+            }
+            if (next > totalCards - 1) {
+                next = totalCards - 1;
+                velocityRef.current = 0;
+            }
+
+            // Update drag index roughly
+            const rounded = Math.round(next);
+            if (rounded !== dragIndex) {
+                setDragIndex(rounded);
+                if (onIndexChange) onIndexChange(rounded);
+            }
+            return next;
+        });
+
+        requestRef.current = requestAnimationFrame(applyMomentum);
+    };
 
     const handlePointerDown = (e) => {
+        // Stop any ongoing momentum
+        cancelAnimationFrame(requestRef.current);
+
         setIsDragging(true);
+        setIsScrubbing(true);
         setStartX(e.clientX || e.touches[0].clientX);
-        setInitialIndex(currentIndex);
+        lastXRef.current = e.clientX || e.touches[0].clientX;
+        lastTimeRef.current = Date.now();
+        velocityRef.current = 0;
+
+        setInitialIndex(fractionalIndex); // Start from current fractional pos
+
         setDragIndex(currentIndex);
-        setFractionalIndex(currentIndex);
-        e.currentTarget.setPointerCapture(e.pointerId); // Capture pointer for smooth dragging outside element
+        // setFractionalIndex(currentIndex); // Keep existing fractional index to avoid jump?
+        // Actually if we stop momentum, we are at fractionalIndex.
+        e.currentTarget.setPointerCapture(e.pointerId);
     };
 
     const handlePointerMove = (e) => {
@@ -36,20 +101,31 @@ const Flashcard = ({
         const x = e.clientX || (e.touches && e.touches[0] ? e.touches[0].clientX : 0);
         if (!x) return;
 
+        const now = Date.now();
+        const dt = now - lastTimeRef.current;
+
+        // Calculate instantaneous velocity (cards per frame approx)
+        if (dt > 0) {
+            const dx = x - lastXRef.current;
+            // Negative dx means moving Left. 
+            // Moving Left means we want index to Increase (next cards).
+            // So velocity is -dx. 
+            // Scale it: threshold 15px = 1 card.
+            const threshold = 15;
+            const newVelocity = -dx / threshold;
+
+            // Smooth velocity (simple low-pass filter)
+            velocityRef.current = newVelocity * 0.5 + velocityRef.current * 0.5;
+        }
+
+        lastXRef.current = x;
+        lastTimeRef.current = now;
+
         const deltaX = x - startX;
-        const threshold = 30; // Pixels per card increment - visually matching expected drag speed
+        const threshold = 15;
 
-        // Calculate smooth fractional index
-        // Inverse direction: Drag Left (negative delta) -> Increase Index (move to next)
-        // Standard swipe logic: Pull content left to see what's on the right.
-        let rawFraction = initialIndex + (deltaX / threshold); // Try direct mapping first (Right -> Increase) as per previous build
-        // If user says "move in direction of scroll", usually if I drag LEFT, I want dots to move LEFT.
-        // If dots move LEFT, index INCREASES.
-        // So (deltaX < 0) -> Index Incr.
-        // Let's invert:
-        rawFraction = initialIndex - (deltaX / threshold);
+        let rawFraction = initialIndex - (deltaX / threshold);
 
-        // Clamp
         if (rawFraction < 0) rawFraction = 0;
         if (rawFraction > totalCards - 1) rawFraction = totalCards - 1;
 
@@ -61,7 +137,6 @@ const Flashcard = ({
             setDragIndex(newIndex);
             if (onIndexChange) onIndexChange(newIndex);
 
-            // Haptic feedback
             if (navigator.vibrate) {
                 navigator.vibrate(5);
             }
@@ -71,6 +146,15 @@ const Flashcard = ({
     const handlePointerUp = (e) => {
         setIsDragging(false);
         e.currentTarget.releasePointerCapture(e.pointerId);
+
+        // Start momentum if velocity is significant
+        if (Math.abs(velocityRef.current) > 0.01) {
+            requestRef.current = requestAnimationFrame(applyMomentum);
+        } else {
+            // Snap if stopped
+            setFractionalIndex(prev => Math.round(prev));
+            setIsScrubbing(false);
+        }
     };
 
     // Calculate dots window
@@ -85,7 +169,7 @@ const Flashcard = ({
     const visibleDots = Array.from({ length: Math.min(dotsWindow, totalCards) }, (_, i) => startDot + i);
 
     // Visual Constants
-    const DOT_SPACING = 48; // px (width + gap)
+    const DOT_SPACING = 16; // px (width + gap)
 
     const getContentStyle = (field, isVisible) => {
         if (isVisible || revealedFields[field]) return '';
@@ -123,57 +207,55 @@ const Flashcard = ({
                             onPointerMove={handlePointerMove}
                             onPointerUp={handlePointerUp}
                             onPointerCancel={handlePointerUp}
-                            onPointerLeave={handlePointerUp}
                         >
                             {currentIndex + 1} / {totalCards}
                         </span>
                     </div>
 
                     {/* Dots overlay - visible only when dragging */}
-                    {isDragging && (
+                    {/* Dots overlay - visible when scrubbing with transition */}
+                    <div
+                        className={`absolute inset-0 flex items-center justify-center pointer-events-none z-0 transition-all duration-100 ease-out origin-center ${isScrubbing ? 'opacity-100 scale-y-100' : 'opacity-0 scale-y-0'}`}
+                    >
                         <div
-                            className="absolute inset-0 flex items-center justify-center pointer-events-none z-0"
+                            className="flex items-center gap-0 will-change-transform"
+                            style={{
+                                // Shift logic ensures the fractional index is exactly at the center
+                                // Subtracting DOT_SPACING / 2 centers the 'gap' or the dot itself depending on box model
+                                // Here we center the dot (width 24px centered in 48px slot)
+                                transform: `translateX(${- (fractionalIndex - startDot) * DOT_SPACING + (visibleDots.length * DOT_SPACING / 2) - (DOT_SPACING / 2)}px)`
+                            }}
                         >
-                            <div
-                                className="flex items-center gap-0 will-change-transform"
-                                style={{
-                                    // Shift logic ensures the fractional index is exactly at the center
-                                    // Subtracting DOT_SPACING / 2 centers the 'gap' or the dot itself depending on box model
-                                    // Here we center the dot (width 24px centered in 48px slot)
-                                    transform: `translateX(${- (fractionalIndex - startDot) * DOT_SPACING + (visibleDots.length * DOT_SPACING / 2) - (DOT_SPACING / 2)}px)`
-                                }}
-                            >
-                                {visibleDots.map(idx => {
-                                    const rawDistance = Math.abs(idx - fractionalIndex);
-                                    // Plateau: Keep scale 1.0 for a small area around center (under the text)
-                                    // Text is approx 80-100px wide. Spacing is 48px.
-                                    // So roughly +/- 1.0 unit should be max scale.
-                                    const effectiveDistance = Math.max(0, rawDistance - 0.8);
+                            {visibleDots.map(idx => {
+                                const rawDistance = Math.abs(idx - fractionalIndex);
+                                // Plateau: Keep scale 1.0 for a small area around center (under the text)
+                                // Text is approx 80-100px wide. Spacing is 48px.
+                                // So roughly +/- 1.0 unit should be max scale.
+                                const effectiveDistance = Math.max(0, rawDistance - 0.8);
 
-                                    // Scale Logic: Fisheye with plateau
-                                    let scale = Math.max(0.0, 1 - Math.pow(effectiveDistance * 0.2, 2));
+                                // Scale Logic: Fisheye with plateau
+                                let scale = Math.max(0.0, 1 - Math.pow(effectiveDistance * 0.2, 2));
 
-                                    return (
+                                return (
+                                    <div
+                                        key={idx}
+                                        className="flex items-center justify-center"
+                                        style={{ width: DOT_SPACING, height: DOT_SPACING }}
+                                    >
                                         <div
-                                            key={idx}
-                                            className="flex items-center justify-center"
-                                            style={{ width: DOT_SPACING, height: DOT_SPACING }}
-                                        >
-                                            <div
-                                                className="bg-accent rounded-full shadow-sm transition-transform duration-100"
-                                                style={{
-                                                    width: '24px',
-                                                    height: '24px',
-                                                    transform: `scale(${scale})`,
-                                                    opacity: 1
-                                                }}
-                                            />
-                                        </div>
-                                    );
-                                })}
-                            </div>
+                                            className="bg-accent rounded-full shadow-sm transition-transform duration-100"
+                                            style={{
+                                                width: '24px',
+                                                height: '24px',
+                                                transform: `scale(${scale})`,
+                                                opacity: 1
+                                            }}
+                                        />
+                                    </div>
+                                );
+                            })}
                         </div>
-                    )}
+                    </div>
                 </div>
 
                 <div className="min-h-[250px] sm:min-h-[300px] flex flex-col justify-center items-center space-y-4 sm:space-y-6">
