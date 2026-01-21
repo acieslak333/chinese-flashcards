@@ -103,7 +103,7 @@ const FlashcardApp = () => {
                 .eq('user_id', syncCode)
                 .single();
 
-            if (error && error.code !== 'PGRST116') { 
+            if (error && error.code !== 'PGRST116') {
                 console.error("Error loading data:", error);
                 if (!isSilent) alert("Błąd pobierania danych z chmury");
                 return;
@@ -119,7 +119,7 @@ const FlashcardApp = () => {
                 if (cloudData.displayMode) setDisplayMode(cloudData.displayMode);
                 if (cloudData.currentTheme) setCurrentTheme(cloudData.currentTheme);
                 if (cloudData.currentIndex !== undefined) setCurrentIndex(cloudData.currentIndex);
-                
+
                 console.log("✅ Data loaded from cloud (Auto: " + isSilent + ")");
                 if (!isSilent) alert("Dane pobrane z chmury!");
             } else {
@@ -141,7 +141,7 @@ const FlashcardApp = () => {
     // Debounced Save Effect
     const saveData = React.useCallback(async () => {
         if (!syncCode) return;
-        
+
         const payload = {
             difficulties,
             selectedLessons,
@@ -155,7 +155,7 @@ const FlashcardApp = () => {
 
         const { error } = await supabase
             .from('sync_table')
-            .upsert({ 
+            .upsert({
                 user_id: syncCode,
                 json_data: payload,
                 updated_at: new Date().toISOString()
@@ -167,7 +167,7 @@ const FlashcardApp = () => {
     // Debounced Save Effect (Auto-save while working)
     useEffect(() => {
         if (!syncCode) return;
-        const timeoutId = setTimeout(saveData, 2000); 
+        const timeoutId = setTimeout(saveData, 2000);
         return () => clearTimeout(timeoutId);
     }, [saveData, syncCode]); // saveData changes whenever dependencies change
 
@@ -231,7 +231,7 @@ const FlashcardApp = () => {
             console.log('Current difficulties map:', difficulties);
             filtered = filtered.filter(card => {
                 const cardId = flashcards.indexOf(card);
-                const cardDifficulty = difficulties[cardId] || 'średnie'; // Default to medium if not set
+                const cardDifficulty = difficulties[cardId] || 'pozostałe'; // Default to 'pozostałe' (others) if not set
                 console.log(`Card ${cardId}: ${cardDifficulty}`);
                 return selectedDifficulties.includes(cardDifficulty);
             });
@@ -385,7 +385,7 @@ const FlashcardApp = () => {
     const selectAllLessons = () => setSelectedLessons([...allLessons]);
     const deselectAllLessons = () => setSelectedLessons([]);
 
-    const selectAllDifficulties = () => setSelectedDifficulties(['łatwe', 'średnie', 'trudne']);
+    const selectAllDifficulties = () => setSelectedDifficulties(['łatwe', 'średnie', 'trudne', 'pozostałe']);
     const deselectAllDifficulties = () => setSelectedDifficulties([]);
 
     // handleReset is defined above with swipe handlers
@@ -485,6 +485,8 @@ const FlashcardApp = () => {
                     toggleLesson={toggleLesson}
                     selectedDifficulties={selectedDifficulties}
                     toggleDifficulty={toggleDifficulty}
+                    difficulties={difficulties}
+                    totalCards={flashcards.length}
                     currentTheme={currentTheme}
                     setCurrentTheme={setCurrentTheme}
                     themes={themes}
@@ -498,10 +500,10 @@ const FlashcardApp = () => {
                 />
 
                 {showCatalogue && (
-                     <Catalogue 
-                        cards={filteredCards} 
-                        onClose={() => setShowCatalogue(false)} 
-                     />
+                    <Catalogue
+                        cards={filteredCards}
+                        onClose={() => setShowCatalogue(false)}
+                    />
                 )}
 
                 <div className="flex-1 flex flex-col items-center justify-center p-8 text-center opacity-60">
@@ -527,7 +529,7 @@ const FlashcardApp = () => {
     if (!currentCard) return null;
 
     return (
-        <div 
+        <div
             {...swipeHandlers}
             className="h-[100dvh] bg-secondary text-primary flex flex-col overflow-hidden transition-colors duration-500 relative"
         >
@@ -567,8 +569,8 @@ const FlashcardApp = () => {
 
             {/* Catalogue Overlay */}
             {showCatalogue && (
-                <Catalogue 
-                    cards={filteredCards} 
+                <Catalogue
+                    cards={filteredCards}
                     onClose={() => setShowCatalogue(false)}
                     showSettings={showSettings}
                     setShowSettings={setShowSettings}
@@ -595,6 +597,7 @@ const FlashcardApp = () => {
                 toggleLesson={toggleLesson}
                 selectedDifficulties={selectedDifficulties}
                 toggleDifficulty={toggleDifficulty}
+                totalCards={flashcards.length}
                 currentTheme={currentTheme}
                 setCurrentTheme={setCurrentTheme}
                 themes={themes}

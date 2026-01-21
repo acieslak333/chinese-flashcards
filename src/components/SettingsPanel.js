@@ -27,7 +27,8 @@ const SettingsPanel = ({
     syncCode,
     setSyncCode,
     onForceSync,
-    difficulties = {}
+    difficulties = {},
+    totalCards = 0
 }) => {
     const [lessonSearch, setLessonSearch] = useState('');
     const [lessonView, setLessonView] = useState('all'); // 'all' or 'selected'
@@ -140,7 +141,7 @@ const SettingsPanel = ({
                             <h2 className="text-xl font-bold text-primary">Ustawienia</h2>
                         </div>
                         <div className="flex items-center gap-2">
-                             <button
+                            <button
                                 onClick={onOpenCatalogue}
                                 className="p-2 rounded-full hover:bg-accent hover:text-secondary transition"
                                 title={showCatalogue ? "Wróć do Fiszek" : "Otwórz Katalog"}
@@ -251,15 +252,15 @@ const SettingsPanel = ({
 
                                 {/* Expandable Date Filters */}
                                 <div className="border border-primary rounded-lg overflow-hidden">
-                                     <button 
+                                    <button
                                         onClick={() => setShowDateFilters(!showDateFilters)}
                                         className="w-full flex items-center justify-between p-3 bg-secondary hover:bg-primary hover:text-secondary transition-colors"
-                                     >
-                                         <span className="text-sm font-bold">Filtruj wg daty</span>
-                                         {showDateFilters ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
-                                     </button>
-                                     
-                                     {showDateFilters && (
+                                    >
+                                        <span className="text-sm font-bold">Filtruj wg daty</span>
+                                        {showDateFilters ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+                                    </button>
+
+                                    {showDateFilters && (
                                         <div className="p-3 bg-secondary border-t border-primary space-y-4">
                                             {/* Years Multi-Select */}
                                             <div className="space-y-1">
@@ -303,7 +304,7 @@ const SettingsPanel = ({
                                                 </div>
                                             </div>
                                         </div>
-                                     )}
+                                    )}
                                 </div>
 
 
@@ -349,7 +350,7 @@ const SettingsPanel = ({
                             <div className="flex justify-between items-center mb-3">
                                 <h3 className="font-semibold text-primary">Trudność</h3>
                                 <div className="flex gap-2 text-xs">
-                                    {selectedDifficulties.length === 3 ? (
+                                    {selectedDifficulties.length === 4 ? (
                                         <button onClick={deselectAllDifficulties} className="text-accent hover:underline hover:text-accent font-bold">Odznacz wszystkie</button>
                                     ) : (
                                         <button onClick={selectAllDifficulties} className="text-accent hover:underline hover:text-accent font-bold">Zaznacz wszystkie</button>
@@ -357,9 +358,22 @@ const SettingsPanel = ({
                                 </div>
                             </div>
 
-                            <div className="flex gap-2 w-full">
-                                {['łatwe', 'średnie', 'trudne'].map(diff => {
-                                    const count = Object.values(difficulties).filter(d => d === diff).length;
+                            <div className="flex flex-wrap gap-2 w-full">
+                                {['łatwe', 'średnie', 'trudne', 'pozostałe'].map(diff => {
+                                    let count;
+                                    if (diff === 'pozostałe') {
+                                        count = totalCards - Object.keys(difficulties).filter(k => ['łatwe', 'średnie', 'trudne'].includes(difficulties[k])).length;
+                                        // Correction: above logic assumes no other keys in difficulties. 
+                                        // Safer: count = totalCards - cards_with_known_difficulty
+                                        // Actually simplest way if we trust 'difficulties' map matches 'flashcards' indices:
+                                        // count = totalCards - Object.keys(difficulties).length; -> This assumes every entry in 'difficulties' is valid.
+                                        // Let's stick to counting explicit values to be safe if dirty data exists.
+                                        const knownCount = Object.values(difficulties).filter(d => ['łatwe', 'średnie', 'trudne'].includes(d)).length;
+                                        count = totalCards - knownCount;
+                                    } else {
+                                        count = Object.values(difficulties).filter(d => d === diff).length;
+                                    }
+
                                     return (
                                         <button
                                             key={diff}
@@ -379,14 +393,14 @@ const SettingsPanel = ({
                     </div>
                     {/* Expandable Theme List */}
                     <div className="border border-primary rounded-lg overflow-hidden mt-6">
-                        <button 
+                        <button
                             onClick={() => setShowThemes(!showThemes)}
                             className="w-full flex items-center justify-between p-3 bg-secondary hover:bg-primary hover:text-secondary transition-colors"
                         >
                             <span className="text-sm font-bold">Wybierz motyw</span>
                             {showThemes ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
                         </button>
-                        
+
                         {showThemes && (
                             <div className="p-3 bg-secondary border-t border-primary grid grid-cols-1 gap-2">
                                 {Object.entries(themes).map(([key, theme]) => (
@@ -411,18 +425,18 @@ const SettingsPanel = ({
                     </div>
                     {/* Expandable Cloud Sync (Small) */}
                     <div className="border border-primary rounded-lg overflow-hidden mt-6">
-                         <button 
+                        <button
                             onClick={() => setShowSync(!showSync)}
                             className="w-full flex items-center justify-between p-3 bg-secondary hover:bg-primary hover:text-secondary transition-colors"
-                         >
-                             <div className="flex items-center gap-2">
+                        >
+                            <div className="flex items-center gap-2">
                                 <Cloud size={16} />
                                 <span className="text-sm font-bold">Synchronizacja</span>
-                             </div>
-                             {showSync ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
-                         </button>
-                         
-                         {showSync && (
+                            </div>
+                            {showSync ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+                        </button>
+
+                        {showSync && (
                             <div className="p-3 bg-secondary border-t border-primary">
                                 <div className="text-xs mb-2 text-primary font-semibold">Hasło synchronizacji</div>
                                 <div className="flex gap-2">
@@ -433,7 +447,7 @@ const SettingsPanel = ({
                                         placeholder="Hasło"
                                         className="flex-1 px-2 py-1 rounded bg-secondary border border-primary text-primary focus:outline-none focus:border-accent text-sm"
                                     />
-                                    <button 
+                                    <button
                                         onClick={onForceSync}
                                         className="p-2 bg-primary text-secondary rounded hover:bg-accent transition disabled:opacity-50"
                                         disabled={!syncCode}
@@ -443,7 +457,7 @@ const SettingsPanel = ({
                                     </button>
                                 </div>
                             </div>
-                         )}
+                        )}
                     </div>
                 </div>
             </div>
