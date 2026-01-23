@@ -29,6 +29,7 @@ const Flashcard = ({
     const lastXRef = React.useRef(0);
     const lastTimeRef = React.useRef(0);
     const requestRef = React.useRef();
+    const lastVibratedIndexRef = React.useRef(currentIndex);
 
     const applyMomentum = () => {
         // Friction factor (0.95 = slippery, 0.8 = rough)
@@ -68,10 +69,11 @@ const Flashcard = ({
 
             // Update drag index roughly
             const rounded = Math.round(next);
-            if (rounded !== dragIndex) {
+            if (rounded !== lastVibratedIndexRef.current) {
                 setDragIndex(rounded);
                 if (onIndexChange) onIndexChange(rounded, { isScrubbing: true });
                 if (navigator.vibrate) navigator.vibrate(5);
+                lastVibratedIndexRef.current = rounded;
             }
             return next;
         });
@@ -89,6 +91,7 @@ const Flashcard = ({
         lastXRef.current = e.clientX || e.touches[0].clientX;
         lastTimeRef.current = Date.now();
         velocityRef.current = 0;
+        lastVibratedIndexRef.current = currentIndex;
 
         setInitialIndex(fractionalIndex); // Start from current fractional pos
 
@@ -135,13 +138,14 @@ const Flashcard = ({
 
         const newIndex = Math.round(rawFraction);
 
-        if (newIndex !== dragIndex) {
+        if (newIndex !== lastVibratedIndexRef.current) {
             setDragIndex(newIndex);
             if (onIndexChange) onIndexChange(newIndex, { isScrubbing: true });
 
             if (navigator.vibrate) {
                 navigator.vibrate(5);
             }
+            lastVibratedIndexRef.current = newIndex;
         }
     };
 
