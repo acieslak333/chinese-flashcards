@@ -14,6 +14,10 @@ import { supabase } from './supabaseClient';
 const FlashcardApp = () => {
     const [flashcards] = useState(chineseData);
 
+    // Detect Embed Mode
+    const searchParams = new URLSearchParams(window.location.search);
+    const isEmbed = searchParams.get('embed') === 'true';
+
 
 
     // Persistent State: Current Index (Last Flashcard)
@@ -63,6 +67,10 @@ const FlashcardApp = () => {
 
     // Persistent State: Theme
     const [currentTheme, setCurrentTheme] = useState(() => {
+        if (isEmbed) {
+            const themeKeys = Object.keys(themes);
+            return themeKeys[Math.floor(Math.random() * themeKeys.length)];
+        }
         return localStorage.getItem('currentTheme') || 'matcha-latte';
     });
 
@@ -226,16 +234,18 @@ const FlashcardApp = () => {
 
     // Persistence Effect
     useEffect(() => {
-        localStorage.setItem('displayMode', JSON.stringify(displayMode));
-        localStorage.setItem('isRandom', JSON.stringify(isRandom));
-        localStorage.setItem('selectedLessons', JSON.stringify(selectedLessons));
-        localStorage.setItem('selectedDifficulties', JSON.stringify(selectedDifficulties));
-        localStorage.setItem('difficulties', JSON.stringify(difficulties));
-        localStorage.setItem('currentTheme', currentTheme);
-        localStorage.setItem('currentIndex', currentIndex);
-        localStorage.setItem('isRandomBlur', JSON.stringify(isRandomBlur));
-        localStorage.setItem('quizConfig', JSON.stringify(quizConfig));
-    }, [displayMode, isRandom, selectedLessons, selectedDifficulties, difficulties, currentTheme, isRandomBlur, currentIndex, quizConfig]);
+        if (!isEmbed) {
+            localStorage.setItem('displayMode', JSON.stringify(displayMode));
+            localStorage.setItem('isRandom', JSON.stringify(isRandom));
+            localStorage.setItem('selectedLessons', JSON.stringify(selectedLessons));
+            localStorage.setItem('selectedDifficulties', JSON.stringify(selectedDifficulties));
+            localStorage.setItem('difficulties', JSON.stringify(difficulties));
+            localStorage.setItem('currentTheme', currentTheme);
+            localStorage.setItem('currentIndex', currentIndex);
+            localStorage.setItem('isRandomBlur', JSON.stringify(isRandomBlur));
+            localStorage.setItem('quizConfig', JSON.stringify(quizConfig));
+        }
+    }, [displayMode, isRandom, selectedLessons, selectedDifficulties, difficulties, currentTheme, isRandomBlur, currentIndex, quizConfig, isEmbed]);
 
     // 1. Filtering Logic
     useEffect(() => {
@@ -514,12 +524,14 @@ const FlashcardApp = () => {
     if (filteredCards.length === 0) {
         return (
             <div className="h-screen bg-secondary text-primary flex flex-col overflow-hidden transition-colors duration-500">
-                <Header
-                    showSettings={showSettings}
-                    setShowSettings={setShowSettings}
-                    isQuizMode={isQuizMode}
-                    setIsQuizMode={handleSetIsQuizMode}
-                />
+                {!isEmbed && (
+                    <Header
+                        showSettings={showSettings}
+                        setShowSettings={setShowSettings}
+                        isQuizMode={isQuizMode}
+                        setIsQuizMode={handleSetIsQuizMode}
+                    />
+                )}
 
                 <SettingsPanel
                     showSettings={showSettings}
@@ -587,12 +599,14 @@ const FlashcardApp = () => {
         >
             {/* Main Interactive Content - Inert when settings open */}
             <div className={`flex flex-col h-full w-full ${showSettings ? 'pointer-events-none opacity-50' : ''}`}>
-                <Header
-                    showSettings={showSettings}
-                    setShowSettings={setShowSettings}
-                    isQuizMode={isQuizMode}
-                    setIsQuizMode={handleSetIsQuizMode}
-                />
+                {!isEmbed && (
+                    <Header
+                        showSettings={showSettings}
+                        setShowSettings={setShowSettings}
+                        isQuizMode={isQuizMode}
+                        setIsQuizMode={handleSetIsQuizMode}
+                    />
+                )}
 
                 {isQuizMode ? (
                     <Quiz

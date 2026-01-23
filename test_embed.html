@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcard Embed Test</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px;
+        }
+        .container {
+            display: flex;
+            gap: 40px;
+        }
+        .embed-wrapper {
+            width: 400px;
+            height: 700px;
+            background: white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Embed Test</h1>
+    <div class="container">
+        <div>
+            <h2>Normal Mode</h2>
+            <p>Header should be visible.</p>
+            <div class="embed-wrapper">
+                <iframe src="http://localhost:3000"></iframe>
+            </div>
+        </div>
+        <div>
+            <h2>Embed Mode</h2>
+            <p>Header should be HIDDEN.</p>
+            <div class="embed-wrapper">
+                <iframe src="http://localhost:3000/?embed=true"></iframe>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
