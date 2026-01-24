@@ -1,19 +1,20 @@
 import React, { useState, useMemo } from 'react';
 import { X, Search } from 'lucide-react';
 import Header from './Header';
+import SelectableText from './SelectableText';
 
-const CatalogueItem = ({ card, difficulty, displayMode, isRandomBlur }) => {
+const CatalogueItem = ({ card, difficulty, displayMode, isRandomBlur, onSelectionChange, isActiveSelection }) => {
     const [isRevealed, setIsRevealed] = useState(false);
 
     // Determine which fields to blur for Random Blur mode
     // We do this once on mount (or if isRandomBlur changes) to keep it stable
     const randomBlurMask = useMemo(() => {
         if (!isRandomBlur) return { chinese: false, pinyin: false, polish: false };
-        
+
         const mask = { chinese: false, pinyin: false, polish: false };
         const fields = ['chinese', 'pinyin', 'polish'];
         const numHidden = Math.floor(Math.random() * 2) + 1; // Hide 1 or 2 fields
-        
+
         // Shuffle and pick fields to hide
         const shuffled = [...fields].sort(() => 0.5 - Math.random());
         for (let i = 0; i < numHidden; i++) {
@@ -24,11 +25,11 @@ const CatalogueItem = ({ card, difficulty, displayMode, isRandomBlur }) => {
 
     const shouldBlur = (field) => {
         if (isRevealed) return false;
-        
+
         if (isRandomBlur) {
             return randomBlurMask[field];
         }
-        
+
         return !displayMode[field]; // If displayMode is false (unchecked), we blur/hide? 
         // Wait, standard displayMode logic in main app: checkbox checked = VISIBLE.
         // So passed displayMode={chinese: true...}
@@ -38,7 +39,7 @@ const CatalogueItem = ({ card, difficulty, displayMode, isRandomBlur }) => {
     };
 
     // Helper for blur style
-    const blurStyle = (field) => shouldBlur(field) ? 'filter blur-sm select-none opacity-50' : '';
+    const blurStyle = (field) => shouldBlur(field) ? 'filter blur-sm select-none' : '';
 
     // Difficulty Dots helper
     const getDifficultyDots = () => {
@@ -46,7 +47,7 @@ const CatalogueItem = ({ card, difficulty, displayMode, isRandomBlur }) => {
         if (difficulty === 'łatwe') count = 1;
         if (difficulty === 'średnie') count = 2;
         if (difficulty === 'trudne') count = 3;
-        
+
         if (count === 0) return null;
 
         return (
@@ -59,29 +60,38 @@ const CatalogueItem = ({ card, difficulty, displayMode, isRandomBlur }) => {
     };
 
     return (
-        <div 
+        <div
             onClick={() => setIsRevealed(!isRevealed)}
             className="bg-secondary border-2 border-accent rounded-lg p-2 flex flex-col items-center justify-center text-center aspect-square hover:border-accent transition-colors cursor-pointer relative overflow-hidden group"
         >
-            <div className={`text-[32px] font-bold text-primary text-wrap w-full transition-all duration-300 ${blurStyle('chinese')}`}>{card.chiński}</div>
+            <div className={`text-[32px] font-bold text-primary text-wrap w-full transition-all duration-300 ${blurStyle('chinese')}`}>
+                <SelectableText
+                    text={card.chiński}
+                    onSelectionChange={onSelectionChange}
+                    isActiveSelection={isActiveSelection}
+                    className="justify-center"
+                />
+            </div>
             <div className={`text-[14px] text-accent text-wrap w-full leading-tight transition-all duration-300 ${blurStyle('pinyin')}`}>{card.pinyin}</div>
-            <div className={`text-[14px] text-primary mt-1 text-wrap w-full opacity-80 transition-all duration-300 ${blurStyle('polish')}`}>{card.polskie_znaczenie}</div>
-            
+            <div className={`text-[14px] text-primary mt-1 text-wrap w-full transition-all duration-300 ${blurStyle('polish')}`}>{card.polskie_znaczenie}</div>
+
             {getDifficultyDots()}
         </div>
     );
 };
 
-const Catalogue = ({ 
-    cards, 
-    onClose, 
-    showSettings, 
+const Catalogue = ({
+    cards,
+    onClose,
+    showSettings,
     setShowSettings,
     difficulties, // { "index": "difficulty" }
     allCards, // Original array to find index 
     displayMode = { chinese: true, pinyin: true, polish: true },
     isRandomBlur = false,
-    isRandom = false
+    isRandom = false,
+    onSelectionChange,
+    isActiveSelection
 }) => {
     const [searchTerm, setSearchTerm] = useState('');
 
@@ -107,10 +117,10 @@ const Catalogue = ({
                 const chinese = normalizeText(card.chiński);
                 const pinyin = normalizeText(card.pinyin);
                 const polish = normalizeText(card.polskie_znaczenie);
-                
-                return regex.test(chinese) || 
-                       regex.test(pinyin) || 
-                       regex.test(polish);
+
+                return regex.test(chinese) ||
+                    regex.test(pinyin) ||
+                    regex.test(polish);
             });
         } catch (e) {
             console.warn("Invalid Regex pattern", e);
@@ -127,15 +137,15 @@ const Catalogue = ({
             result.sort(() => Math.random() - 0.5);
         }
         return result;
-    }, [filteredBase, isRandom]); 
+    }, [filteredBase, isRandom]);
 
     // Helper to find difficulty for a filtered card
     const getDifficulty = (card) => {
         if (!allCards || !difficulties) return null;
         // Optimization: Create a map if array is huge, but here findIndex is okay for <1000 items
-        const originalIndex = allCards.findIndex(c => 
-            c.chiński === card.chiński && 
-            c.pinyin === card.pinyin && 
+        const originalIndex = allCards.findIndex(c =>
+            c.chiński === card.chiński &&
+            c.pinyin === card.pinyin &&
             c.polskie_znaczenie === card.polskie_znaczenie
         );
         if (originalIndex === -1) return null;
@@ -152,17 +162,19 @@ const Catalogue = ({
             <div className="flex-1 overflow-y-auto p-2 pb-20">
                 <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 gap-2 sm:gap-4">
                     {finalCards.map((card, index) => (
-                        <CatalogueItem 
+                        <CatalogueItem
                             key={index}
                             card={card}
                             difficulty={getDifficulty(card)}
                             displayMode={displayMode}
                             isRandomBlur={isRandomBlur}
+                            onSelectionChange={onSelectionChange}
+                            isActiveSelection={isActiveSelection}
                         />
                     ))}
                 </div>
                 {finalCards.length === 0 && (
-                    <div className="text-center text-primary opacity-50 mt-10">
+                    <div className="text-center text-primary mt-10">
                         Brak wyników
                     </div>
                 )}
@@ -171,7 +183,7 @@ const Catalogue = ({
             {/* Search Bar Footer */}
             <div className="fixed bottom-0 left-0 right-0 bg-secondary p-4 border-t-2 border-primary">
                 <div className="relative max-w-md mx-auto">
-                    <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-primary opacity-50" size={20} />
+                    <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-primary" size={20} />
                     <input
                         type="text"
                         placeholder="Szukaj (np. 'e' znajdzie 'ē')..."

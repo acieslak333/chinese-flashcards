@@ -8,7 +8,8 @@
     --color-accent: #4b351e;
 }
 
-html, body {
+html,
+body {
     margin: 0;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
         'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -17,7 +18,8 @@ html, body {
     -moz-osx-font-smoothing: grayscale;
     background-color: var(--color-secondary);
     color: var(--color-primary);
-    overscroll-behavior: none; /* Disables Pull-to-Refresh */
+    overscroll-behavior: none;
+    /* Disables Pull-to-Refresh */
 }
 
 @keyframes slideInRight {
@@ -56,6 +58,22 @@ html, body {
     }
 }
 
+@keyframes zoomInPopup {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -100%) scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, -100%) scale(1);
+    }
+}
+
+.animate-zoom-in {
+    animation: zoomInPopup 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
 .animate-slide-right {
     animation: slideInRight 0.3s ease-out forwards;
 }
@@ -66,4 +84,45 @@ html, body {
 
 .animate-fade-up {
     animation: fadeInUp 0.3s ease-out forwards;
+}
+
+/* Custom Scrollbar Styling - Global application */
+*::-webkit-scrollbar {
+    width: 8px;
+    /* Standard width */
+    height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+    background-color: transparent;
+    border-radius: 999px;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--color-primary);
+    border-radius: 999px;
+    border: 2px solid var(--color-secondary);
+    /* Add border to simulated space if needed, or keep flat */
+    border: none;
+    /* Flat style as requested */
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color-accent);
+}
+
+*::-webkit-scrollbar-button {
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+*::-webkit-scrollbar-corner {
+    background-color: transparent;
+}
+
+/* Firefox support */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-primary) transparent;
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import SelectableText from './SelectableText';
 
 const Flashcard = ({
     currentCard,
@@ -12,6 +13,8 @@ const Flashcard = ({
     revealedFields,
     onReveal,
     onRevealAll,
+    onSelectionChange, // New prop
+    isActiveSelection, // New prop
     direction,
     onIndexChange,
     shouldAnimate = true
@@ -20,7 +23,6 @@ const Flashcard = ({
     const [isDragging, setIsDragging] = React.useState(false);
     const [startX, setStartX] = React.useState(0);
     const [initialIndex, setInitialIndex] = React.useState(0);
-    const [dragIndex, setDragIndex] = React.useState(currentIndex);
     const [fractionalIndex, setFractionalIndex] = React.useState(currentIndex);
     const [isScrubbing, setIsScrubbing] = React.useState(false);
 
@@ -48,7 +50,6 @@ const Flashcard = ({
             // Let's snap lightly at the very end to align.
             setFractionalIndex(prev => {
                 const target = Math.round(prev);
-                setDragIndex(target);
                 if (onIndexChange) onIndexChange(target, { isScrubbing: true });
                 return target;
             });
@@ -70,7 +71,6 @@ const Flashcard = ({
             // Update drag index roughly
             const rounded = Math.round(next);
             if (rounded !== lastVibratedIndexRef.current) {
-                setDragIndex(rounded);
                 if (onIndexChange) onIndexChange(rounded, { isScrubbing: true });
                 if (navigator.vibrate) navigator.vibrate(5);
                 lastVibratedIndexRef.current = rounded;
@@ -95,7 +95,7 @@ const Flashcard = ({
 
         setInitialIndex(fractionalIndex); // Start from current fractional pos
 
-        setDragIndex(currentIndex);
+        setInitialIndex(fractionalIndex); // Start from current fractional pos
         // setFractionalIndex(currentIndex); // Keep existing fractional index to avoid jump?
         // Actually if we stop momentum, we are at fractionalIndex.
         e.currentTarget.setPointerCapture(e.pointerId);
@@ -139,7 +139,6 @@ const Flashcard = ({
         const newIndex = Math.round(rawFraction);
 
         if (newIndex !== lastVibratedIndexRef.current) {
-            setDragIndex(newIndex);
             if (onIndexChange) onIndexChange(newIndex, { isScrubbing: true });
 
             if (navigator.vibrate) {
@@ -191,7 +190,7 @@ const Flashcard = ({
             <React.Fragment key={index}>
                 {part}
                 {index < parts.length - 1 && (
-                    <span className="bg-secondary text-accent px-1 rounded-sm mx-0.5 font-bold shadow-sm">
+                    <span className="bg-secondary text-accent px-1 rounded-sm mx-0.5 font-bold">
                         {keyword}
                     </span>
                 )}
@@ -252,7 +251,7 @@ const Flashcard = ({
                                         style={{ width: DOT_SPACING, height: DOT_SPACING }}
                                     >
                                         <div
-                                            className="bg-accent rounded-full shadow-sm transition-transform duration-100"
+                                            className="bg-accent rounded-full transition-transform duration-100"
                                             style={{
                                                 width: '24px',
                                                 height: '24px',
@@ -272,7 +271,12 @@ const Flashcard = ({
                         onMouseEnter={() => onReveal('chinese')}
                         className={`text-5xl sm:text-7xl font-bold text-accent ${getContentStyle('chinese', displayMode.chinese)}`}
                     >
-                        {currentCard.chiński}
+                        {/* replaced standard div with SelectableText */}
+                        <SelectableText
+                            text={currentCard.chiński}
+                            onSelectionChange={onSelectionChange}
+                            isActiveSelection={isActiveSelection}
+                        />
                     </div>
                     <div
                         onMouseEnter={() => onReveal('pinyin')}
@@ -293,7 +297,7 @@ const Flashcard = ({
                         className={`transition-all duration-500 ease-in-out overflow-hidden w-full ${showExample ? 'max-h-[500px] opacity-100 mt-6' : 'max-h-0 opacity-0 mt-0'
                             }`}
                     >
-                        <div className="bg-accent backdrop-blur-sm p-4 sm:p-6 rounded-3xl w-full space-y-2 border-2 border-accent">
+                        <div className="bg-accent p-4 sm:p-6 rounded-3xl w-full space-y-2 border-2 border-accent">
                             <div className="text-xl sm:text-2xl text-center text-secondary font-bold">{highlightText(currentCard.przykład.chiński, currentCard.chiński)}</div>
                             <div className="text-base sm:text-lg text-center text-secondary">{currentCard.przykład.pinyin}</div>
                             <div className="text-sm sm:text-base text-center text-secondary font-semibold">{currentCard.przykład.polski}</div>

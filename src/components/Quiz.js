@@ -1,11 +1,14 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { Check, X } from 'lucide-react';
+import SelectableText from './SelectableText';
 
 const Quiz = ({
     currentCard,
     allCards,
     onNext,
-    config = { optionsCount: 4, questionType: 'chinese', answerType: 'polish' }
+    config = { optionsCount: 4, questionType: 'chinese', answerType: 'polish' },
+    onSelectionChange,
+    isActiveSelection
 }) => {
     const [selectedOption, setSelectedOption] = useState(null);
     const [isCorrect, setIsCorrect] = useState(null);
@@ -90,17 +93,22 @@ const Quiz = ({
                     {getQuestionLabel(questionType)}
                 </div>
                 <div className="text-4xl sm:text-6xl font-bold text-accent text-wrap text-center mb-2 break-words w-full">
-                    {getDisplayText(currentCard, questionType)}
+                    {/* Selectable text only if Chinese? User said "should work also on quiz", presumably for Chinese characters. 
+                        If question is Chinese, use SelectableText. Else standard. 
+                    */}
+                    {questionType === 'chinese' ? (
+                        <SelectableText
+                            text={getDisplayText(currentCard, questionType)}
+                            onSelectionChange={onSelectionChange}
+                            isActiveSelection={isActiveSelection}
+                            className="justify-center"
+                        />
+                    ) : (
+                        getDisplayText(currentCard, questionType)
+                    )}
                 </div>
                 {/* Optional Hint (show pinyin if question is chinese) */}
-                {questionType === 'chinese' && (
-                    <div className="text-xl text-accent opacity-70 text-center">
-                        {/* Maybe hide pinyin in strict mode? For now show it as hint */}
-                        {/* User might want to hide it. Let's show only if config says distinct types? */}
-                        {/* Actually, if Answer is Pinyin, hiding Pinyin here is key. */}
-                        {answerType !== 'pinyin' ? currentCard.pinyin : ''}
-                    </div>
-                )}
+                {/* REMOVED as per user request */}
             </div>
 
             {/* Options Grid */}

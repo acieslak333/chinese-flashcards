@@ -6,6 +6,7 @@ import Flashcard from './components/Flashcard';
 import Navigation from './components/Navigation';
 import Catalogue from './components/Catalogue';
 import Quiz from './components/Quiz.js';
+import SelectionPopup from './components/SelectionPopup';
 import './App.css';
 import chineseData from './data/chinese.json';
 import themes from './data/themes.json';
@@ -110,6 +111,28 @@ const FlashcardApp = () => {
         pinyin: false,
         polish: false
     });
+
+    // Custom Text Selection State
+    const [customSelection, setCustomSelection] = useState(null);
+
+    // Clear selection on click outside
+    useEffect(() => {
+        const onWindowPointerDown = (e) => {
+            // Check if clicking inside Popup
+            if (e.target.closest('[data-component="selection-popup"]')) return;
+
+            // Check if clicking inside SelectableText
+            // Note: SelectableText handles its own selection cleaning on start, 
+            // so we only clear here if we are OUTSIDE both.
+            if (e.target.closest('[data-component="selectable-text"]')) return;
+
+            setCustomSelection(null);
+        };
+
+        // Use capture=true to ensure we catch the event before any stopPropagation might happen
+        window.addEventListener('pointerdown', onWindowPointerDown, true);
+        return () => window.removeEventListener('pointerdown', onWindowPointerDown, true);
+    }, []);
 
     // State for Cloud Sync
     const [syncCode, setSyncCode] = useState(() => {
@@ -508,6 +531,7 @@ const FlashcardApp = () => {
         setIsQuizMode(newValue);
         if (newValue === true) {
             setShowCatalogue(false);
+            setShowSettings(false); // Close settings when starting quiz
         }
     };
 
@@ -517,7 +541,13 @@ const FlashcardApp = () => {
         } else {
             setShowCatalogue(true);
             setIsQuizMode(false);
+            setShowSettings(false); // Close settings when opening catalogue
         }
+    };
+
+    const resetProgress = () => {
+        setDifficulties({});
+        localStorage.removeItem('difficulties'); // Ensure it clears from storage too if needed immediately
     };
 
     // Safety check - if no cards match filters
@@ -569,21 +599,27 @@ const FlashcardApp = () => {
                         onClose={() => setShowCatalogue(false)}
                     />
                 )}
-
-                <div className="flex-1 flex flex-col items-center justify-center p-8 text-center opacity-60">
+                {/* The conditional {!currentCard ? ( was incorrectly placed here.
+                    The div below is the content for when no cards match filters.
+                    The check for !currentCard is handled by the early return below. */}
+                <div className="flex-1 flex flex-col items-center justify-center p-8 text-center">
                     <div className="text-2xl font-bold mb-4">Brak kart spełniających kryteria</div>
-                    <p>Zmień ustawienia filtrów, aby zobaczyć fiszki.</p>
+                    <div className="text-lg mb-6">Spróbuj zmienić filtry lub zresetować postęp.</div>
                     <button
-                        onClick={() => setShowSettings(true)}
-                        className="mt-6 px-6 py-3 bg-secondary text-secondary rounded-full font-bold hover:opacity-90 transition"
+                        onClick={resetProgress}
+                        className="mt-6 px-6 py-3 bg-secondary text-secondary rounded-full font-bold transition hover:scale-105"
                     >
-                        Otwórz ustawienia
+                        Zresetuj postęp
                     </button>
                     <button
-                        onClick={() => setShowCatalogue(true)}
-                        className="mt-4 text-primary underline hover:opacity-80"
+                        onClick={() => {
+                            // Reset filters to defaults?
+                            setSelectedLessons([]);
+                            setSelectedDifficulties([]);
+                        }}
+                        className="mt-4 text-primary underline"
                     >
-                        Otwórz Katalog
+                        Wyczyść filtry
                     </button>
                 </div>
             </div>
@@ -615,6 +651,8 @@ const FlashcardApp = () => {
                         onNext={handleNext}
                         onIndexChange={handleManualIndexChange}
                         config={quizConfig}
+                        onSelectionChange={setCustomSelection}
+                        isActiveSelection={customSelection}
                     />
                 ) : (
                     <Flashcard
@@ -629,6 +667,8 @@ const FlashcardApp = () => {
                         revealedFields={revealedFields}
                         onReveal={handleReveal}
                         onRevealAll={revealAll}
+                        onSelectionChange={setCustomSelection}
+                        isActiveSelection={customSelection}
                         direction={direction}
                         shouldAnimate={shouldAnimate}
                         onIndexChange={handleManualIndexChange}
@@ -646,6 +686,16 @@ const FlashcardApp = () => {
                         handleReset={handleReset}
                     />
                 )}
+
+                {/* Selection Popup */}
+                {customSelection && (
+                    <div data-component="selection-popup">
+                        <SelectionPopup
+                            selection={customSelection}
+                            onClose={() => setCustomSelection(null)}
+                        />
+                    </div>
+                )}
             </div>
 
             {/* Catalogue Overlay */}
@@ -661,6 +711,8 @@ const FlashcardApp = () => {
                     displayMode={displayMode}
                     isRandomBlur={isRandomBlur}
                     isRandom={isRandom}
+                    onSelectionChange={setCustomSelection}
+                    isActiveSelection={customSelection}
                 />
             )}
 
