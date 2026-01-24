@@ -38,7 +38,7 @@ const SelectionPopup = ({ selection, onClose }) => {
     return (
         <div
             style={{ ...style, overscrollBehavior: 'contain', touchAction: 'pan-y' }}
-            className="bg-secondary text-primary p-3 rounded-2xl border-2 border-primary min-w-[220px] max-w-[300px] animate-zoom-in origin-bottom"
+            className="bg-secondary text-primary p-3 rounded-2xl border-2 border-primary min-w-[220px] max-w-[300px] animate-zoom-in origin-bottom no-swipe"
             onPointerDown={(e) => e.stopPropagation()}
             onPointerMove={(e) => e.stopPropagation()}
             onPointerUp={(e) => e.stopPropagation()}

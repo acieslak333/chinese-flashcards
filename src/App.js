@@ -366,9 +366,16 @@ const FlashcardApp = () => {
     };
 
     const swipeHandlers = useSwipeable({
-        onSwipedLeft: () => handleNext(),
-        onSwipedRight: () => handlePrev(),
-        onSwipedUp: () => {
+        onSwipedLeft: (e) => {
+            if (e.event.target.closest('.no-swipe')) return;
+            handleNext();
+        },
+        onSwipedRight: (e) => {
+            if (e.event.target.closest('.no-swipe')) return;
+            handlePrev();
+        },
+        onSwipedUp: (e) => {
+            if (e.event.target.closest('.no-swipe')) return;
             if (isAnyHidden) {
                 // Stage 1: Reveal All
                 revealAll();

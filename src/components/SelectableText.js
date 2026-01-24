@@ -154,7 +154,7 @@ const SelectableText = ({ text, onSelectionChange, className = '', isActiveSelec
         <div
             ref={containerRef}
             data-component="selectable-text"
-            className={`cursor-text select-none touch-none inline-flex flex-wrap justify-center font-bold ${className}`}
+            className={`cursor-text select-none touch-none inline-flex flex-wrap justify-center font-bold no-swipe ${className}`}
             onPointerDown={handlePointerDown}
             onPointerMove={handlePointerMove}
             onPointerUp={handlePointerUp}
