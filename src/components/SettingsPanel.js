@@ -181,6 +181,23 @@ const SettingsPanel = ({
                             <div>
                                 <h3 className="font-semibold mb-3 text-primary">Tryb wyświetlania</h3>
                                 <div className="space-y-4">
+                                    {/* Order Mode Toggle */}
+                                    <label className="flex items-center space-x-3 cursor-pointer group">
+                                        <div className={`w-5 h-5 rounded border transition flex items-center justify-center ${isRandom ? 'bg-primary border-primary' : 'border-primary group-hover:border-accent'}`}>
+                                            {isRandom && <div className="w-2.5 h-2.5 bg-secondary rounded-sm" />}
+                                        </div>
+                                        <input
+                                            type="checkbox"
+                                            checked={isRandom}
+                                            onChange={(e) => setIsRandom(e.target.checked)}
+                                            className="hidden"
+                                        />
+                                        <span className={`transition ${isRandom ? 'font-bold' : ''} group-hover:text-accent group-hover:border-accent`}>
+                                            {isRandom ? 'Kolejność: Losowa' : 'Kolejność: Po kolei'}
+                                        </span>
+                                    </label>
+                                    <h3 className="font-semibold mb-3 text-primary">Widok Fiszek</h3>
+                                    {/* existing Random Blur toggle and display fields map... */}
                                     <label className="flex items-center space-x-3 cursor-pointer group">
                                         <div className={`w-5 h-5 rounded border transition flex items-center justify-center ${isRandomBlur ? 'bg-primary border-primary' : 'border-primary group-hover:border-accent'}`}>
                                             {isRandomBlur && <div className="w-2.5 h-2.5 bg-secondary rounded-sm" />}
