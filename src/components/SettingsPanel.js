@@ -191,10 +191,10 @@ const SettingsPanel = ({
                                             onChange={(e) => setIsRandomBlur(e.target.checked)}
                                             className="hidden"
                                         />
-                                        <span className={`transition ${isRandomBlur ? 'font-bold' : ''} group-hover:text-accent`}>Losowe ukrywanie (1-2 pola)</span>
+                                        <span className={`transition ${isRandomBlur ? 'font-bold' : ''} group-hover:text-accent group-hover:border-accent`}>Losowe ukrywanie (1-2 pola)</span>
                                     </label>
 
-                                    <div className={`space-y-2 pl-2 border-l-2 border-primary border-opacity-20 transition-opacity duration-300 ${isRandomBlur ? 'opacity-40 pointer-events-none' : 'opacity-100'}`}>
+                                    <div className={`space-y-2 pl-2 border-l-2 border-primary border-opacity-20 transition-opacity duration-300 ${isRandomBlur ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
                                         {['chinese', 'pinyin', 'polish'].map(field => (
                                             <label key={field} className="flex items-center space-x-2 cursor-pointer group">
                                                 <div className={`w-4 h-4 rounded border transition flex items-center justify-center ${displayMode[field] ? 'bg-primary border-primary' : 'border-primary group-hover:border-accent'}`}>
@@ -294,73 +294,52 @@ const SettingsPanel = ({
 
                             {/* Search and Filters */}
                             <div className="mb-4 space-y-3">
-                                <div className="relative">
-                                    <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-primary opacity-50" size={16} />
-                                    <input
-                                        type="text"
-                                        placeholder="Szukaj lekcji..."
-                                        value={lessonSearch}
-                                        onChange={(e) => setLessonSearch(e.target.value)}
-                                        className="w-full pl-9 pr-3 py-2 bg-transparent border border-primary rounded-full text-sm text-primary placeholder-primary placeholder-opacity-50 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
-                                    />
-                                </div>
 
-                                {/* Expandable Date Filters */}
-                                <div className="border border-primary rounded-lg overflow-hidden">
-                                    <button
-                                        onClick={() => setShowDateFilters(!showDateFilters)}
-                                        className="w-full flex items-center justify-between p-3 bg-secondary hover:bg-primary hover:text-secondary transition-colors"
-                                    >
-                                        <span className="text-sm font-bold">Filtruj wg daty</span>
-                                        {showDateFilters ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
-                                    </button>
-
-                                    {showDateFilters && (
-                                        <div className="p-3 bg-secondary border-t border-primary space-y-4">
-                                            {/* Years Multi-Select */}
-                                            <div className="space-y-1">
-                                                <h4 className="text-xs font-semibold opacity-70 mb-1">Rok</h4>
-                                                <div className="flex flex-wrap gap-2">
-                                                    {uniqueYears.map(year => (
-                                                        <label key={year} className="flex items-center space-x-2 cursor-pointer group">
-                                                            <div className={`w-4 h-4 rounded border transition flex items-center justify-center ${selectedYears.includes(year) ? 'bg-primary border-primary' : 'border-primary group-hover:border-accent'}`}>
-                                                                {selectedYears.includes(year) && <div className="w-2 h-2 bg-secondary rounded-sm" />}
-                                                            </div>
-                                                            <input
-                                                                type="checkbox"
-                                                                checked={selectedYears.includes(year)}
-                                                                onChange={() => toggleYear(year)}
-                                                                className="hidden"
-                                                            />
-                                                            <span className={`text-sm group-hover:text-accent ${selectedYears.includes(year) ? 'font-bold' : ''}`}>{year}</span>
-                                                        </label>
-                                                    ))}
-                                                </div>
-                                            </div>
-
-                                            {/* Months Multi-Select */}
-                                            <div className="space-y-1">
-                                                <h4 className="text-xs font-semibold opacity-70 mb-1">Miesiąc</h4>
-                                                <div className="grid grid-cols-2 gap-2">
-                                                    {months.map(m => (
-                                                        <label key={m.val} className="flex items-center space-x-2 cursor-pointer group">
-                                                            <div className={`w-4 h-4 rounded border transition flex items-center justify-center ${selectedMonths.includes(m.val) ? 'bg-primary border-primary' : 'border-primary group-hover:border-accent'}`}>
-                                                                {selectedMonths.includes(m.val) && <div className="w-2 h-2 bg-secondary rounded-sm" />}
-                                                            </div>
-                                                            <input
-                                                                type="checkbox"
-                                                                checked={selectedMonths.includes(m.val)}
-                                                                onChange={() => toggleMonth(m.val)}
-                                                                className="hidden"
-                                                            />
-                                                            <span className={`text-sm group-hover:text-accent ${selectedMonths.includes(m.val) ? 'font-bold' : ''}`}>{m.name}</span>
-                                                        </label>
-                                                    ))}
-                                                </div>
+                                {showDateFilters && (
+                                    <div className="p-3 bg-secondary border-t border-primary space-y-4">
+                                        {/* Years Multi-Select */}
+                                        <div className="space-y-1">
+                                            <h4 className="text-xs font-semibold opacity-70 mb-1">Rok</h4>
+                                            <div className="flex flex-wrap gap-2">
+                                                {uniqueYears.map(year => (
+                                                    <label key={year} className="flex items-center space-x-2 cursor-pointer group">
+                                                        <div className={`w-4 h-4 rounded border transition flex items-center justify-center ${selectedYears.includes(year) ? 'bg-primary border-primary' : 'border-primary group-hover:border-accent'}`}>
+                                                            {selectedYears.includes(year) && <div className="w-2 h-2 bg-secondary rounded-sm" />}
+                                                        </div>
+                                                        <input
+                                                            type="checkbox"
+                                                            checked={selectedYears.includes(year)}
+                                                            onChange={() => toggleYear(year)}
+                                                            className="hidden"
+                                                        />
+                                                        <span className={`text-sm group-hover:text-accent ${selectedYears.includes(year) ? 'font-bold' : ''}`}>{year}</span>
+                                                    </label>
+                                                ))}
                                             </div>
                                         </div>
-                                    )}
-                                </div>
+
+                                        {/* Months Multi-Select */}
+                                        <div className="space-y-1">
+                                            <h4 className="text-xs font-semibold opacity-70 mb-1">Miesiąc</h4>
+                                            <div className="grid grid-cols-2 gap-2">
+                                                {months.map(m => (
+                                                    <label key={m.val} className="flex items-center space-x-2 cursor-pointer group">
+                                                        <div className={`w-4 h-4 rounded border transition flex items-center justify-center ${selectedMonths.includes(m.val) ? 'bg-primary border-primary' : 'border-primary group-hover:border-accent'}`}>
+                                                            {selectedMonths.includes(m.val) && <div className="w-2 h-2 bg-secondary rounded-sm" />}
+                                                        </div>
+                                                        <input
+                                                            type="checkbox"
+                                                            checked={selectedMonths.includes(m.val)}
+                                                            onChange={() => toggleMonth(m.val)}
+                                                            className="hidden"
+                                                        />
+                                                        <span className={`text-sm group-hover:text-accent ${selectedMonths.includes(m.val) ? 'font-bold' : ''}`}>{m.name}</span>
+                                                    </label>
+                                                ))}
+                                            </div>
+                                        </div>
+                                    </div>
+                                )}
 
 
                                 <div className="flex p-1 bg-primary rounded-full mt-2">

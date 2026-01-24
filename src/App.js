@@ -529,6 +529,7 @@ const FlashcardApp = () => {
 
     const handleSetIsQuizMode = (newValue) => {
         setIsQuizMode(newValue);
+        setShowSettings(false); // Close settings when starting quiz
         if (newValue === true) {
             setShowCatalogue(false);
             setShowSettings(false); // Close settings when starting quiz
@@ -538,6 +539,7 @@ const FlashcardApp = () => {
     const handleToggleCatalogue = () => {
         if (showCatalogue) {
             setShowCatalogue(false);
+            setShowSettings(false); // Close settings when opening catalogue
         } else {
             setShowCatalogue(true);
             setIsQuizMode(false);

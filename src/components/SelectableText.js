@@ -28,6 +28,8 @@ const SelectableText = ({ text, onSelectionChange, className = '', isActiveSelec
         if (e.button !== 0 && e.pointerType === 'mouse') return;
 
         e.preventDefault(); // Prevent native selection
+        e.stopPropagation(); // Prevent parent swipe handlers
+
         const index = getIndexFromPoint(e.clientX, e.clientY);
 
         if (index !== null) {
@@ -43,6 +45,7 @@ const SelectableText = ({ text, onSelectionChange, className = '', isActiveSelec
 
     const handlePointerMove = (e) => {
         if (!isDragging.current) return;
+        e.stopPropagation(); // Prevent parent swipe handlers
 
         const index = getIndexFromPoint(e.clientX, e.clientY);
         if (index !== null) {
@@ -56,6 +59,7 @@ const SelectableText = ({ text, onSelectionChange, className = '', isActiveSelec
 
     const handlePointerUp = (e) => {
         if (!isDragging.current) return;
+        e.stopPropagation(); // Prevent parent swipe handlers
 
         isDragging.current = false;
         e.currentTarget.releasePointerCapture(e.pointerId);
