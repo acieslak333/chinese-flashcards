@@ -159,6 +159,10 @@ const SelectableText = ({ text, onSelectionChange, className = '', isActiveSelec
             onPointerMove={handlePointerMove}
             onPointerUp={handlePointerUp}
             onPointerCancel={handlePointerUp}
+            // Explicitly stop touch propagation to prevent react-swipeable from seeing these events
+            onTouchStart={(e) => e.stopPropagation()}
+            onTouchMove={(e) => e.stopPropagation()}
+            onTouchEnd={(e) => e.stopPropagation()}
         >
             {text.split('').map((char, i) => {
                 const isSelected = selection && i >= selection.start && i <= selection.end;
