@@ -510,6 +510,10 @@ const SettingsPanel = ({
                                 </div>
                             </div>
                         )}
+
+                        <div className="text-center mt-8 pb-4 text-primary/40 text-xs font-mono opacity-50">
+                            v{versionData.version}
+                        </div>
                     </div>
                 </div>
             </div>
