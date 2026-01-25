@@ -16,7 +16,7 @@ const SelectionPopup = ({ selection, onClose }) => {
         // Or if the selection *contains* a word?
         // Usually dictionary looks up the exact term selected.
         card.chiński.includes(selection.text)
-    ).slice(0, 3); // Limit to 3 matches
+    ); // Limit to 3 matches
 
     // If no exact/partial matches in card phrases, maybe it's just a single char?
     // The generic dictionary might be needed, but we only have `chinese.json` which are flashcards.
