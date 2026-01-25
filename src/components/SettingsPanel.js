@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { X, ListOrdered, Shuffle, Search, Maximize, Minimize, Grid, ChevronDown, ChevronUp, RectangleVertical, Cloud, Download, GraduationCap, ArrowLeft } from 'lucide-react';
+import versionData from '../version.json';
 
 const SettingsPanel = ({
     showSettings,
