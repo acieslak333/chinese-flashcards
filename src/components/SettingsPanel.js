@@ -511,11 +511,13 @@ const SettingsPanel = ({
                             </div>
                         )}
 
-                        <div className="text-center mt-8 pb-4 text-primary/40 text-xs font-mono opacity-50">
-                            v{versionData.version}
-                        </div>
+
+                    </div>
+                    <div className="text-right mt-2 pb-2 text-primary text-xs font-mono">
+                        v{versionData.version}
                     </div>
                 </div>
+
             </div>
 
             {/* Overlay */}
