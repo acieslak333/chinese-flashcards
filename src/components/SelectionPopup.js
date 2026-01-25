@@ -53,8 +53,24 @@ const SelectionPopup = ({ selection, onClose }) => {
 
             <div className="space-y-2 max-h-[160px] overflow-y-auto custom-scrollbar px-1">
                 {matches.length > 0 ? matches.map((card, idx) => (
-                    <div key={idx} className="bg-primary/5 p-2 rounded-xl border-2 border-transparent hover:border-primary/20 transition-colors">
-                        <div className="text-xl font-bold text-primary mb-0.5 leading-none">{card.chiński}</div>
+                    <div key={idx} className="p-2 rounded-xl border-2 border-transparent transition-colors">
+                        <div className="text-xl font-bold mb-0.5 leading-none">
+                            {(() => {
+                                const text = card.chiński;
+                                const keyword = selection.text;
+                                if (!text.includes(keyword)) return text;
+                                return text.split(keyword).map((part, i, arr) => (
+                                    <React.Fragment key={i}>
+                                        {part}
+                                        {i < arr.length - 1 && (
+                                            <span className="bg-primary text-secondary px-1 rounded-sm mx-0.5 inline-block">
+                                                {keyword}
+                                            </span>
+                                        )}
+                                    </React.Fragment>
+                                ));
+                            })()}
+                        </div>
                         <div className="text-accent font-bold text-sm leading-tight mb-0.5">{card.pinyin}</div>
                         <div className="text-primary font-medium text-xs leading-snug">{card.polskie_znaczenie}</div>
                     </div>
