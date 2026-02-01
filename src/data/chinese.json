@@ -3419,5 +3419,214 @@
             "pinyin": "Zhè shì chū kǒu.",
             "polski": "To jest wyjście."
         }
+    },
+    {
+        "chiński": "十字路口",
+        "pinyin": "shí zì lù kǒu",
+        "polskie_znaczenie": "skrzyżowanie",
+        "id_lekcji": "25.01.2026",
+        "przykład": {
+            "chiński": "在十字路口左转。",
+            "pinyin": "Zài shízìlùkǒu zuǒ zhuǎn.",
+            "polski": "Skręć w lewo na skrzyżowaniu."
+        }
+    },
+    {
+        "chiński": "从...到...",
+        "pinyin": "cóng... dào...",
+        "polskie_znaczenie": "Od... do...",
+        "id_lekcji": "25.01.2026",
+        "przykład": {
+            "chiński": "从商场到公园怎么走？",
+            "pinyin": "Cóng shāngchǎng dào gōngyuán zěnme zǒu?",
+            "polski": "Jak dojść z centrum handlowego do parku?"
+        }
+    },
+    {
+        "chiński": "往",
+        "pinyin": "wǎng",
+        "polskie_znaczenie": "w kierunku / w stronę / do",
+        "id_lekcji": "25.01.2026",
+        "przykład": {
+            "chiński": "往左转",
+            "pinyin": "wǎng zuǒ zhuǎn",
+            "polski": "skręć w lewo"
+        }
+    },
+    {
+        "chiński": "往前走",
+        "pinyin": "wǎng qián zǒu",
+        "polskie_znaczenie": "Idź w kierunku przodu / Idź prosto",
+        "id_lekcji": "25.01.2026",
+        "przykład": {
+            "chiński": "你先往前走。",
+            "pinyin": "Nǐ xiān wǎng qián zǒu.",
+            "polski": "Najpierw idź prosto."
+        }
+    },
+    {
+        "chiński": "往左转",
+        "pinyin": "wǎng zuǒ zhuǎn",
+        "polskie_znaczenie": "Skręć w lewo",
+        "id_lekcji": "25.01.2026",
+        "przykład": {
+            "chiński": "然后往左转。",
+            "pinyin": "Ránhòu wǎng zuǒ zhuǎn.",
+            "polski": "Następnie skręć w lewo."
+        }
+    },
+    {
+        "chiński": "往家走",
+        "pinyin": "wǎng jiā zǒu",
+        "polskie_znaczenie": "Idź do domu",
+        "id_lekcji": "25.01.2026",
+        "przykład": {
+            "chiński": "我们往家走。",
+            "pinyin": "Wǒmen wǎng jiā zǒu.",
+            "polski": "Idziemy do domu."
+        }
+    },
+    {
+        "chiński": "走",
+        "pinyin": "zǒu",
+        "polskie_znaczenie": "iść pieszo",
+        "id_lekcji": "25.01.2026",
+        "przykład": {
+            "chiński": "我走去学校。",
+            "pinyin": "Wǒ zǒu qù xuéxiào.",
+            "polski": "Idę pieszo do szkoły."
+        }
+    },
+    {
+        "chiński": "去",
+        "pinyin": "qù",
+        "polskie_znaczenie": "pójść / pojechać do miejsca",
+        "id_lekcji": "25.01.2026",
+        "przykład": {
+            "chiński": "她去中国。",
+            "pinyin": "Tā qù Zhōngguó.",
+            "polski": "Ona jedzie do Chin."
+        }
+    },
+    {
+        "chiński": "来",
+        "pinyin": "lái",
+        "polskie_znaczenie": "przyjść",
+        "id_lekcji": "25.01.2026",
+        "przykład": {
+            "chiński": "他来我家。",
+            "pinyin": "Tā lái wǒ jiā.",
+            "polski": "On przychodzi do mojego domu."
+        }
+    },
+    {
+        "chiński": "你知道……吗？",
+        "pinyin": "Nǐ zhīdào …… ma?",
+        "polskie_znaczenie": "Czy wiesz…?",
+        "id_lekcji": "25.01.2026",
+        "przykład": {
+            "chiński": "你知道电影院在哪里吗？",
+            "pinyin": "Nǐ zhīdào diànyǐngyuàn zài nǎlǐ ma?",
+            "polski": "Czy wiesz gdzie jest kino?"
+        }
+    },
+    {
+        "chiński": "我知道。",
+        "pinyin": "Wǒ zhīdào.",
+        "polskie_znaczenie": "Wiem.",
+        "id_lekcji": "25.01.2026",
+        "przykład": {
+            "chiński": "我知道，电影院就不远。",
+            "pinyin": "Wǒ zhīdào, diànyǐngyuàn jiù bù yuǎn.",
+            "polski": "Wiem, kino jest niedaleko."
+        }
+    },
+    {
+        "chiński": "我不知道。",
+        "pinyin": "Wǒ bù zhīdào.",
+        "polskie_znaczenie": "Nie wiem.",
+        "id_lekcji": "25.01.2026",
+        "przykład": {
+            "chiński": "对不起，我不知道。",
+            "pinyin": "Duìbuqǐ, wǒ bù zhīdào.",
+            "polski": "Przepraszam, nie wiem."
+        }
+    },
+    {
+        "chiński": "木",
+        "pinyin": "mù",
+        "polskie_znaczenie": "drzewo",
+        "id_lekcji": "01.02.2026",
+        "przykład": {
+            "chiński": "木头",
+            "pinyin": "mùtou",
+            "polski": "drewno"
+        }
+    },
+    {
+        "chiński": "从",
+        "pinyin": "cóng",
+        "polskie_znaczenie": "podążać / razem",
+        "id_lekcji": "01.02.2026",
+        "przykład": {
+            "chiński": "跟从",
+            "pinyin": "gēncóng",
+            "polski": "podążać za"
+        }
+    },
+    {
+        "chiński": "林",
+        "pinyin": "lín",
+        "polskie_znaczenie": "lasek",
+        "id_lekcji": "01.02.2026",
+        "przykład": {
+            "chiński": "树林",
+            "pinyin": "shùlín",
+            "polski": "lasek / zagajnik"
+        }
+    },
+    {
+        "chiński": "众",
+        "pinyin": "zhòng",
+        "polskie_znaczenie": "tłum",
+        "id_lekcji": "01.02.2026",
+        "przykład": {
+            "chiński": "观众",
+            "pinyin": "guānzhòng",
+            "polski": "publiczność / widzowie"
+        }
+    },
+    {
+        "chiński": "森",
+        "pinyin": "sēn",
+        "polskie_znaczenie": "las",
+        "id_lekcji": "01.02.2026",
+        "przykład": {
+            "chiński": "森林",
+            "pinyin": "sēnlín",
+            "polski": "las"
+        }
+    },
+    {
+        "chiński": "东南西北",
+        "pinyin": "dōng nán xī běi",
+        "polskie_znaczenie": "Wschód, Południe, Zachód, Północ",
+        "id_lekcji": "01.02.2026",
+        "przykład": {
+            "chiński": "方向",
+            "pinyin": "fāngxiàng",
+            "polski": "kierunki"
+        }
+    },
+    {
+        "chiński": "公园",
+        "pinyin": "gōngyuán",
+        "polskie_znaczenie": "park",
+        "id_lekcji": "01.02.2026",
+        "przykład": {
+            "chiński": "从商场到公园怎么走？",
+            "pinyin": "Cóng shāngchǎng dào gōngyuán zěnme zǒu?",
+            "polski": "Jak dojść z centrum handlowego do parku?"
+        }
     }
 ]
